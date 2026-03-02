@@ -4,6 +4,9 @@
 	"private": true,
 	"packageManager": "pnpm@10.30.3",
 	"scripts": {
+		"build": "turbo run build",
+		"check": "turbo run check",
+		"dev": "turbo run dev --parallel",
 		"ui-ingredients": "pnpm --filter=ui-ingredients",
 		"scripts": "pnpm --filter=@ui-ingredients/scripts",
 		"website": "pnpm --filter=@ui-ingredients/website",
@@ -14,5 +17,8 @@
 		"@biomejs/biome": "^2.4.4",
 		"@types/node": "^25.3.3",
 		"typescript": "^5.9.3"
+	},
+	"devDependencies": {
+		"turbo": "^2.8.12"
 	}
 }
