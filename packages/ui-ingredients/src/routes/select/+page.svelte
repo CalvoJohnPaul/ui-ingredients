@@ -1,8 +1,8 @@
 <script lang="ts">
 import {createListCollection, Portal, Select} from '$lib/index.js';
-import CheckIcon from '../CheckIcon.svelte';
-import ChevronDownIcon from '../ChevronDownIcon.svelte';
-import XIcon from '../XIcon.svelte';
+import CheckIcon from '../@icons/CheckIcon.svelte';
+import ChevronDownIcon from '../@icons/ChevronDownIcon.svelte';
+import XIcon from '../@icons/XIcon.svelte';
 
 let collection = createListCollection({
 	items: [

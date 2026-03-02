@@ -1,7 +1,7 @@
 <script lang="ts">
 import {Menu} from '$lib/index.js';
-import CheckIcon from '../../CheckIcon.svelte';
-import ChevronDownIcon from '../../ChevronDownIcon.svelte';
+import CheckIcon from '../../@icons/CheckIcon.svelte';
+import ChevronDownIcon from '../../@icons/ChevronDownIcon.svelte';
 
 let items = [
 	{value: 'Item 1'},

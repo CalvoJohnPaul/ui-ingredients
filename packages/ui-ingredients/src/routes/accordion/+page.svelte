@@ -1,6 +1,6 @@
 <script lang="ts">
 import {Accordion} from '$lib/index.js';
-import ChevronDownIcon from '../ChevronDownIcon.svelte';
+import ChevronDownIcon from '../@icons/ChevronDownIcon.svelte';
 
 let items = [
 	{

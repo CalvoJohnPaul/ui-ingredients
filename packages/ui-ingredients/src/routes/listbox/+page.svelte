@@ -1,6 +1,6 @@
 <script lang="ts">
 import {createListCollection, Listbox} from '$lib/index.js';
-import CheckIcon from '../CheckIcon.svelte';
+import CheckIcon from '../@icons/CheckIcon.svelte';
 
 let collection = createListCollection({
 	items: [

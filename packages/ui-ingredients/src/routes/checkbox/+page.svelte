@@ -1,6 +1,6 @@
 <script lang="ts">
 import {Checkbox, Field} from '$lib/index.js';
-import CheckIcon from '../CheckIcon.svelte';
+import CheckIcon from '../@icons/CheckIcon.svelte';
 
 let checked = $state(false);
 

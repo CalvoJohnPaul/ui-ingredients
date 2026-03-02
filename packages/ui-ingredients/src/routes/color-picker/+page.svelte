@@ -1,6 +1,6 @@
 <script lang="ts">
 import {ColorPicker} from '$lib/index.js';
-import DropperIcon from '../DropperIcon.svelte';
+import DropperIcon from '../@icons/DropperIcon.svelte';
 
 let presets = [
 	'hsl(10, 81%, 59%)',

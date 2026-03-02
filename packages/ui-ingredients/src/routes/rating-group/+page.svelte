@@ -1,6 +1,6 @@
 <script lang="ts">
 import {RatingGroup} from '$lib/index.js';
-import StarIcon from '../StarIcon.svelte';
+import StarIcon from '../@icons/StarIcon.svelte';
 
 let value = $state(1);
 

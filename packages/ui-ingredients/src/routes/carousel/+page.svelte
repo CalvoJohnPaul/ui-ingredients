@@ -1,7 +1,7 @@
 <script lang="ts">
 import {Carousel} from '$lib/index.js';
-import ChevronLeftIcon from '../ChevronLeftIcon.svelte';
-import ChevronRightIcon from '../ChevronRightIcon.svelte';
+import ChevronLeftIcon from '../@icons/ChevronLeftIcon.svelte';
+import ChevronRightIcon from '../@icons/ChevronRightIcon.svelte';
 
 let items = [
 	'https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',

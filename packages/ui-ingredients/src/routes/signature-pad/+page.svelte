@@ -1,6 +1,6 @@
 <script lang="ts">
 import {SignaturePad} from '$lib/index.js';
-import RefreshIcon from '../RefreshIcon.svelte';
+import RefreshIcon from '../@icons/RefreshIcon.svelte';
 </script>
 
 <SignaturePad.Root>

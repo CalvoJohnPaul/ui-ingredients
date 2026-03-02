@@ -1,8 +1,8 @@
 <script lang="ts">
 import {Combobox, createFilter, createListCollection} from '$lib/index.js';
-import CheckIcon from '../CheckIcon.svelte';
-import ChevronDownIcon from '../ChevronDownIcon.svelte';
-import XIcon from '../XIcon.svelte';
+import CheckIcon from '../@icons/CheckIcon.svelte';
+import ChevronDownIcon from '../@icons/ChevronDownIcon.svelte';
+import XIcon from '../@icons/XIcon.svelte';
 
 let items = [
 	{label: 'Option 1', value: '1'},

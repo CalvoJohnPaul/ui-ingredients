@@ -1,7 +1,7 @@
 <script lang="ts">
 import {Clipboard} from '$lib/index.js';
-import CheckIcon from '../CheckIcon.svelte';
-import CopyIcon from '../CopyIcon.svelte';
+import CheckIcon from '../@icons/CheckIcon.svelte';
+import CopyIcon from '../@icons/CopyIcon.svelte';
 
 let value = $state('UI Ingredients');
 

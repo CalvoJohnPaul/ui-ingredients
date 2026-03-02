@@ -1,7 +1,7 @@
 <script lang="ts">
 import {PasswordInput} from '$lib/index.js';
-import EyeIcon from '../EyeIcon.svelte';
-import EyeOffIcon from '../EyeOffIcon.svelte';
+import EyeIcon from '../@icons/EyeIcon.svelte';
+import EyeOffIcon from '../@icons/EyeOffIcon.svelte';
 
 let value: string[] = $state([]);
 

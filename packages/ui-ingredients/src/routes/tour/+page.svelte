@@ -1,6 +1,6 @@
 <script lang="ts">
 import {Tour, type TourStepDetails} from '$lib/index.js';
-import XIcon from '../XIcon.svelte';
+import XIcon from '../@icons/XIcon.svelte';
 
 const length = 5;
 const steps = Array.from({length}).map((_, idx) => {

@@ -1,9 +1,9 @@
 <script lang="ts">
 import {DatePicker, Portal, type DateValue} from '$lib/index.js';
-import CalendarIcon from '../../CalendarIcon.svelte';
-import ChevronLeftIcon from '../../ChevronLeftIcon.svelte';
-import ChevronRightIcon from '../../ChevronRightIcon.svelte';
-import XIcon from '../../XIcon.svelte';
+import CalendarIcon from '../../@icons/CalendarIcon.svelte';
+import ChevronLeftIcon from '../../@icons/ChevronLeftIcon.svelte';
+import ChevronRightIcon from '../../@icons/ChevronRightIcon.svelte';
+import XIcon from '../../@icons/XIcon.svelte';
 
 let value: DateValue[] = $state([]);
 

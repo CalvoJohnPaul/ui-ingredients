@@ -1,9 +1,9 @@
 <script lang="ts">
 import {createTreeCollection, type NodeProps, TreeView} from '$lib/index.js';
 import type {Component} from 'svelte';
-import ChevronRightIcon from '../ChevronRightIcon.svelte';
-import FileIcon from '../FileIcon.svelte';
-import FolderIcon from '../FolderIcon.svelte';
+import ChevronRightIcon from '../@icons/ChevronRightIcon.svelte';
+import FileIcon from '../@icons/FileIcon.svelte';
+import FolderIcon from '../@icons/FolderIcon.svelte';
 
 interface Node {
 	icon: Component;

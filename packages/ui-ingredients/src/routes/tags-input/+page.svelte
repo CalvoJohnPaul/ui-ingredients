@@ -1,6 +1,6 @@
 <script lang="ts">
 import {TagsInput} from '$lib/index.js';
-import XIcon from '../XIcon.svelte';
+import XIcon from '../@icons/XIcon.svelte';
 
 let value = $state(['Hello']);
 

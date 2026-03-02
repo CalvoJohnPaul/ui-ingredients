@@ -1,6 +1,6 @@
 <script lang="ts">
 import {Menu} from '$lib/index.js';
-import ChevronRightIcon from '../../ChevronRightIcon.svelte';
+import ChevronRightIcon from '../../@icons/ChevronRightIcon.svelte';
 </script>
 
 <Menu.Root>

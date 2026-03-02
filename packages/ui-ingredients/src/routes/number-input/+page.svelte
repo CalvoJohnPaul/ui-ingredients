@@ -1,7 +1,7 @@
 <script lang="ts">
 import {NumberInput} from '$lib/index.js';
-import ChevronDownIcon from '../ChevronDownIcon.svelte';
-import ChevronUpIcon from '../ChevronUpIcon.svelte';
+import ChevronDownIcon from '../@icons/ChevronDownIcon.svelte';
+import ChevronUpIcon from '../@icons/ChevronUpIcon.svelte';
 
 let value = $state('0');
 

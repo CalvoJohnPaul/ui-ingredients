@@ -1,7 +1,7 @@
 <script lang="ts">
 import {Pagination} from '$lib/index.js';
-import ChevronLeftIcon from '../ChevronLeftIcon.svelte';
-import ChevronRightIcon from '../ChevronRightIcon.svelte';
+import ChevronLeftIcon from '../@icons/ChevronLeftIcon.svelte';
+import ChevronRightIcon from '../@icons/ChevronRightIcon.svelte';
 
 let page = $state(1);
 
