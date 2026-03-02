@@ -29,10 +29,16 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       - run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - run: pnpm --filter ui-ingredients release -- --ci --increment major
+      - run: pnpm --filter ui-ingredients exec release-it --ci --increment major
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
