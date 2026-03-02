@@ -195,6 +195,8 @@ h6 {
 
 /* ALERT DIALOG */
 
+[data-scope="dialog"][data-part="trigger"],
+[data-scope="dialog"][data-part="close-trigger"],
 [data-scope="alert-dialog"][data-part="trigger"],
 [data-scope="alert-dialog"][data-part="close-trigger"] {
 	padding-left: 14px;
@@ -203,6 +205,7 @@ h6 {
 	border: 1px solid var(--border-default);
 }
 
+[data-scope="dialog"][data-part="backdrop"],
 [data-scope="alert-dialog"][data-part="backdrop"] {
 	background-color: rgba(0, 0, 0, 0.5);
 	position: fixed;
@@ -210,36 +213,55 @@ h6 {
 	backdrop-filter: blur(4px);
 }
 
-[data-scope="alert-dialog"][data-part="content"] {
+[data-scope="dialog"][data-part="positioner"],
+[data-scope="alert-dialog"][data-part="positioner"] {
 	position: fixed;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+[data-scope="dialog"][data-part="content"],
+[data-scope="alert-dialog"][data-part="content"] {
 	width: 400px;
 	background: var(--bg-default);
 	padding: 20px;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 }
 
-[data-scope="alert-dialog"][data-part="backdrop"][data-state="open"],
-[data-scope="alert-dialog"][data-part="content"][data-state="open"] {
+[data-scope="dialog"][data-part="backdrop"][data-state="open"],
+[data-scope="alert-dialog"][data-part="backdrop"][data-state="open"] {
 	animation: fade-in 250ms;
 }
 
-[data-scope="alert-dialog"][data-part="backdrop"][data-state="closed"],
-[data-scope="alert-dialog"][data-part="content"][data-state="closed"] {
+[data-scope="dialog"][data-part="backdrop"][data-state="closed"],
+[data-scope="alert-dialog"][data-part="backdrop"][data-state="closed"] {
 	animation: fade-out 150ms;
 }
 
+[data-scope="dialog"][data-part="content"][data-state="open"],
+[data-scope="alert-dialog"][data-part="content"][data-state="open"] {
+	animation: scale-fade-in 250ms;
+}
+
+[data-scope="dialog"][data-part="content"][data-state="closed"],
+[data-scope="alert-dialog"][data-part="content"][data-state="closed"] {
+	animation: scale-fade-out 150ms;
+}
+
+[data-scope="dialog"][data-part="title"],
 [data-scope="alert-dialog"][data-part="title"] {
 	display: block;
 	font-size: 18px;
 }
 
+[data-scope="dialog"][data-part="description"],
 [data-scope="alert-dialog"][data-part="description"] {
 	display: block;
 	color: var(--color-muted);
 }
 
+[data-scope="dialog"][data-part="close-trigger"],
 [data-scope="alert-dialog"][data-part="close-trigger"] {
 	margin-top: 16px;
 	width: 100%;
@@ -485,11 +507,11 @@ h6 {
 }
 
 [data-scope="combobox"][data-part="content"][data-state="open"] {
-	animation: fade-in 250ms;
+	animation: slide-fade-in 250ms;
 }
 
 [data-scope="combobox"][data-part="content"][data-state="closed"] {
-	animation: fade-out 150ms;
+	animation: slide-fade-out 150ms;
 }
 
 [data-scope="combobox"][data-part="item"] {
@@ -506,68 +528,6 @@ h6 {
 [data-scope="combobox"][data-part="item"][data-disabled] {
 	opacity: 0.75;
 	cursor: not-allowed;
-}
-
-/* DIALOG */
-
-[data-scope="dialog"][data-part="trigger"],
-[data-scope="dialog"][data-part="close-trigger"] {
-	padding-left: 14px;
-	padding-right: 14px;
-	height: 40px;
-	border: 1px solid var(--border-default);
-}
-
-[data-scope="dialog"][data-part="backdrop"] {
-	background-color: rgba(0, 0, 0, 0.5);
-	position: fixed;
-	inset: 0;
-	backdrop-filter: blur(4px);
-}
-
-[data-scope="dialog"][data-part="positioner"] {
-	position: fixed;
-	inset: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-[data-scope="dialog"][data-part="content"] {
-	width: 400px;
-	background: white;
-	padding: 20px;
-}
-
-[data-scope="dialog"][data-part="content"][data-state="open"] {
-	animation: scale-fade-in 250ms;
-}
-
-[data-scope="dialog"][data-part="content"][data-state="closed"] {
-	animation: scale-fade-out 150ms;
-}
-
-[data-scope="dialog"][data-part="backdrop"][data-state="open"] {
-	animation: fade-in 250ms;
-}
-
-[data-scope="dialog"][data-part="backdrop"][data-state="closed"] {
-	animation: fade-out 150ms;
-}
-
-[data-scope="dialog"][data-part="title"] {
-	display: block;
-	font-size: 18px;
-}
-
-[data-scope="dialog"][data-part="description"] {
-	display: block;
-	color: var(--color-muted);
-}
-
-[data-scope="dialog"][data-part="close-trigger"] {
-	margin-top: 16px;
-	width: 100%;
 }
 
 /* DRAWER */
@@ -956,11 +916,11 @@ h6 {
 }
 
 [data-scope="tooltip"][data-part="content"][data-state="open"] {
-	animation: fade-in 250ms;
+	animation: slide-fade-in 250ms;
 }
 
 [data-scope="tooltip"][data-part="content"][data-state="closed"] {
-	animation: fade-out 150ms;
+	animation: slide-fade-out 150ms;
 }
 
 /* CAROUSEL */
@@ -1082,6 +1042,14 @@ h6 {
 	background: var(--bg-default);
 }
 
+[data-scope="color-picker"][data-part="content"][data-state="open"] {
+	animation: slide-fade-in 250ms;
+}
+
+[data-scope="color-picker"][data-part="content"][data-state="closed"] {
+	animation: slide-fade-out 150ms;
+}
+
 [data-scope="color-picker"][data-part="area"] {
 	width: 100%;
 	aspect-ratio: 16 / 9;
@@ -1160,6 +1128,14 @@ h6 {
 	padding: 8px;
 	border: 1px solid var(--border-default);
 	background: var(--bg-default);
+}
+
+[data-scope="date-picker"][data-part="content"][data-state="open"] {
+	animation: slide-fade-in 250ms;
+}
+
+[data-scope="date-picker"][data-part="content"][data-state="closed"] {
+	animation: slide-fade-out 150ms;
 }
 
 [data-scope="date-picker"][data-part="view-control"] {
@@ -1627,11 +1603,11 @@ h6 {
 }
 
 [data-scope="select"][data-part="content"][data-state="open"] {
-	animation: fade-in 250ms;
+	animation: slide-fade-in 250ms;
 }
 
 [data-scope="select"][data-part="content"][data-state="closed"] {
-	animation: fade-out 150ms;
+	animation: slide-fade-out 150ms;
 }
 
 [data-scope="select"][data-part="item"] {
@@ -1805,11 +1781,11 @@ h6 {
 }
 
 [data-scope="popover"][data-part="content"][data-state="open"] {
-	animation: fade-in 250ms;
+	animation: slide-fade-in 250ms;
 }
 
 [data-scope="popover"][data-part="content"][data-state="closed"] {
-	animation: fade-out 150ms;
+	animation: slide-fade-out 150ms;
 }
 
 [data-scope="popover"][data-part="title"] {
@@ -1929,11 +1905,11 @@ h6 {
 }
 
 [data-scope="menu"][data-part="content"][data-state="open"] {
-	animation: fade-in 250ms;
+	animation: slide-fade-in 250ms;
 }
 
 [data-scope="menu"][data-part="content"][data-state="closed"] {
-	animation: fade-out 150ms;
+	animation: slide-fade-out 150ms;
 }
 
 [data-scope="menu"][data-part="item"],
@@ -1982,11 +1958,11 @@ h6 {
 }
 
 [data-scope="hover-card"][data-part="content"][data-state="open"] {
-	animation: fade-in 250ms;
+	animation: slide-fade-in 250ms;
 }
 
 [data-scope="hover-card"][data-part="content"][data-state="closed"] {
-	animation: fade-out 150ms;
+	animation: slide-fade-out 150ms;
 }
 
 /* FILE UPLOAD */
@@ -2180,5 +2156,27 @@ h6 {
 	to {
 		opacity: 0;
 		transform: scale(0.75);
+	}
+}
+
+@keyframes slide-fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slide-fade-out {
+	from {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateY(16px);
 	}
 }
