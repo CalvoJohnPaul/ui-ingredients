@@ -21,18 +21,3 @@ $inspect({present});
 	corrupti veniam maxime rem eaque praesentium dignissimos asperiores. Beatae
 	modi nihil delectus eaque! Ipsam.
 </Presence>
-
-<style>
-:global(.presence) {
-	margin-top: 12px;
-	max-width: 400px;
-}
-
-:global(.presence[data-state="open"]) {
-	animation: fade-in 250ms;
-}
-
-:global(.presence[data-state="closed"]) {
-	animation: fade-out 150ms;
-}
-</style>

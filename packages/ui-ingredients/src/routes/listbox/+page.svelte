@@ -24,11 +24,3 @@ let collection = createListCollection({
 		{/each}
 	</Listbox.ItemGroup>
 </Listbox.Root>
-
-<style>
-:global([data-scope="listbox"][data-part="item"]) {
-	display: flex;
-	align-items: center;
-	gap: 4px;
-}
-</style>

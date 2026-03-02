@@ -24,26 +24,3 @@ $inspect({value});
 		</RatingGroup.Control>
 	{/snippet}
 </RatingGroup.Root>
-
-<style>
-:global([data-scope="rating-group"][data-part="label"]) {
-	display: block;
-	margin-bottom: 4px;
-}
-
-:global([data-scope="rating-group"][data-part="control"]) {
-	display: flex;
-	align-items: center;
-}
-
-:global([data-scope="rating-group"][data-part="item"]) {
-	color: oklch(0.922 0 0);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-:global([data-scope="rating-group"][data-part="item"][data-highlighted]) {
-	color: oklch(0.852 0.199 91.936);
-}
-</style>

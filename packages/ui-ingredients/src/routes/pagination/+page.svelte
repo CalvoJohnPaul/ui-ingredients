@@ -34,36 +34,3 @@ $inspect(page);
 		</Pagination.NextTrigger>
 	{/snippet}
 </Pagination.Root>
-
-<style>
-:global([data-scope="pagination"][data-part="root"]) {
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 4px;
-}
-
-:global([data-scope="pagination"][data-part="item"]),
-:global([data-scope="pagination"][data-part="prev-trigger"]),
-:global([data-scope="pagination"][data-part="next-trigger"]) {
-	border: 1px solid var(--border-default);
-	height: 40px;
-	min-width: 40px;
-	padding: 0px 4px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-:global([data-scope="pagination"][data-part="item"][data-selected]) {
-	color: var(--color-accent);
-	font-weight: 500;
-}
-
-:global([data-scope="pagination"][data-part="ellipsis"]) {
-	display: block;
-	text-align: center;
-	width: 40px;
-	opacity: 0.65;
-}
-</style>
