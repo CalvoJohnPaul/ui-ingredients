@@ -481,6 +481,7 @@ h6 {
 [data-scope="combobox"][data-part="content"] {
 	padding: 8px;
 	border: 1px solid var(--border-default);
+	background: var(--bg-default);
 }
 
 [data-scope="combobox"][data-part="content"][data-state="open"] {
@@ -1158,6 +1159,7 @@ h6 {
 	width: 350px;
 	padding: 8px;
 	border: 1px solid var(--border-default);
+	background: var(--bg-default);
 }
 
 [data-scope="date-picker"][data-part="view-control"] {
@@ -1192,9 +1194,15 @@ h6 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-variant-numeric: tabular-nums;
 }
 
 [data-scope="date-picker"][data-part="table-cell-trigger"][data-selected] {
+	color: var(--color-accent);
+	font-weight: 500;
+}
+
+[data-scope="date-picker"][data-part="table-cell-trigger"][data-in-range] {
 	color: var(--color-accent);
 	font-weight: 500;
 }
@@ -1791,9 +1799,9 @@ h6 {
 
 [data-scope="popover"][data-part="content"] {
 	width: 375px;
-	background: var(--bg-default);
 	padding: 16px;
 	border: 1px solid var(--border-default);
+	background: var(--bg-default);
 }
 
 [data-scope="popover"][data-part="content"][data-state="open"] {
