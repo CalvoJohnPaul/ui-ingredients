@@ -8,9 +8,9 @@ import svgson from 'svgson';
 const workspaceRoot = path.resolve(path.dirname('../..'));
 const outputDir = path.join(workspaceRoot, 'website/src/lib/icons/anatomy');
 
-const spinner = p.spinner();
-
 export async function generateAnatomyIcons() {
+  const spinner = p.spinner();
+
   spinner.start('Generating anatomy icons...');
 
   const keys = Object.keys(allComponents) as ComponentAnatomyName[];

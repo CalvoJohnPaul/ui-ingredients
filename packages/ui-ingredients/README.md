@@ -15,15 +15,26 @@ npm install ui-ingredients
   import {Dialog, Portal} from 'ui-ingredients';
   import {XCloseIcon} from '$lib/icons';
   import {Button} from '$lib/ui';
+
+  let open = $state(false)
 </script>
 
-<Dialog.Root lazyMount keepMounted>
+<Dialog.Root 
+  {open}
+  onOpenChange={function (details) {
+    open = details.open;
+  }}
+  lazyMount
+  keepMounted
+  onExitComplete={function () {
+    console.log('🚀');
+  }}
+>
   <Dialog.Trigger>
     {#snippet asChild(props)}
       <Button {...props()}>Open</Button>
     {/snippet}
   </Dialog.Trigger>
-
   <Portal>
     <Dialog.Backdrop />
     <Dialog.Positioner>
