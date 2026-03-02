@@ -1,0 +1,11 @@
+packages:
+  - packages/*
+  - scripts
+  - website
+
+ignoredBuiltDependencies:
+  - '@tailwindcss/oxide'
+
+onlyBuiltDependencies:
+  - esbuild
+  - sharp

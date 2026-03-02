@@ -1,0 +1,24 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.biome": "always",
+		"source.fixAll.biome": "always",
+		"source.organizeImports.biome": "always"
+	},
+	"editor.defaultFormatter": "biomejs.biome",
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"tailwindCSS.experimental.classRegex": [
+		["twJoin\\(([^)]*)\\)", "'([^']*)'"],
+		["twMerge\\(([^)]*)\\)", "'([^']*)'"]
+	],
+	"tailwindCSS.experimental.configFile": {
+		"website/src/app.css": "website/src/**"
+	},
+	"biome.enabled": true,
+	"prettier.enable": false,
+	"[svelte]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"typescript.tsdk": "node_modules\\typescript\\lib"
+}

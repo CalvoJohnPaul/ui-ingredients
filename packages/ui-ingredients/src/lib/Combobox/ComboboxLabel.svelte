@@ -1,0 +1,26 @@
+<script lang="ts" module>
+import {mergeProps} from '@zag-js/svelte';
+import type {HtmlIngredientProps} from '../types.js';
+import {getComboboxContext} from './ComboboxContext.svelte.js';
+
+export interface ComboboxLabelProps
+	extends HtmlIngredientProps<'label', HTMLLabelElement> {}
+</script>
+
+<script lang="ts">
+let {
+	ref = $bindable(null),
+	asChild,
+	children,
+	...props
+}: ComboboxLabelProps = $props();
+
+let combobox = getComboboxContext();
+let mergedProps = $derived(mergeProps(combobox().getLabelProps(), props));
+</script>
+
+{#if asChild}
+	{@render asChild(() => mergedProps)}
+{:else}
+	<label bind:this={ref} {...mergedProps}> {@render children?.()} </label>
+{/if}

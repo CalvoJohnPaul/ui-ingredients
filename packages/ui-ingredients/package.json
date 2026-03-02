@@ -1,0 +1,188 @@
+{
+	"name": "ui-ingredients",
+	"type": "module",
+	"license": "MIT",
+	"version": "1.9.0",
+	"svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
+	"author": {
+		"name": "John Paul Calvo",
+		"email": "looselytiedshoelace@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CalvoJohnPaul/ui-ingredients.git",
+		"directory": "packages/ui-ingredients"
+	},
+	"bugs": {
+		"url": "https://github.com/CalvoJohnPaul/ui-ingredients/issues",
+		"email": "looselytiedshoelace@gmail.com"
+	},
+	"description": "Headless component library for Svelte powered by zag",
+	"keywords": [
+		"Svelte",
+		"Component Library",
+		"Headless UI",
+		"Accordion",
+		"Alert",
+		"Alert Dialog",
+		"Avatar",
+		"Breadcrumbs",
+		"Carousel",
+		"Checkbox",
+		"Clipboard",
+		"Collapsible",
+		"Color Picker",
+		"Combobox",
+		"Date Picker",
+		"Dialog",
+		"Drawer",
+		"Editable",
+		"Field",
+		"File Upload",
+		"Floating Panel",
+		"Highlight",
+		"Hover Card",
+		"Menu",
+		"Number Input",
+		"Pagination",
+		"Pin Input",
+		"Popover",
+		"Portal",
+		"Presence",
+		"Progress",
+		"QR Code",
+		"Radio Group",
+		"Rating Group",
+		"Segment Group",
+		"Select",
+		"Signature Pad",
+		"Slider",
+		"Splitter",
+		"Steps",
+		"Switch",
+		"Tabs",
+		"Tags Input",
+		"Time Picker",
+		"Timer",
+		"Toast",
+		"Toggle",
+		"Toggle Group",
+		"Tooltip",
+		"Tour",
+		"Tree View",
+		"Password Input"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build && npm run package",
+		"preview": "vite preview",
+		"package": "svelte-kit sync && svelte-package && publint",
+		"prepublishOnly": "npm run package",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"release": "release-it"
+	},
+	"dependencies": {
+		"@zag-js/accordion": "^1.35.2",
+		"@zag-js/anatomy": "^1.35.2",
+		"@zag-js/angle-slider": "^1.35.2",
+		"@zag-js/auto-resize": "^1.35.2",
+		"@zag-js/avatar": "^1.35.2",
+		"@zag-js/carousel": "^1.35.2",
+		"@zag-js/checkbox": "^1.35.2",
+		"@zag-js/clipboard": "^1.35.2",
+		"@zag-js/collapsible": "^1.35.2",
+		"@zag-js/collection": "^1.35.2",
+		"@zag-js/color-picker": "^1.35.2",
+		"@zag-js/combobox": "^1.35.2",
+		"@zag-js/core": "^1.35.2",
+		"@zag-js/date-picker": "^1.35.2",
+		"@zag-js/dialog": "^1.35.2",
+		"@zag-js/dom-query": "^1.35.2",
+		"@zag-js/editable": "^1.35.2",
+		"@zag-js/file-upload": "^1.35.2",
+		"@zag-js/floating-panel": "^1.35.2",
+		"@zag-js/focus-trap": "^1.35.2",
+		"@zag-js/highlight-word": "^1.35.2",
+		"@zag-js/hover-card": "^1.35.2",
+		"@zag-js/i18n-utils": "^1.35.2",
+		"@zag-js/listbox": "^1.35.2",
+		"@zag-js/menu": "^1.35.2",
+		"@zag-js/number-input": "^1.35.2",
+		"@zag-js/pagination": "^1.35.2",
+		"@zag-js/password-input": "^1.35.2",
+		"@zag-js/pin-input": "^1.35.2",
+		"@zag-js/popover": "^1.35.2",
+		"@zag-js/presence": "^1.35.2",
+		"@zag-js/progress": "^1.35.2",
+		"@zag-js/qr-code": "^1.35.2",
+		"@zag-js/radio-group": "^1.35.2",
+		"@zag-js/rating-group": "^1.35.2",
+		"@zag-js/select": "^1.35.2",
+		"@zag-js/signature-pad": "^1.35.2",
+		"@zag-js/slider": "^1.35.2",
+		"@zag-js/splitter": "^1.35.2",
+		"@zag-js/steps": "^1.35.2",
+		"@zag-js/svelte": "^1.35.2",
+		"@zag-js/switch": "^1.35.2",
+		"@zag-js/tabs": "^1.35.2",
+		"@zag-js/tags-input": "^1.35.2",
+		"@zag-js/timer": "^1.35.2",
+		"@zag-js/toast": "^1.35.2",
+		"@zag-js/toggle": "^1.35.2",
+		"@zag-js/toggle-group": "^1.35.2",
+		"@zag-js/tooltip": "^1.35.2",
+		"@zag-js/tour": "^1.35.2",
+		"@zag-js/tree-view": "^1.35.2",
+		"es-toolkit": "^1.44.0",
+		"type-fest": "^5.4.4"
+	},
+	"peerDependencies": {
+		"svelte": "^5.20.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-vercel": "^6.3.3",
+		"@sveltejs/kit": "^2.53.4",
+		"@sveltejs/package": "^2.5.7",
+		"@sveltejs/vite-plugin-svelte": "^6.2.4",
+		"publint": "^0.3.17",
+		"release-it": "^19.2.4",
+		"svelte": "^5.53.6",
+		"svelte-check": "^4.4.4",
+		"typescript": "^5.9.3",
+		"vite": "^7.3.1"
+	},
+	"release-it": {
+		"git": {
+			"commitMessage": "chore: release ${npm.name} v${version}",
+			"tagName": "${npm.name}@${version}"
+		},
+		"github": {
+			"release": false
+		},
+		"hooks": {
+			"before:init": [
+				"pnpm check"
+			],
+			"after:bump": [
+				"pnpm package"
+			]
+		}
+	}
+}
