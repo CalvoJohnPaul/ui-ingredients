@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {OptionItemProps, OptionItemState} from '@zag-js/menu';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	getMenuContext,
@@ -24,7 +24,7 @@ let {
 	...props
 }: MenuOptionItemProps = $props();
 
-let menuOptionItemPropKeys: UnionToTuple<keyof OptionItemProps> = [
+let menuOptionItemPropKeys = defineKeyset<OptionItemProps>()([
 	'value',
 	'disabled',
 	'valueText',
@@ -32,7 +32,7 @@ let menuOptionItemPropKeys: UnionToTuple<keyof OptionItemProps> = [
 	'checked',
 	'type',
 	'onCheckedChange',
-];
+]);
 
 let [menuOptionItemProps, localProps] = $derived(
 	splitProps(props, menuOptionItemPropKeys),
@@ -62,3 +62,5 @@ setMenuOptionItemPropsContext(() => menuOptionItemProps);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(itemState)}</div>
 {/if}
+
+

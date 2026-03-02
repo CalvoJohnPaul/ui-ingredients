@@ -1,6 +1,7 @@
 <script lang="ts" module>
+import {defineKeyset} from '$lib/defineKeySet.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {PresenceStrategyProps} from '../Presence/createPresence.svelte.js';
 import {createPresence} from '../Presence/createPresence.svelte.js';
 import {setPresenceContext} from '../Presence/PresenceContext.svelte.js';
@@ -29,15 +30,15 @@ let {
 	...props
 }: CollapsibleProps = $props();
 
-let presenceStrategyPropKeys: UnionToTuple<
-	keyof Omit<PresenceStrategyProps, 'onExitComplete'>
-> = ['lazyMount', 'keepMounted', 'animateOnMount'];
+let presenceStrategyPropKeys = defineKeyset<
+	Omit<PresenceStrategyProps, 'onExitComplete'>
+>()(['lazyMount', 'keepMounted', 'animateOnMount']);
 
 let [presenceStrategyProps, collapsibleProps] = $derived(
 	splitProps(props, presenceStrategyPropKeys),
 );
 
-let collapsiblePropKeys: UnionToTuple<keyof CreateCollapsibleProps> = [
+let collapsiblePropKeys = defineKeyset<CreateCollapsibleProps>()([
 	'id',
 	'ids',
 	'open',
@@ -47,7 +48,7 @@ let collapsiblePropKeys: UnionToTuple<keyof CreateCollapsibleProps> = [
 	'disabled',
 	'collapsedHeight',
 	'collapsedWidth',
-];
+]);
 
 let [createCollapsibleProps, localProps] = $derived(
 	splitProps(collapsibleProps, collapsiblePropKeys),

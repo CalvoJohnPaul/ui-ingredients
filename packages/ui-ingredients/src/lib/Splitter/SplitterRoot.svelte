@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	createSplitter,
@@ -25,7 +25,7 @@ let {
 	...props
 }: SplitterProps = $props();
 
-let createSplitterPropKeys: UnionToTuple<keyof CreateSplitterProps> = [
+let createSplitterPropKeys = defineKeyset<CreateSplitterProps>()([
 	'id',
 	'orientation',
 	'size',
@@ -39,7 +39,7 @@ let createSplitterPropKeys: UnionToTuple<keyof CreateSplitterProps> = [
 	'nonce',
 	'onCollapse',
 	'onExpand',
-];
+]);
 
 let [createSplitterProps, localProps] = $derived(
 	splitProps(props, createSplitterPropKeys),
@@ -57,3 +57,5 @@ setSplitterContext(splitter);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(splitter)}</div>
 {/if}
+
+

@@ -1,6 +1,6 @@
 <script lang="ts" module>
-import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import {defineKeyset} from '$lib/defineKeySet.js';import {mergeProps} from '@zag-js/svelte';
+import type {Merge, SetOptional} from 'type-fest';
 import type {PresenceStrategyProps} from '../Presence/createPresence.svelte.js';
 import {setPresenceStrategyPropsContext} from '../Presence/PresenceContext.svelte.js';
 import {splitProps} from '../splitProps.js';
@@ -28,18 +28,18 @@ let {
 	...props
 }: AccordionProps = $props();
 
-let presentStrategyPropKeys: UnionToTuple<keyof PresenceStrategyProps> = [
+let presentStrategyPropKeys = defineKeyset<PresenceStrategyProps>()([
 	'lazyMount',
 	'keepMounted',
 	'animateOnMount',
 	'onExitComplete',
-];
+]);
 
 let [presenceStrategyProps, accordionProps] = $derived(
 	splitProps(props, presentStrategyPropKeys),
 );
 
-let createAccordionPropKeys: UnionToTuple<keyof CreateAccordionProps> = [
+let createAccordionPropKeys = defineKeyset<CreateAccordionProps>()([
 	'id',
 	'ids',
 	'multiple',
@@ -50,7 +50,7 @@ let createAccordionPropKeys: UnionToTuple<keyof CreateAccordionProps> = [
 	'onValueChange',
 	'onFocusChange',
 	'orientation',
-];
+]);
 
 let [createAccordionProps, localProps] = $derived(
 	splitProps(accordionProps, createAccordionPropKeys),
@@ -69,3 +69,5 @@ setPresenceStrategyPropsContext(() => presenceStrategyProps);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(accordion)}</div>
 {/if}
+
+

@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	createSlider,
@@ -25,7 +25,7 @@ let {
 	...props
 }: SliderProps = $props();
 
-let createSliderPropKeys: UnionToTuple<keyof CreateSliderProps> = [
+let createSliderPropKeys = defineKeyset<CreateSliderProps>()([
 	'ids',
 	'aria-label',
 	'aria-labelledby',
@@ -50,7 +50,7 @@ let createSliderPropKeys: UnionToTuple<keyof CreateSliderProps> = [
 	'thumbSize',
 	'thumbCollisionBehavior',
 	'id',
-];
+]);
 
 let [createSliderProps, localProps] = $derived(
 	splitProps(props, createSliderPropKeys),
@@ -68,3 +68,5 @@ setSliderContext(slider);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(slider)}</div>
 {/if}
+
+

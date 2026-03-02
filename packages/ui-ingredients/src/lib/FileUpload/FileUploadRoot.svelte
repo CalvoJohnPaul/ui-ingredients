@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	createFileUpload,
@@ -25,7 +25,7 @@ let {
 	...props
 }: FileUploadProps = $props();
 
-let createFileUploadPropKeys: UnionToTuple<keyof CreateFileUploadProps> = [
+let createFileUploadPropKeys = defineKeyset<CreateFileUploadProps>()([
 	'name',
 	'ids',
 	'translations',
@@ -50,7 +50,7 @@ let createFileUploadPropKeys: UnionToTuple<keyof CreateFileUploadProps> = [
 	'transformFiles',
 	'locale',
 	'id',
-];
+]);
 
 let [createFileUploadProps, localProps] = $derived(
 	splitProps(props, createFileUploadPropKeys),
@@ -68,3 +68,5 @@ setFileUploadContext(fileUpload);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(fileUpload)}</div>
 {/if}
+
+

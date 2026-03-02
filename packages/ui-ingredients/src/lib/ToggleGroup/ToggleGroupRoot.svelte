@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import type {
 	CreateToggleGroupProps,
@@ -25,7 +25,7 @@ let {
 	...props
 }: ToggleGroupProps = $props();
 
-let createToggleGroupPropKeys: UnionToTuple<keyof CreateToggleGroupProps> = [
+let createToggleGroupPropKeys = defineKeyset<CreateToggleGroupProps>()([
 	'id',
 	'ids',
 	'disabled',
@@ -37,7 +37,7 @@ let createToggleGroupPropKeys: UnionToTuple<keyof CreateToggleGroupProps> = [
 	'orientation',
 	'multiple',
 	'deselectable',
-];
+]);
 
 let [createToggleGroupProps, localProps] = $derived(
 	splitProps(props, createToggleGroupPropKeys),
@@ -57,3 +57,5 @@ setToggleGroupContext(toggleGroup);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(toggleGroup)}</div>
 {/if}
+
+

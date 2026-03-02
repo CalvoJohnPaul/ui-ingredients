@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import type {
 	CreateToggleProps,
@@ -25,12 +25,12 @@ let {
 	...props
 }: ToggleProps = $props();
 
-let createTogglePropKeys: UnionToTuple<keyof CreateToggleProps> = [
+let createTogglePropKeys = defineKeyset<CreateToggleProps>()([
 	'disabled',
 	'defaultPressed',
 	'pressed',
 	'onPressedChange',
-];
+]);
 
 let [createToggleProps, localProps] = $derived(
 	splitProps(props, createTogglePropKeys),
@@ -49,3 +49,5 @@ setToggleContext(toggle);
 		{@render children?.(toggle)}
 	</button>
 {/if}
+
+

@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {ItemProps, ItemState} from '@zag-js/menu';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {getMenuContext} from './MenuContext.svelte.js';
 
@@ -21,12 +21,12 @@ let {
 	...props
 }: MenuItemProps = $props();
 
-let itemPropKeys: UnionToTuple<keyof ItemProps> = [
+let itemPropKeys = defineKeyset<ItemProps>()([
 	'value',
 	'disabled',
 	'valueText',
 	'closeOnSelect',
-];
+]);
 
 let [itemProps, localProps] = $derived(splitProps(props, itemPropKeys));
 
@@ -48,3 +48,5 @@ let itemState = (): ItemState =>
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(itemState)}</div>
 {/if}
+
+

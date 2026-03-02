@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {setAngleSliderContext} from './AngleSliderContext.svelte.js';
 import {
@@ -25,7 +25,7 @@ let {
 	...props
 }: AngleSliderProps = $props();
 
-let createAngleSliderPropKeys: UnionToTuple<keyof CreateAngleSliderProps> = [
+let createAngleSliderPropKeys = defineKeyset<CreateAngleSliderProps>()([
 	'id',
 	'aria-label',
 	'aria-labelledby',
@@ -39,7 +39,7 @@ let createAngleSliderPropKeys: UnionToTuple<keyof CreateAngleSliderProps> = [
 	'readOnly',
 	'invalid',
 	'name',
-];
+]);
 
 let [createAngleSliderProps, localProps] = $derived(
 	splitProps(props, createAngleSliderPropKeys),
@@ -59,3 +59,5 @@ setAngleSliderContext(angleSlider);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(angleSlider)}</div>
 {/if}
+
+

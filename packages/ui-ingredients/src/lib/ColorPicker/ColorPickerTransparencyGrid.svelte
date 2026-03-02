@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {TransparencyGridProps} from '@zag-js/color-picker';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {getColorPickerContext} from './ColorPickerContext.svelte.js';
 
@@ -21,9 +21,9 @@ let {
 	...props
 }: ColorPickerTransparencyGridProps = $props();
 
-let transparencyGridPropKeys: UnionToTuple<keyof TransparencyGridProps> = [
+let transparencyGridPropKeys = defineKeyset<TransparencyGridProps>()([
 	'size',
-];
+]);
 
 let [transparencyGridProps, localProps] = $derived(
 	splitProps(props, transparencyGridPropKeys),
@@ -43,3 +43,5 @@ let mergedProps = $derived(
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.()}</div>
 {/if}
+
+

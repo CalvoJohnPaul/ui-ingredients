@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {TableProps} from '@zag-js/date-picker';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	getDatePickerContext,
@@ -25,10 +25,10 @@ let {
 	...props
 }: DatePickerTableProps = $props();
 
-let tablePropKeys: UnionToTuple<keyof Omit<TableProps, 'view'>> = [
+let tablePropKeys = defineKeyset<Omit<TableProps, 'view'>>()([
 	'columns',
 	'id',
-];
+]);
 
 let [tableProps, localProps] = $derived(splitProps(props, tablePropKeys));
 
@@ -51,3 +51,5 @@ setDatePickerTablePropsContext(() => tableProps);
 		{@render children?.()}
 	</table>
 {/if}
+
+

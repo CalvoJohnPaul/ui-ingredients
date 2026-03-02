@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import type {
 	CreateFieldProps,
@@ -20,14 +20,14 @@ export interface FieldProps
 <script lang="ts">
 let {ref = $bindable(null), asChild, children, ...props}: FieldProps = $props();
 
-let createFieldPropKeys: UnionToTuple<keyof CreateFieldProps> = [
+let createFieldPropKeys = defineKeyset<CreateFieldProps>()([
 	'id',
 	'ids',
 	'invalid',
 	'required',
 	'disabled',
 	'readOnly',
-];
+]);
 
 let [createFieldProps, localProps] = $derived(
 	splitProps(props, createFieldPropKeys),
@@ -45,3 +45,5 @@ setFieldContext(field);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(field)}</div>
 {/if}
+
+

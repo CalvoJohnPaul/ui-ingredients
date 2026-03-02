@@ -1,8 +1,9 @@
 <script lang="ts" module>
+import {defineKeyset} from '$lib/defineKeySet.js';
 import {setPresenceContext} from '$lib/Presence/PresenceContext.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import {
 	createPresence,
 	type PresenceStrategyProps,
@@ -31,60 +32,62 @@ let {
 	...props
 }: DatePickerProps = $props();
 
-let presenceStrategyPropKeys: UnionToTuple<keyof PresenceStrategyProps> = [
+let presenceStrategyPropKeys = defineKeyset<PresenceStrategyProps>()([
 	'lazyMount',
 	'keepMounted',
 	'animateOnMount',
 	'onExitComplete',
-];
+]);
 
 let [presenceStrategyProps, datePickerProps] = $derived(
 	splitProps(props, presenceStrategyPropKeys),
 );
 
-let createDatePickerPropKeys: UnionToTuple<keyof CreateDatePickerProps> = [
+let createDatePickerPropKeys = defineKeyset<CreateDatePickerProps>()([
 	'id',
-	'translations',
 	'ids',
-	'name',
-	'timeZone',
-	'disabled',
-	'timeZone',
-	'required',
+	'inline',
 	'invalid',
-	'outsideDaySelectable',
-	'min',
+	'isDateUnavailable',
+	'locale',
 	'max',
-	'closeOnSelect',
-	'openOnClick',
-	'value',
-	'defaultValue',
-	'focusedValue',
-	'defaultFocusedValue',
+	'maxSelectedDates',
+	'maxView',
+	'min',
+	'minView',
+	'name',
 	'numOfMonths',
-	'startOfWeek',
-	'fixedWeeks',
-	'showWeekNumbers',
-	'onValueChange',
 	'onFocusChange',
+	'onOpenChange',
+	'onValueChange',
 	'onViewChange',
 	'onVisibleRangeChange',
-	'onOpenChange',
-	'isDateUnavailable',
-	'selectionMode',
-	'maxSelectedDates',
-	'format',
+	'open',
+	'openOnClick',
+	'outsideDaySelectable',
 	'parse',
 	'placeholder',
-	'view',
-	'defaultView',
-	'minView',
-	'maxView',
 	'positioning',
-	'open',
+	'readOnly',
+	'required',
+	'selectionMode',
+	'showWeekNumbers',
+	'startOfWeek',
+	'timeZone',
+	'translations',
+	'value',
+	'view',
+	'closeOnSelect',
+	'createCalendar',
+	'defaultFocusedValue',
 	'defaultOpen',
-	'inline',
-];
+	'defaultValue',
+	'defaultView',
+	'disabled',
+	'fixedWeeks',
+	'focusedValue',
+	'format',
+]);
 
 let [createDatePickerProps, localProps] = $derived(
 	splitProps(datePickerProps, createDatePickerPropKeys),

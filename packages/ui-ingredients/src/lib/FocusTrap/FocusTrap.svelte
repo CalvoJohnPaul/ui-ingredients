@@ -1,11 +1,11 @@
 <script lang="ts" module>
-import {browser} from '$app/environment';
+import {defineKeyset} from '$lib/defineKeySet.js';import {browser} from '$app/environment';
 import {getEnvironmentContext} from '$lib/EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
 import * as focusTrap from '@zag-js/focus-trap';
 import {mergeProps} from '@zag-js/svelte';
 import {createAttachmentKey} from 'svelte/attachments';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 
 interface FocusTrapOptions
@@ -25,7 +25,7 @@ let {
 	...props
 }: FocusTrapProps = $props();
 
-let focusTrapPropKeys: UnionToTuple<keyof FocusTrapOptions> = [
+let focusTrapPropKeys = defineKeyset<FocusTrapOptions>()([
 	'onActivate',
 	'onPostActivate',
 	'onPause',
@@ -51,7 +51,7 @@ let focusTrapPropKeys: UnionToTuple<keyof FocusTrapOptions> = [
 	'followControlledElements',
 	'getShadowRoot',
 	'disabled',
-];
+]);
 
 let [focusTrapProps, localProps] = $derived(
 	splitProps(props, focusTrapPropKeys),
@@ -79,3 +79,5 @@ let mergedProps = $derived(
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.()}</div>
 {/if}
+
+

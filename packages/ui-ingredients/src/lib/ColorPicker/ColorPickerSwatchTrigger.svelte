@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {SwatchTriggerProps} from '@zag-js/color-picker';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {getColorPickerContext} from './ColorPickerContext.svelte.js';
 
@@ -21,10 +21,10 @@ let {
 	...props
 }: ColorPickerSwatchTriggerProps = $props();
 
-let swatchTriggerPropKeys: UnionToTuple<keyof SwatchTriggerProps> = [
+let swatchTriggerPropKeys = defineKeyset<SwatchTriggerProps>()([
 	'disabled',
 	'value',
-];
+]);
 
 let [swatchTriggerProps, localProps] = $derived(
 	splitProps(props, swatchTriggerPropKeys),
@@ -46,3 +46,5 @@ let mergedProps = $derived(
 		{@render children?.()}
 	</button>
 {/if}
+
+

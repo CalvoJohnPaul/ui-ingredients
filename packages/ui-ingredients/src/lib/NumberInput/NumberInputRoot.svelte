@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	createNumberInput,
@@ -25,7 +25,7 @@ let {
 	...props
 }: NumberInputProps = $props();
 
-let createNumberInputPropKeys: UnionToTuple<keyof CreateNumberInputProps> = [
+let createNumberInputPropKeys = defineKeyset<CreateNumberInputProps>()([
 	'ids',
 	'name',
 	'form',
@@ -53,7 +53,7 @@ let createNumberInputPropKeys: UnionToTuple<keyof CreateNumberInputProps> = [
 	'spinOnPress',
 	'locale',
 	'id',
-];
+]);
 
 let [createNumberInputProps, localProps] = $derived(
 	splitProps(props, createNumberInputPropKeys),
@@ -73,3 +73,5 @@ setNumberInputContext(numberInput);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(numberInput)}</div>
 {/if}
+
+

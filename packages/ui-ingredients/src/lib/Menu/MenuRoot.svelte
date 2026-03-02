@@ -1,5 +1,5 @@
 <script lang="ts" module>
-import {type Snippet} from 'svelte';
+import {defineKeyset} from '$lib/defineKeySet.js';import {type Snippet} from 'svelte';
 import {
 	createPresence,
 	type PresenceStrategyProps,
@@ -8,7 +8,7 @@ import {
 import {setPresenceContext} from '$lib/Presence/PresenceContext.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
 import type {Accessor} from '$lib/types.js';
-import type {SetOptional, UnionToTuple} from 'type-fest';
+import type {SetOptional} from 'type-fest';
 import {
 	createMenu,
 	type CreateMenuProps,
@@ -30,12 +30,12 @@ export interface MenuRootProps
 <script lang="ts">
 let {children, ...props}: MenuRootProps = $props();
 
-let presenceStrategyPropKeys: UnionToTuple<keyof PresenceStrategyProps> = [
+let presenceStrategyPropKeys = defineKeyset<PresenceStrategyProps>()([
 	'lazyMount',
 	'keepMounted',
 	'animateOnMount',
 	'onExitComplete',
-];
+]);
 
 let [presenceStrategyProps, createMenuProps] = $derived(
 	splitProps(props, presenceStrategyPropKeys),
@@ -62,3 +62,5 @@ if (parentMenu?.()) {
 </script>
 
 {@render children?.(menu)}
+
+

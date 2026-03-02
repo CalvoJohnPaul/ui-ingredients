@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	createSegmentGroup,
@@ -25,7 +25,7 @@ let {
 	...props
 }: SegmentGroupProps = $props();
 
-let createSegmentGroupPropKeys: UnionToTuple<keyof CreateSegmentGroupProps> = [
+let createSegmentGroupPropKeys = defineKeyset<CreateSegmentGroupProps>()([
 	'ids',
 	'value',
 	'defaultValue',
@@ -38,7 +38,7 @@ let createSegmentGroupPropKeys: UnionToTuple<keyof CreateSegmentGroupProps> = [
 	'onValueChange',
 	'orientation',
 	'id',
-];
+]);
 
 let [createSegmentGroupProps, localProps] = $derived(
 	splitProps(props, createSegmentGroupPropKeys),
@@ -58,3 +58,5 @@ setSegmentGroupContext(segmentGroup);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(segmentGroup)}</div>
 {/if}
+
+

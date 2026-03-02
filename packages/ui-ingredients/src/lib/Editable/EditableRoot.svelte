@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	createEditable,
@@ -25,7 +25,7 @@ let {
 	...props
 }: EditableProps = $props();
 
-let createEditablePropKeys: UnionToTuple<keyof CreateEditableProps> = [
+let createEditablePropKeys = defineKeyset<CreateEditableProps>()([
 	'ids',
 	'invalid',
 	'name',
@@ -53,7 +53,7 @@ let createEditablePropKeys: UnionToTuple<keyof CreateEditableProps> = [
 	'onPointerDownOutside',
 	'onFocusOutside',
 	'onInteractOutside',
-];
+]);
 
 let [createEditableProps, localProps] = $derived(
 	splitProps(props, createEditablePropKeys),
@@ -71,3 +71,5 @@ setEditableContext(editable);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(editable)}</div>
 {/if}
+
+

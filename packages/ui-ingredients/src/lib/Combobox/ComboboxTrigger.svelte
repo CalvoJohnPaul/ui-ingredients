@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {TriggerProps} from '@zag-js/combobox';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {getComboboxContext} from './ComboboxContext.svelte.js';
 
@@ -21,7 +21,7 @@ let {
 	...props
 }: ComboboxTriggerProps = $props();
 
-let triggerPropKeys: UnionToTuple<keyof TriggerProps> = ['focusable'];
+let triggerPropKeys = defineKeyset<TriggerProps>()(['focusable']);
 let [triggerProps, localProps] = $derived(splitProps(props, triggerPropKeys));
 
 let combobox = getComboboxContext();
@@ -37,3 +37,5 @@ let mergedProps = $derived(
 		{@render children?.()}
 	</button>
 {/if}
+
+

@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
 import type {ContentProps} from '@zag-js/tabs';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {getTabsContext} from './TabsContext.svelte.js';
 
@@ -18,7 +18,7 @@ let {
 	...props
 }: TabsContentProps = $props();
 
-let contentPropKeys: UnionToTuple<keyof ContentProps> = ['value'];
+let contentPropKeys = defineKeyset<ContentProps>()(['value']);
 let [contentProps, localProps] = $derived(splitProps(props, contentPropKeys));
 
 let tabs = getTabsContext();
@@ -32,3 +32,5 @@ let mergedProps = $derived(
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.()}</div>
 {/if}
+
+

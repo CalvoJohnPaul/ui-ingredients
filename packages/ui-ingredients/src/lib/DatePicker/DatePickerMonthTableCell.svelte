@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {TableCellProps, TableCellState} from '@zag-js/date-picker';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	getDatePickerContext,
@@ -26,11 +26,11 @@ let {
 
 let datePicker = getDatePickerContext();
 
-let tableCellPropKeys: UnionToTuple<keyof TableCellProps> = [
+let tableCellPropKeys = defineKeyset<TableCellProps>()([
 	'disabled',
 	'value',
 	'columns',
-];
+]);
 let [tableCellProps, localProps] = $derived(
 	splitProps(props, tableCellPropKeys),
 );
@@ -49,3 +49,5 @@ setDatePickerTableCellPropsContext(() => tableCellProps);
 {:else}
 	<td bind:this={ref} {...mergedProps}>{@render children?.(tableCellState)}</td>
 {/if}
+
+

@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {StageTriggerProps} from '@zag-js/floating-panel';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {getFloatingPanelContext} from './FloatingPanelContext.svelte.js';
 
@@ -21,7 +21,7 @@ let {
 	...props
 }: FloatingPanelStageTriggerProps = $props();
 
-let stageTriggerPropKeys: UnionToTuple<keyof StageTriggerProps> = ['stage'];
+let stageTriggerPropKeys = defineKeyset<StageTriggerProps>()(['stage']);
 let [stageTriggerProps, localProps] = $derived(
 	splitProps(props, stageTriggerPropKeys),
 );
@@ -42,3 +42,5 @@ let mergedProps = $derived(
 		{@render children?.()}
 	</button>
 {/if}
+
+

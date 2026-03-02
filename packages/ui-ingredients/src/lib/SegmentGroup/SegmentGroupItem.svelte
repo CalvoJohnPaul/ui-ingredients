@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {ItemProps, ItemState} from '@zag-js/radio-group';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	getSegmentGroupContext,
@@ -24,11 +24,11 @@ let {
 	...props
 }: SegmentGroupItemProps = $props();
 
-let itemPropKeys: UnionToTuple<keyof ItemProps> = [
+let itemPropKeys = defineKeyset<ItemProps>()([
 	'value',
 	'disabled',
 	'invalid',
-];
+]);
 let [itemProps, localProps] = $derived(splitProps(props, itemPropKeys));
 
 let segmentGroup = getSegmentGroupContext();
@@ -47,3 +47,5 @@ setSegmentGroupItemPropsContext(() => itemProps);
 		{@render children?.(itemState)}
 	</label>
 {/if}
+
+

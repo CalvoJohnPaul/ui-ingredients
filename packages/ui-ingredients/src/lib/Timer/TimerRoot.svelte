@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	createTimer,
@@ -20,7 +20,7 @@ export interface TimerProps
 <script lang="ts">
 let {ref = $bindable(null), asChild, children, ...props}: TimerProps = $props();
 
-let createTimerPropKeys: UnionToTuple<keyof CreateTimerProps> = [
+let createTimerPropKeys = defineKeyset<CreateTimerProps>()([
 	'ids',
 	'countdown',
 	'startMs',
@@ -30,7 +30,7 @@ let createTimerPropKeys: UnionToTuple<keyof CreateTimerProps> = [
 	'onTick',
 	'onComplete',
 	'id',
-];
+]);
 
 let [createTimerProps, localProps] = $derived(
 	splitProps(props, createTimerPropKeys),
@@ -48,3 +48,5 @@ setTimerContext(timer);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(timer)}</div>
 {/if}
+
+

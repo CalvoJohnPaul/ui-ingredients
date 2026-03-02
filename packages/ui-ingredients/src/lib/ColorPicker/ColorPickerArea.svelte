@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {AreaProps} from '@zag-js/color-picker';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	getColorPickerContext,
@@ -21,7 +21,7 @@ let {
 	...props
 }: ColorPickerAreaProps = $props();
 
-let areaPropKeys: UnionToTuple<keyof AreaProps> = ['xChannel', 'yChannel'];
+let areaPropKeys = defineKeyset<AreaProps>()(['xChannel', 'yChannel']);
 let [areaProps, localProps] = $derived(splitProps(props, areaPropKeys));
 let colorPicker = getColorPickerContext();
 
@@ -37,3 +37,5 @@ setColorPickerAreaPropsContext(() => areaProps);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.()}</div>
 {/if}
+
+

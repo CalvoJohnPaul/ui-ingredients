@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {setCarouselContext} from './CarouselContext.svelte.js';
 import {
@@ -25,7 +25,7 @@ let {
 	...props
 }: CarouselProps = $props();
 
-let createCarouselPropKeys: UnionToTuple<keyof CreateCarouselProps> = [
+let createCarouselPropKeys = defineKeyset<CreateCarouselProps>()([
 	'ids',
 	'translations',
 	'slidesPerPage',
@@ -46,7 +46,7 @@ let createCarouselPropKeys: UnionToTuple<keyof CreateCarouselProps> = [
 	'onAutoplayStatusChange',
 	'id',
 	'orientation',
-];
+]);
 
 let [createCarouselProps, localProps] = $derived(
 	splitProps(props, createCarouselPropKeys),
@@ -64,3 +64,5 @@ setCarouselContext(carousel);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(carousel)}</div>
 {/if}
+
+

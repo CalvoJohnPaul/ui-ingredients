@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {Accessor} from '$lib/types.js';
 import type {Snippet} from 'svelte';
-import type {SetOptional, UnionToTuple} from 'type-fest';
+import type {SetOptional} from 'type-fest';
 import type {PresenceStrategyProps} from '../Presence/createPresence.svelte.js';
 import {createPresence} from '../Presence/createPresence.svelte.js';
 import {setPresenceContext} from '../Presence/PresenceContext.svelte.js';
@@ -23,12 +23,12 @@ export interface TooltipProps
 <script lang="ts">
 let {children, ...props}: TooltipProps = $props();
 
-let presenceStrategyPropKeys: UnionToTuple<keyof PresenceStrategyProps> = [
+let presenceStrategyPropKeys = defineKeyset<PresenceStrategyProps>()([
 	'lazyMount',
 	'keepMounted',
 	'animateOnMount',
 	'onExitComplete',
-];
+]);
 
 let [presenceStrategyProps, createTooltipProps] = $derived(
 	splitProps(props, presenceStrategyPropKeys),
@@ -46,3 +46,5 @@ setPresenceContext(presence);
 </script>
 
 {@render children?.(tooltip)}
+
+

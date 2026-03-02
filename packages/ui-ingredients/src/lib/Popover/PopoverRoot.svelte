@@ -1,9 +1,10 @@
 <script lang="ts" module>
+import {defineKeyset} from '$lib/defineKeySet.js';
 import {setPresenceContext} from '$lib/Presence/PresenceContext.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
 import type {Accessor} from '$lib/types.js';
 import type {Snippet} from 'svelte';
-import type {SetOptional, UnionToTuple} from 'type-fest';
+import type {SetOptional} from 'type-fest';
 import {
 	createPresence,
 	type PresenceStrategyProps,
@@ -25,27 +26,14 @@ export interface PopoverProps
 <script lang="ts">
 let {children, ...props}: PopoverProps = $props();
 
-let presenceStrategyPropKeys: UnionToTuple<keyof CreatePopoverProps> = [
-	'id',
-	'modal',
-	'portalled',
-	'autoFocus',
-	'initialFocusEl',
-	'closeOnInteractOutside',
-	'closeOnEscape',
-	'onOpenChange',
-	'positioning',
-	'open',
-	'defaultOpen',
-	'onEscapeKeyDown',
-	'onRequestDismiss',
-	'onPointerDownOutside',
-	'onFocusOutside',
-	'onInteractOutside',
-	'persistentElements',
-];
+let presenceStrategyPropKeys = defineKeyset<PresenceStrategyProps>()([
+	'animateOnMount',
+	'keepMounted',
+	'lazyMount',
+	'onExitComplete',
+]);
 
-let [createPopoverProps, presenceStrategyProps] = $derived(
+let [presenceStrategyProps, createPopoverProps] = $derived(
 	splitProps(props, presenceStrategyPropKeys),
 );
 

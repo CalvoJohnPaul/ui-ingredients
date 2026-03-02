@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	createProgress,
@@ -25,7 +25,7 @@ let {
 	...props
 }: ProgressProps = $props();
 
-let createProgressPropKeys: UnionToTuple<keyof CreateProgressProps> = [
+let createProgressPropKeys = defineKeyset<CreateProgressProps>()([
 	'ids',
 	'value',
 	'defaultValue',
@@ -37,7 +37,7 @@ let createProgressPropKeys: UnionToTuple<keyof CreateProgressProps> = [
 	'locale',
 	'id',
 	'orientation',
-];
+]);
 
 let [createProgressProps, localProps] = $derived(
 	splitProps(props, createProgressPropKeys),
@@ -55,3 +55,5 @@ setProgressContext(progress);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(progress)}</div>
 {/if}
+
+

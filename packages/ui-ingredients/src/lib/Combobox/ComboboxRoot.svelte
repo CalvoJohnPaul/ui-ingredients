@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {PresenceStrategyProps} from '../Presence/createPresence.svelte.js';
 import {createPresence} from '../Presence/createPresence.svelte.js';
 import {setPresenceContext} from '../Presence/PresenceContext.svelte.js';
@@ -29,18 +29,18 @@ let {
 	...props
 }: ComboboxProps = $props();
 
-let presenceStrategyPropKeys: UnionToTuple<keyof PresenceStrategyProps> = [
+let presenceStrategyPropKeys = defineKeyset<PresenceStrategyProps>()([
 	'lazyMount',
 	'keepMounted',
 	'animateOnMount',
 	'onExitComplete',
-];
+]);
 
 let [presenceStrategyProps, comboboxProps] = $derived(
 	splitProps(props, presenceStrategyPropKeys),
 );
 
-let createComboboxPropKeys: UnionToTuple<keyof CreateComboboxProps> = [
+let createComboboxPropKeys = defineKeyset<CreateComboboxProps>()([
 	'id',
 	'placeholder',
 	'open',
@@ -84,7 +84,7 @@ let createComboboxPropKeys: UnionToTuple<keyof CreateComboboxProps> = [
 	'onPointerDownOutside',
 	'onFocusOutside',
 	'onInteractOutside',
-];
+]);
 
 let [createComboboxProps, localProps] = $derived(
 	splitProps(comboboxProps, createComboboxPropKeys),
@@ -108,3 +108,5 @@ setPresenceContext(presence);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(combobox)}</div>
 {/if}
+
+

@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {PresetTriggerProps} from '@zag-js/date-picker';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {getDatePickerContext} from './DatePickerContext.svelte.js';
 
@@ -21,9 +21,9 @@ let {
 	...props
 }: DatePickerPresetTriggerProps = $props();
 
-let datePickerPresetTriggerPropKeys: UnionToTuple<keyof PresetTriggerProps> = [
+let datePickerPresetTriggerPropKeys = defineKeyset<PresetTriggerProps>()([
 	'value',
-];
+]);
 
 let [datePickerPresetTriggerProps, localProps] = $derived(
 	splitProps(props, datePickerPresetTriggerPropKeys),
@@ -45,3 +45,5 @@ let mergedProps = $derived(
 		{@render children?.()}
 	</button>
 {/if}
+
+

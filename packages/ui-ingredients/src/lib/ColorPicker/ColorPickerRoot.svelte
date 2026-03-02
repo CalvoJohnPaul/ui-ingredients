@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {setPresenceContext} from '$lib/Presence/PresenceContext.svelte.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {setPresenceContext} from '$lib/Presence/PresenceContext.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import {
 	createPresence,
 	type PresenceStrategyProps,
@@ -31,18 +31,18 @@ let {
 	...props
 }: ColorPickerProps = $props();
 
-let presenceStrategyPropKeys: UnionToTuple<keyof PresenceStrategyProps> = [
+let presenceStrategyPropKeys = defineKeyset<PresenceStrategyProps>()([
 	'lazyMount',
 	'keepMounted',
 	'animateOnMount',
 	'onExitComplete',
-];
+]);
 
 let [presenceStrategyProps, colorPickerProps] = $derived(
 	splitProps(props, presenceStrategyPropKeys),
 );
 
-let createColorPickerPropKeys: UnionToTuple<keyof CreateColorPickerProps> = [
+let createColorPickerPropKeys = defineKeyset<CreateColorPickerProps>()([
 	'ids',
 	'value',
 	'defaultValue',
@@ -68,7 +68,7 @@ let createColorPickerPropKeys: UnionToTuple<keyof CreateColorPickerProps> = [
 	'onPointerDownOutside',
 	'onFocusOutside',
 	'onInteractOutside',
-];
+]);
 
 let [createColorPickerProps, localProps] = $derived(
 	splitProps(colorPickerProps, createColorPickerPropKeys),
@@ -95,3 +95,5 @@ setPresenceContext(presence);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(colorPicker)}</div>
 {/if}
+
+

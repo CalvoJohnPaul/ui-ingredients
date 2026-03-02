@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	createRatingGroup,
@@ -25,7 +25,7 @@ let {
 	...props
 }: RatingGroupProps = $props();
 
-let createRatingGroupPropKeys: UnionToTuple<keyof CreateRatingGroupProps> = [
+let createRatingGroupPropKeys = defineKeyset<CreateRatingGroupProps>()([
 	'ids',
 	'translations',
 	'count',
@@ -41,7 +41,7 @@ let createRatingGroupPropKeys: UnionToTuple<keyof CreateRatingGroupProps> = [
 	'onValueChange',
 	'onHoverChange',
 	'id',
-];
+]);
 
 let [createRatingGroupProps, localProps] = $derived(
 	splitProps(props, createRatingGroupPropKeys),
@@ -61,3 +61,5 @@ setRatingGroupContext(ratingGroup);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(ratingGroup)}</div>
 {/if}
+
+

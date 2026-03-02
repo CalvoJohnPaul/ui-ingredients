@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	createTabs,
@@ -20,7 +20,7 @@ export interface TabsProps
 <script lang="ts">
 let {ref = $bindable(null), asChild, children, ...props}: TabsProps = $props();
 
-let createTabsPropKeys: UnionToTuple<keyof CreateTabsProps> = [
+let createTabsPropKeys = defineKeyset<CreateTabsProps>()([
 	'id',
 	'ids',
 	'translations',
@@ -34,7 +34,7 @@ let createTabsPropKeys: UnionToTuple<keyof CreateTabsProps> = [
 	'composite',
 	'deselectable',
 	'navigate',
-];
+]);
 
 let [createTabsProps, localProps] = $derived(
 	splitProps(props, createTabsPropKeys),
@@ -52,3 +52,5 @@ setTabsContext(tabs);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(tabs)}</div>
 {/if}
+
+

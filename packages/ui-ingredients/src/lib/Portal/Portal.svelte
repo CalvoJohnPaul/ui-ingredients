@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {portal} from '@zag-js/svelte';
+import {defineKeyset} from '$lib/defineKeySet.js';import {portal} from '@zag-js/svelte';
 import type {SvelteHTMLElements} from 'svelte/elements';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import {getEnvironmentContext} from '../EnvironmentProvider/index.js';
 import {splitProps} from '../splitProps.js';
 import {getPortalProviderPropsContext} from './PortalContext.svelte.js';
@@ -18,10 +18,10 @@ export interface PortalProps
 <script lang="ts">
 let {children, ...props}: PortalProps = $props();
 
-let portalActionPropKeys: UnionToTuple<keyof PortalActionProps> = [
+let portalActionPropKeys = defineKeyset<PortalActionProps>()([
 	'disabled',
 	'container',
-];
+]);
 
 let [portalActionProps, localProps] = $derived(
 	splitProps(props, portalActionPropKeys),
@@ -44,3 +44,5 @@ let environment = getEnvironmentContext();
 >
 	{@render children?.()}
 </div>
+
+

@@ -1,8 +1,9 @@
 <script lang="ts" module>
+import {defineKeyset} from '$lib/defineKeySet.js';
 import {setPresenceStrategyPropsContext} from '$lib/Presence/PresenceContext.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {PresenceStrategyProps} from '../Presence/createPresence.svelte.js';
 import type {HtmlIngredientProps} from '../types.js';
 import {
@@ -28,18 +29,18 @@ let {
 	...props
 }: TreeViewProps = $props();
 
-let presenceStrategyPropKeys: UnionToTuple<keyof PresenceStrategyProps> = [
+let presenceStrategyPropKeys = defineKeyset<PresenceStrategyProps>()([
 	'lazyMount',
 	'keepMounted',
 	'animateOnMount',
 	'onExitComplete',
-];
+]);
 
 let [presenceStrategyProps, treeviewProps] = $derived(
 	splitProps(props, presenceStrategyPropKeys),
 );
 
-let createTreeViewPropKeys: UnionToTuple<keyof CreateTreeViewProps> = [
+let createTreeViewPropKeys = defineKeyset<CreateTreeViewProps>()([
 	'collection',
 	'ids',
 	'expandedValue',
@@ -66,7 +67,7 @@ let createTreeViewPropKeys: UnionToTuple<keyof CreateTreeViewProps> = [
 	'loadChildren',
 	'scrollToIndexFn',
 	'id',
-];
+]);
 
 let [createTreeViewProps, localProps] = $derived(
 	splitProps(treeviewProps, createTreeViewPropKeys),

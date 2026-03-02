@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	createTagsInput,
@@ -25,7 +25,7 @@ let {
 	...props
 }: TagsInputProps = $props();
 
-let createTagsInputPropKeys: UnionToTuple<keyof CreateTagsInputProps> = [
+let createTagsInputPropKeys = defineKeyset<CreateTagsInputProps>()([
 	'ids',
 	'translations',
 	'maxLength',
@@ -56,7 +56,7 @@ let createTagsInputPropKeys: UnionToTuple<keyof CreateTagsInputProps> = [
 	'onPointerDownOutside',
 	'onFocusOutside',
 	'onInteractOutside',
-];
+]);
 
 let [createTagsInputProps, localProps] = $derived(
 	splitProps(props, createTagsInputPropKeys),
@@ -74,3 +74,5 @@ setTagsInputContext(tagsInput);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(tagsInput)}</div>
 {/if}
+
+

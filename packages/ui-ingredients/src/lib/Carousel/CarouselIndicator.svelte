@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {IndicatorProps} from '@zag-js/carousel';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {getCarouselContext} from './CarouselContext.svelte.js';
 
@@ -21,10 +21,10 @@ let {
 	...props
 }: CarouselIndicatorProps = $props();
 
-let indicatorPropKeys: UnionToTuple<keyof IndicatorProps> = [
+let indicatorPropKeys = defineKeyset<IndicatorProps>()([
 	'index',
 	'readOnly',
-];
+]);
 
 let [indicatorProps, localProps] = $derived(
 	splitProps(props, indicatorPropKeys),
@@ -43,3 +43,5 @@ let mergedProps = $derived(
 		{@render children?.()}
 	</button>
 {/if}
+
+

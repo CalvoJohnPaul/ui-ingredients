@@ -28,7 +28,7 @@ let mergedProps = $derived(
 		{#if children}
 			{@render children?.()}
 		{:else}
-			{numberInput.valueAsNumber}
+			{numberInput().valueAsNumber}
 		{/if}
 	</span>
 {/if}

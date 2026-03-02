@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
 import type {ActionTriggerProps} from '@zag-js/timer';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {getTimerContext} from './TimerContext.svelte.js';
 
@@ -21,7 +21,7 @@ let {
 	...props
 }: TimerActionTriggerProps = $props();
 
-let actionTriggerPropKeys: UnionToTuple<keyof ActionTriggerProps> = ['action'];
+let actionTriggerPropKeys = defineKeyset<ActionTriggerProps>()(['action']);
 let [actionTriggerProps, localProps] = $derived(
 	splitProps(props, actionTriggerPropKeys),
 );
@@ -39,3 +39,5 @@ let mergedProps = $derived(
 		{@render children?.()}
 	</button>
 {/if}
+
+

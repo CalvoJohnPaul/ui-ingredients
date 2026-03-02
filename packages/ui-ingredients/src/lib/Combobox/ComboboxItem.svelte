@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {ItemProps, ItemState} from '@zag-js/combobox';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	getComboboxContext,
@@ -24,7 +24,7 @@ let {
 	...props
 }: ComboboxItemProps = $props();
 
-let itemPropKeys: UnionToTuple<keyof ItemProps> = ['persistFocus', 'item'];
+let itemPropKeys = defineKeyset<ItemProps>()(['persistFocus', 'item']);
 let [itemProps, localProps] = $derived(splitProps(props, itemPropKeys));
 
 let combobox = getComboboxContext();
@@ -41,3 +41,5 @@ setComboboxItemPropsContext(() => itemProps);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(itemState)}</div>
 {/if}
+
+

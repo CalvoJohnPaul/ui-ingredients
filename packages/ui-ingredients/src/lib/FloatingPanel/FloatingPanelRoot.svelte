@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {setPresenceContext} from '$lib/Presence/PresenceContext.svelte.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {setPresenceContext} from '$lib/Presence/PresenceContext.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
 import type {Snippet} from 'svelte';
-import type {SetOptional, UnionToTuple} from 'type-fest';
+import type {SetOptional} from 'type-fest';
 import {
 	createPresence,
 	type PresenceStrategyProps,
@@ -25,12 +25,12 @@ export interface FloatingPanelProps
 <script lang="ts">
 let {children, ...props}: FloatingPanelProps = $props();
 
-let presenceStrategyPropKeys: UnionToTuple<keyof PresenceStrategyProps> = [
+let presenceStrategyPropKeys = defineKeyset<PresenceStrategyProps>()([
 	'lazyMount',
 	'keepMounted',
 	'animateOnMount',
 	'onExitComplete',
-];
+]);
 
 let [presenceStrategyProps, createFloatingPanelProps] = $derived(
 	splitProps(props, presenceStrategyPropKeys),
@@ -52,3 +52,5 @@ setPresenceContext(presence);
 </script>
 
 {@render children?.(floatingPanel)}
+
+

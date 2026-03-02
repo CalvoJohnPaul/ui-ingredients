@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {MarkerProps} from '@zag-js/slider';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {getSliderContext} from './SliderContext.svelte.js';
 
@@ -18,7 +18,7 @@ let {
 	...props
 }: SliderMarkerProps = $props();
 
-let sliderMarkPropKeys: UnionToTuple<keyof MarkerProps> = ['value'];
+let sliderMarkPropKeys = defineKeyset<MarkerProps>()(['value']);
 let [sliderMarkerProps, localProps] = $derived(
 	splitProps(props, sliderMarkPropKeys),
 );
@@ -34,3 +34,5 @@ let mergedProps = $derived(
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.()}</div>
 {/if}
+
+

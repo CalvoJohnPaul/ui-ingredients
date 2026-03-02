@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	createListbox,
@@ -25,7 +25,7 @@ let {
 	...props
 }: ListboxProps = $props();
 
-let createListboxPropKeys: UnionToTuple<keyof CreateListboxProps> = [
+let createListboxPropKeys = defineKeyset<CreateListboxProps>()([
 	'orientation',
 	'collection',
 	'ids',
@@ -45,7 +45,7 @@ let createListboxPropKeys: UnionToTuple<keyof CreateListboxProps> = [
 	'typeahead',
 	'onSelect',
 	'id',
-];
+]);
 
 let [createListboxProps, localProps] = $derived(
 	splitProps(props, createListboxPropKeys),
@@ -63,3 +63,5 @@ setListboxContext(listbox);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(listbox)}</div>
 {/if}
+
+

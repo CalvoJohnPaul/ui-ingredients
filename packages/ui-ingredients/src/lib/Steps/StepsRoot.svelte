@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {setPresenceStrategyPropsContext} from '$lib/Presence/PresenceContext.svelte.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {setPresenceStrategyPropsContext} from '$lib/Presence/PresenceContext.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {PresenceStrategyProps} from '../Presence/createPresence.svelte.js';
 import type {HtmlIngredientProps} from '../types.js';
 import {
@@ -23,18 +23,18 @@ export interface StepsProps
 <script lang="ts">
 let {ref = $bindable(null), asChild, children, ...props}: StepsProps = $props();
 
-let presenceStrategyPropKeys: UnionToTuple<keyof PresenceStrategyProps> = [
+let presenceStrategyPropKeys = defineKeyset<PresenceStrategyProps>()([
 	'lazyMount',
 	'keepMounted',
 	'animateOnMount',
 	'onExitComplete',
-];
+]);
 
 let [presenceStrategyProps, stepsProps] = $derived(
 	splitProps(props, presenceStrategyPropKeys),
 );
 
-let createStepsPropKeys: UnionToTuple<keyof CreateStepsProps> = [
+let createStepsPropKeys = defineKeyset<CreateStepsProps>()([
 	'ids',
 	'step',
 	'defaultStep',
@@ -47,7 +47,7 @@ let createStepsPropKeys: UnionToTuple<keyof CreateStepsProps> = [
 	'isStepSkippable',
 	'onStepInvalid',
 	'id',
-];
+]);
 
 let [createStepsProps, localProps] = $derived(
 	splitProps(stepsProps, createStepsPropKeys),
@@ -66,3 +66,5 @@ setPresenceStrategyPropsContext(() => presenceStrategyProps);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(steps)}</div>
 {/if}
+
+

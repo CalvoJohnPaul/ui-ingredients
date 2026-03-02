@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {MonthFormatOptions} from '@zag-js/date-picker';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {getDatePickerContext} from './DatePickerContext.svelte.js';
 
@@ -21,7 +21,7 @@ let {
 	...props
 }: DatePickerMonthSelectProps = $props();
 
-let monthFormatOptionKeys: UnionToTuple<keyof MonthFormatOptions> = ['format'];
+let monthFormatOptionKeys = defineKeyset<MonthFormatOptions>()(['format']);
 let [monthFormatOptions, localProps] = $derived(
 	splitProps(props, monthFormatOptionKeys),
 );
@@ -46,3 +46,5 @@ let cells = $derived(datePicker().getMonths(monthFormatOptions));
 		{/if}
 	</select>
 {/if}
+
+

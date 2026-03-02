@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {ItemGroupProps} from '@zag-js/menu';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	getMenuContext,
@@ -26,7 +26,7 @@ let {
 
 let id = $props.id();
 
-let menuItemGroupPropKeys: UnionToTuple<keyof ItemGroupProps> = ['id'];
+let menuItemGroupPropKeys = defineKeyset<ItemGroupProps>()(['id']);
 let [menuItemGroupProps, localProps] = $derived(
 	splitProps({id, ...props}, menuItemGroupPropKeys),
 );
@@ -44,3 +44,5 @@ setMenuItemGroupPropsContext(() => menuItemGroupProps);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.()}</div>
 {/if}
+
+

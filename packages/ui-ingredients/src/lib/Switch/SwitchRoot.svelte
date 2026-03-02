@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import type {
 	CreateSwitchProps,
@@ -25,7 +25,7 @@ let {
 	...props
 }: SwitchProps = $props();
 
-let createSwitchPropKeys: UnionToTuple<keyof CreateSwitchProps> = [
+let createSwitchPropKeys = defineKeyset<CreateSwitchProps>()([
 	'id',
 	'ids',
 	'label',
@@ -39,7 +39,7 @@ let createSwitchPropKeys: UnionToTuple<keyof CreateSwitchProps> = [
 	'name',
 	'form',
 	'value',
-];
+]);
 
 let [createSwitchProps, localProps] = $derived(
 	splitProps(props, createSwitchPropKeys),
@@ -59,3 +59,5 @@ setSwitchContext(switch_);
 		{@render children?.(switch_)}
 	</label>
 {/if}
+
+

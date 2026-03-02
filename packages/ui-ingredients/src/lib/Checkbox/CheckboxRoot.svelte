@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {setCheckboxContext} from './CheckboxContext.svelte.js';
 import type {
@@ -25,7 +25,7 @@ let {
 	...props
 }: CheckboxProps = $props();
 
-let createCheckboxPropKeys: UnionToTuple<keyof CreateCheckboxProps> = [
+let createCheckboxPropKeys = defineKeyset<CreateCheckboxProps>()([
 	'form',
 	'id',
 	'ids',
@@ -38,7 +38,7 @@ let createCheckboxPropKeys: UnionToTuple<keyof CreateCheckboxProps> = [
 	'onCheckedChange',
 	'name',
 	'value',
-];
+]);
 
 let [createCheckboxProps, localProps] = $derived(
 	splitProps(props, createCheckboxPropKeys),
@@ -58,3 +58,5 @@ setCheckboxContext(checkbox);
 		{@render children?.(checkbox)}
 	</label>
 {/if}
+
+

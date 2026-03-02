@@ -1,5 +1,5 @@
 <script lang="ts" module>
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import {defineKeyset} from '$lib/defineKeySet.js';import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import type {
 	CreatePinInputProps,
@@ -26,7 +26,7 @@ let {
 	...props
 }: PinInputProps = $props();
 
-let createPinInputPropKeys: UnionToTuple<keyof CreatePinInputProps> = [
+let createPinInputPropKeys = defineKeyset<CreatePinInputProps>()([
 	'id',
 	'placeholder',
 	'name',
@@ -50,7 +50,7 @@ let createPinInputPropKeys: UnionToTuple<keyof CreatePinInputProps> = [
 	'selectOnFocus',
 	'translations',
 	'count',
-];
+]);
 
 let [createPinInputProps, localProps] = $derived(
 	splitProps(props, createPinInputPropKeys),
@@ -68,3 +68,5 @@ setPinInputContext(pinInput);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(pinInput)}</div>
 {/if}
+
+

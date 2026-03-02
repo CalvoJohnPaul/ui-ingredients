@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {MarkerProps} from '@zag-js/angle-slider';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {getAngleSliderContext} from './AngleSliderContext.svelte.js';
 
@@ -18,7 +18,7 @@ let {
 	...props
 }: AngleSliderMarkerProps = $props();
 
-let markerPropKeys: UnionToTuple<keyof MarkerProps> = ['value'];
+let markerPropKeys = defineKeyset<MarkerProps>()(['value']);
 let [markerProps, localProps] = $derived(splitProps(props, markerPropKeys));
 
 let angleSlider = getAngleSliderContext();
@@ -32,3 +32,5 @@ let mergedProps = $derived(
 {:else}
 	<div {...mergedProps}>{@render children?.()}</div>
 {/if}
+
+

@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {ChannelInputProps} from '@zag-js/color-picker';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {getColorPickerContext} from './ColorPickerContext.svelte.js';
 
@@ -20,10 +20,10 @@ let {
 	...props
 }: ColorPickerChannelInputProps = $props();
 
-let channelInputPropKeys: UnionToTuple<keyof ChannelInputProps> = [
+let channelInputPropKeys = defineKeyset<ChannelInputProps>()([
 	'channel',
 	'orientation',
-];
+]);
 
 let [channelInputProps, localProps] = $derived(
 	splitProps(props, channelInputPropKeys),
@@ -40,3 +40,5 @@ let mergedProps = $derived(
 {:else}
 	<input bind:this={ref} {...mergedProps}>
 {/if}
+
+

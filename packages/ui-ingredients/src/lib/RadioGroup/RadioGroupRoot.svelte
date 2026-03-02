@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	createRadioGroup,
@@ -25,7 +25,7 @@ let {
 	...props
 }: RadioGroupProps = $props();
 
-let createRadioGroupPropKeys: UnionToTuple<keyof CreateRadioGroupProps> = [
+let createRadioGroupPropKeys = defineKeyset<CreateRadioGroupProps>()([
 	'ids',
 	'value',
 	'defaultValue',
@@ -38,7 +38,7 @@ let createRadioGroupPropKeys: UnionToTuple<keyof CreateRadioGroupProps> = [
 	'onValueChange',
 	'orientation',
 	'id',
-];
+]);
 
 let [createRadioGroupProps, localProps] = $derived(
 	splitProps(props, createRadioGroupPropKeys),
@@ -56,3 +56,5 @@ setRadioGroupContext(radioGroup);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(radioGroup)}</div>
 {/if}
+
+

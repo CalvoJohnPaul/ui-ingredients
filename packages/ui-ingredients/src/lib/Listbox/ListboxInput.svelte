@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {InputProps} from '@zag-js/listbox';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {getListboxContext} from './ListboxContext.svelte.js';
 
@@ -18,7 +18,7 @@ let {
 	...props
 }: ListboxInputProps = $props();
 
-let inputPropKeys: UnionToTuple<keyof InputProps> = ['autoHighlight'];
+let inputPropKeys = defineKeyset<InputProps>()(['autoHighlight']);
 let [inputProps, localProps] = $derived(splitProps(props, inputPropKeys));
 
 let listbox = getListboxContext();
@@ -32,3 +32,5 @@ let mergedProps = $derived(
 {:else}
 	<input bind:this={ref} {...mergedProps}>
 {/if}
+
+

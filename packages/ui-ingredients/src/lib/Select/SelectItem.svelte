@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
 import type {ItemProps, ItemState} from '@zag-js/select';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, UnionToTuple} from 'type-fest';
+import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	getSelectContext,
@@ -24,7 +24,7 @@ let {
 	...props
 }: SelectItemProps = $props();
 
-let itemPropKeys: UnionToTuple<keyof ItemProps> = ['item', 'persistFocus'];
+let itemPropKeys = defineKeyset<ItemProps>()(['item', 'persistFocus']);
 let [itemProps, localProps] = $derived(splitProps(props, itemPropKeys));
 
 let select = getSelectContext();
@@ -41,3 +41,5 @@ setSelectItemPropsContext(() => itemProps);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(itemState)}</div>
 {/if}
+
+

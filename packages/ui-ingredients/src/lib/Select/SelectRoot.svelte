@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {setPresenceContext} from '$lib/Presence/PresenceContext.svelte.js';
+import {defineKeyset} from '$lib/defineKeySet.js';import {setPresenceContext} from '$lib/Presence/PresenceContext.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import type {Merge, SetOptional} from 'type-fest';
 import {
 	createPresence,
 	type PresenceStrategyProps,
@@ -31,7 +31,7 @@ let {
 	...props
 }: SelectProps = $props();
 
-let createSelectPropKeys: UnionToTuple<keyof CreateSelectProps> = [
+let createSelectPropKeys = defineKeyset<CreateSelectProps>()([
 	'collection',
 	'ids',
 	'name',
@@ -62,18 +62,18 @@ let createSelectPropKeys: UnionToTuple<keyof CreateSelectProps> = [
 	'onPointerDownOutside',
 	'onFocusOutside',
 	'onInteractOutside',
-];
+]);
 
 let [createSelectProps, selectProps] = $derived(
 	splitProps(props, createSelectPropKeys),
 );
 
-let presenceStrategyPropKeys: UnionToTuple<keyof PresenceStrategyProps> = [
+let presenceStrategyPropKeys = defineKeyset<PresenceStrategyProps>()([
 	'lazyMount',
 	'keepMounted',
 	'animateOnMount',
 	'onExitComplete',
-];
+]);
 
 let [presenceStrategyProps, localProps] = $derived(
 	splitProps(selectProps, presenceStrategyPropKeys),
@@ -97,3 +97,5 @@ setPresenceContext(presence);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(select)}</div>
 {/if}
+
+

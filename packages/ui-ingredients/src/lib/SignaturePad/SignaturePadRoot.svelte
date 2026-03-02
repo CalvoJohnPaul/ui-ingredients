@@ -1,5 +1,5 @@
 <script lang="ts" module>
-import type {Merge, SetOptional, UnionToTuple} from 'type-fest';
+import {defineKeyset} from '$lib/defineKeySet.js';import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import {
 	createSignaturePad,
@@ -26,7 +26,7 @@ let {
 	...props
 }: SignaturePadProps = $props();
 
-let createSignaturePadPropKeys: UnionToTuple<keyof CreateSignaturePadProps> = [
+let createSignaturePadPropKeys = defineKeyset<CreateSignaturePadProps>()([
 	'ids',
 	'translations',
 	'onDraw',
@@ -39,7 +39,7 @@ let createSignaturePadPropKeys: UnionToTuple<keyof CreateSignaturePadProps> = [
 	'defaultPaths',
 	'paths',
 	'id',
-];
+]);
 
 let [createSignaturePadProps, localProps] = $derived(
 	splitProps(props, createSignaturePadPropKeys),
@@ -59,3 +59,5 @@ setSignaturePadContext(signaturePad);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(signaturePad)}</div>
 {/if}
+
+
