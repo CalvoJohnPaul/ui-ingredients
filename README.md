@@ -1,4 +1,4 @@
-# UI Ingredients
+# ui-ingredients
 
 Headless component library for [Svelte](https://svelte.dev/) powered by [zag](https://zagjs.com/)
 
@@ -15,15 +15,26 @@ npm install ui-ingredients
   import {Dialog, Portal} from 'ui-ingredients';
   import {XCloseIcon} from '$lib/icons';
   import {Button} from '$lib/ui';
+
+  let open = $state(false)
 </script>
 
-<Dialog.Root lazyMount keepMounted>
+<Dialog.Root 
+  {open}
+  onOpenChange={function (details) {
+    open = details.open;
+  }}
+  lazyMount
+  keepMounted
+  onExitComplete={function () {
+    console.log('🚀');
+  }}
+>
   <Dialog.Trigger>
-    {#snippet asChild(attrs)}
-      <Button {...attrs}>Open</Button>
+    {#snippet asChild(props)}
+      <Button {...props()}>Open</Button>
     {/snippet}
   </Dialog.Trigger>
-
   <Portal>
     <Dialog.Backdrop />
     <Dialog.Positioner>
@@ -38,6 +49,11 @@ npm install ui-ingredients
   </Portal>
 </Dialog.Root>
 ```
+
+## Inspiration
+
+- [zag](https://zagjs.com/) - The fantastic library that powers UI ingredients
+- [ark](https://ark-ui.com/) - The outstanding headless component library that greatly inspired this one
 
 ## Documentation
 
