@@ -44,8 +44,17 @@ const links = [
 ></div>
 
 <nav
-	class="fixed left-0 top-16 hidden h-[calc(100dvh---spacing(16))] w-[20rem] shrink-0 space-y-4 overflow-y-auto scroll-smooth border-r border-neutral-200 bg-white px-12 py-8 lg:block dark:border-neutral-800 dark:bg-neutral-950"
+	class="fixed left-0 top-16 hidden h-[calc(100dvh---spacing(16))] w-[20rem] shrink-0 space-y-4 overflow-y-auto scroll-smooth border-r border-neutral-200/80 bg-white/80 px-8 py-8 backdrop-blur-sm lg:block dark:border-neutral-800 dark:bg-neutral-950/75"
 >
+	<div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
+		<div
+			class="absolute -left-12 top-10 h-56 w-56 rounded-full bg-linear-to-br from-indigo-500/10 via-fuchsia-500/6 to-transparent blur-3xl dark:from-indigo-500/16 dark:via-fuchsia-500/10"
+		></div>
+		<div
+			class="absolute right-0 top-1/2 h-52 w-52 rounded-full bg-linear-to-br from-cyan-500/7 via-indigo-500/6 to-transparent blur-3xl dark:from-cyan-500/12 dark:via-indigo-500/9"
+		></div>
+	</div>
+
 	<Search />
 
 	{@render items()}
@@ -68,7 +77,7 @@ const links = [
 
 		<Drawer.Positioner>
 			<Drawer.Content
-				class="ui-open:animate-slide-in-left ui-closed:animate-slide-out-left fixed left-0 top-0 flex h-dvh w-[18rem] flex-col overflow-y-auto border-r border-neutral-200 bg-white px-5 py-6 dark:border-neutral-700 dark:bg-neutral-900"
+				class="ui-open:animate-slide-in-left ui-closed:animate-slide-out-left fixed left-0 top-0 flex h-dvh w-[18rem] flex-col overflow-y-auto border-r border-neutral-200/80 bg-white/95 px-5 py-6 backdrop-blur-sm dark:border-neutral-700 dark:bg-neutral-900/90"
 			>
 				<Drawer.Body> <nav>{@render items()}</nav> </Drawer.Body>
 			</Drawer.Content>
@@ -80,27 +89,42 @@ const links = [
 	<ul>
 		{#each links as parent}
 			<li
-				class="border-t border-neutral-200 py-4 first:border-0 first:pt-0 dark:border-neutral-800"
+				class="border-t border-neutral-200/80 py-4 first:border-0 first:pt-0 dark:border-neutral-800"
 			>
 				<span
-					class="font-lexend block grow py-1 text-left font-semibold lg:text-sm"
+					class="font-lexend block grow py-1 text-left text-xs font-semibold tracking-wide text-neutral-500 uppercase lg:text-[0.7rem] dark:text-neutral-400"
 				>
 					{parent.label}
 				</span>
 
-				<ul class="space-y-0.5 overflow-hidden">
+				<ul class="space-y-1 overflow-hidden">
 					{#each parent.links as child}
 						<li>
 							<a
 								href={child.path}
-								class="flex items-center gap-3 rounded py-1"
+								class={[
+									'relative flex items-center gap-2 rounded-md px-3 py-1.5 transition-colors duration-150',
+									page.url.pathname === child.path
+										? 'bg-indigo-500/10 dark:bg-indigo-500/15'
+										: 'hover:bg-neutral-100/90 dark:hover:bg-neutral-800/45',
+								]}
 								onclick={() => {
                   navbarStore.drawer.close();
                 }}
 							>
 								<span
+									aria-hidden="true"
 									class={[
-                    'font-medium transition-colors duration-150 lg:text-sm',
+										'h-1.5 w-1.5 rounded-full transition-colors duration-150',
+										page.url.pathname === child.path
+											? 'bg-indigo-500 dark:bg-indigo-400'
+											: 'bg-neutral-300 dark:bg-neutral-700',
+									]}
+								></span>
+
+								<span
+									class={[
+										'grow font-medium transition-colors duration-150 lg:text-sm',
                     page.url.pathname === child.path
                       ? 'text-indigo-500 dark:text-indigo-400'
                       : 'text-neutral-500 hover:text-inherit dark:text-neutral-400',

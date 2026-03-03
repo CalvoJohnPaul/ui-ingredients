@@ -84,17 +84,22 @@ $effect(() => {
   }}
 >
 	<Dialog.Trigger
-		class="flex h-10 w-full items-center gap-1 rounded border border-neutral-200 px-3 text-left text-sm text-neutral-400 dark:border-neutral-800"
+		class="group relative flex h-10 w-full items-center gap-2 overflow-hidden rounded-lg border border-neutral-200/80 bg-white/80 px-3 text-left text-sm text-neutral-500 shadow-xs backdrop-blur-sm transition-colors duration-150 hover:border-neutral-300 hover:bg-white dark:border-neutral-700/80 dark:bg-neutral-900/65 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:bg-neutral-900"
 	>
-		<SearchLgIcon class="size-4" />
+		<div
+			aria-hidden="true"
+			class="pointer-events-none absolute inset-0 bg-linear-to-r from-indigo-500/0 via-fuchsia-500/0 to-cyan-500/0 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+		></div>
+
+		<SearchLgIcon class="relative size-4" />
 		<span class="grow font-normal">Search...</span>
 		<span
-			class="grid size-5 place-items-center rounded border border-neutral-200 dark:border-neutral-800"
+			class="relative grid size-5 place-items-center rounded border border-neutral-200 bg-white/90 dark:border-neutral-700 dark:bg-neutral-800/80"
 		>
 			<CommandIcon class="size-3" />
 		</span>
 		<span
-			class="grid size-5 place-items-center rounded border border-neutral-200 font-mono text-xs dark:border-neutral-800"
+			class="relative grid size-5 place-items-center rounded border border-neutral-200 bg-white/90 font-mono text-xs dark:border-neutral-700 dark:bg-neutral-800/80"
 		>
 			K
 		</span>

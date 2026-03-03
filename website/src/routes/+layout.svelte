@@ -41,6 +41,12 @@ let isHomePage = $derived(page.url.pathname === '/');
 						class="absolute right-0 top-40 h-96 w-96 rounded-full bg-linear-to-br from-cyan-400/20 via-indigo-500/10 to-transparent blur-3xl dark:from-cyan-500/25 dark:via-indigo-500/20"
 					></div>
 					<div
+						class="absolute -right-24 bottom-0 h-112 w-md rounded-full bg-linear-to-br from-fuchsia-500/16 via-indigo-500/10 to-transparent blur-3xl dark:from-fuchsia-500/24 dark:via-indigo-500/16"
+					></div>
+					<div
+						class="absolute inset-y-0 right-0 w-[44%] bg-linear-to-l from-cyan-500/8 via-indigo-500/6 to-transparent dark:from-cyan-400/10 dark:via-indigo-400/8"
+					></div>
+					<div
 						class="absolute inset-0 bg-linear-to-b from-white via-white/95 to-white dark:from-neutral-950 dark:via-neutral-950/95 dark:to-neutral-950"
 					></div>
 					<div
