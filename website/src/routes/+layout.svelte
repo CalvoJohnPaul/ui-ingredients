@@ -12,9 +12,9 @@ import '../app.css';
 
 import {ThemeProvider} from 'svelte-os-themes';
 import {LocaleProvider} from 'ui-ingredients';
-import Navbar from './Navbar.svelte';
-import Pagination from './Pagination_.svelte';
-import Sidebar from './Sidebar_.svelte';
+import Navbar from './Navbar_.svelte';
+import Pagination from './Pagination.svelte';
+import Sidebar from './Sidebar.svelte';
 import TableOfContents from './TableOfContents.svelte';
 
 let {children} = $props();

@@ -4,7 +4,7 @@ import Badge from '$components/ui/Badge.svelte';
 import {navbarStore} from '$stores/navbar.svelte';
 import {components, overview, utilities} from '$velite';
 import {Drawer, Portal} from 'ui-ingredients';
-import Search from './Search_.svelte';
+import Search from './Search.svelte';
 
 const links = [
 	{
