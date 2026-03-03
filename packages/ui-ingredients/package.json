@@ -152,6 +152,7 @@
 		"@zag-js/tooltip": "^1.35.2",
 		"@zag-js/tour": "^1.35.2",
 		"@zag-js/tree-view": "^1.35.2",
+		"@zag-js/types": "^1.35.3",
 		"es-toolkit": "^1.44.0",
 		"type-fest": "^5.4.4"
 	},

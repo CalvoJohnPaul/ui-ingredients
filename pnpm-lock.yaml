@@ -183,6 +183,9 @@ importers:
       '@zag-js/tree-view':
         specifier: ^1.35.2
         version: 1.35.2
+      '@zag-js/types':
+        specifier: ^1.35.3
+        version: 1.35.3
       es-toolkit:
         specifier: ^1.44.0
         version: 1.44.0
