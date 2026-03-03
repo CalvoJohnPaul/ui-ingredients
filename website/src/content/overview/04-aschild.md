@@ -18,8 +18,8 @@ The `asChild` prop lets you render a custom component to ensure consistent styli
 
 <Dialog.Root>
   <Dialog.Trigger asChild>
-    {#snippet asChild(attrs)}
-      <Button {...attrs}>Open</Button>
+    {#snippet asChild(props)}
+      <Button {...props()}>Open</Button>
     {/snippet}
   </Dialog.Trigger>
 </Dialog.Root>
@@ -27,7 +27,7 @@ The `asChild` prop lets you render a custom component to ensure consistent styli
 
 In this example, the `asChild` prop allows the `Button` to be used as the trigger for the `Dialog`, inheriting its behaviors from `Dialog.Trigger`.
 
-In some components, you also need to delegate the `action` apart from `attrs` for the component to work properly. See below:
+In some components, the `asChild` snippet can also expose component state as a second argument.
 
 ```svelte
 <script>
@@ -63,8 +63,8 @@ In some components, you also need to delegate the `action` apart from `attrs` fo
         </Accordion.ItemIndicator>
       </Accordion.ItemTrigger>
       <Accordion.ItemContent>
-        {#snippet asChild(action, attrs)}
-          <p use:action {...attrs}>
+        {#snippet asChild(props)}
+          <p {...props()}>
             {item.content}
           </p>
         {/snippet}
@@ -74,4 +74,4 @@ In some components, you also need to delegate the `action` apart from `attrs` fo
 </Accordion.Root>
 ```
 
-Notice that apart from `attrs`, we also have `use:action`, and without this, the component might not work properly, especially with CSS animations.
+You can spread `props()` directly onto your custom element to preserve behavior and accessibility attributes.

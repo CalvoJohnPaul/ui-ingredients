@@ -20,14 +20,6 @@ export default apiEntryFromAnatomy(angleSliderAnatomy)({
         type: '{\n\troot?: string;\n\titem(value: string)?: string;\n\titemContent(value: string)?: string;\n\titemTrigger(value: string): string;\n}',
         description: 'The ids of the elements in the accordion. Useful for composition.',
       },
-      lazyMount: {
-        type: 'boolean',
-        description: 'Whether to enable lazy mounting.',
-      },
-      keepMounted: {
-        type: 'boolean',
-        description: 'Whether to keep the component mounted after exit.',
-      },
     },
   },
   Control: {

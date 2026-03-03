@@ -49,19 +49,19 @@ description: A specialized input field for entering and managing passwords, with
   <PasswordInput.Root>
     {#snippet children(api)}
       <PasswordInput.Label>
-        {#snippet asChild(attrs)}
-          <Label {...attrs}>Label</Label>
+        {#snippet asChild(props)}
+          <Label {...props()}>Label</Label>
         {/snippet}
       </PasswordInput.Label>
       <PasswordInput.Control class="flex">
         <PasswordInput.Input class="rounded-r-none border-r-0 outline-none">
-          {#snippet asChild(attrs)}
-            <Input {...attrs} />
+          {#snippet asChild(props)}
+            <Input {...props()} />
           {/snippet}
         </PasswordInput.Input>
         <PasswordInput.VisibilityTrigger class="rounded-l-none outline-none">
-          {#snippet asChild(attrs)}
-            <Button {...attrs} variant="outline">
+          {#snippet asChild(props)}
+            <Button {...props()} variant="outline">
               <PasswordInput.Indicator>
                 {#if api.visible}
                   <EyeIcon />

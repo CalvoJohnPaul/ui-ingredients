@@ -164,6 +164,25 @@ export default apiEntryFromAnatomy(menuAnatomy)({
         type: '{\n\ttrigger?: string;\n\tcontextTrigger?: string;\n\tcontent?: string;\n\tgroupLabel(id: string)?: string;\n\tgroup(id: string)?: string;\n\tpositioner?: string;\n\tarrow?: string;\n}',
         description: 'The ids of the elements in the menu. Useful for composition.',
       },
+      lazyMount: {
+        type: 'boolean',
+        defaultValue: 'false',
+        description: 'Whether to enable lazy mounting.',
+      },
+      keepMounted: {
+        type: 'boolean',
+        defaultValue: 'true',
+        description: 'Whether to keep the component mounted after exit.',
+      },
+      animateOnMount: {
+        type: 'boolean',
+        defaultValue: 'true',
+        description: 'Whether to run the enter animation when the component mounts.',
+      },
+      onExitComplete: {
+        type: '() => void',
+        description: 'Callback that fires when the exit animation of the dialog completes.',
+      },
     },
   },
   Separator: {

@@ -6,17 +6,17 @@ description: Start incorporating UI Ingredients into your project today!
 
 # Getting Started
 
-Start incorporating UI Ingredients into your project today!
+Get up and running with UI Ingredients in just a few steps.
 
 ## Setup Guide
 
-- Install UI Ingredients using your preferred package manager.
+1. **Install UI Ingredients**
 
 ```bash
 npm install ui-ingredients
 ```
 
-- Import the components you need in your project.
+2. **Import and render a component**
 
 ```svelte
 <script>
@@ -24,21 +24,21 @@ npm install ui-ingredients
 </script>
 
 <Dialog.Root>
-  <Dialog.Trigger />
+  <Dialog.Trigger>Open dialog</Dialog.Trigger>
   <Portal>
     <Dialog.Backdrop />
     <Dialog.Positioner>
       <Dialog.Content>
-        <Dialog.Title />
-        <Dialog.Description />
-        <Dialog.CloseTrigger />
+        <Dialog.Title>Dialog title</Dialog.Title>
+        <Dialog.Description>Dialog description</Dialog.Description>
+        <Dialog.CloseTrigger>Close</Dialog.CloseTrigger>
       </Dialog.Content>
     </Dialog.Positioner>
   </Portal>
 </Dialog.Root>
 ```
 
-- Add styles to the component
+3. **Add styles**
 
 ```css
 [data-scope='dialog'][data-part='backdrop'] {
@@ -48,8 +48,14 @@ npm install ui-ingredients
   backdrop-filter: blur(4px);
   z-index: var(--z-index);
 }
+
+[data-scope='dialog'][data-part='content'] {
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  background: white;
+}
 ```
 
-- That's it
+4. **Done**
 
-Great job! Your components are now set up and styled. Good luck! 😉
+Your first component is now installed and styled.

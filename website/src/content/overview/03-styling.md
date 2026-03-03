@@ -85,28 +85,40 @@ You can customize the styles and animations for the `Dialog.Content` by using CS
 </style>
 ```
 
-## Using the TailwindCSS Plugin
+## Using Tailwind with tailwind-zag
 
-If you are using [TailwindCSS](https://tailwindcss.com/), you can use the `ui-ingredients-plugin-tailwindcss` plugin to style the components using their data-\* attributes.
+If you are using [TailwindCSS](https://tailwindcss.com/), use `tailwind-zag` to style components using their data-\* attributes.
+
+`ui-ingredients-plugin-tailwindcss` is deprecated.
 
 ### Installation
 
 ```bash
-npm install ui-ingredients-plugin-tailwindcss
+npm install tailwind-zag
 ```
 
-### Usage
+### Usage (Tailwind v4)
+
+In Tailwind v4, register plugins in your CSS entry file:
+
+```css
+/* src/app.css */
+@import 'tailwindcss';
+@plugin 'tailwind-zag';
+```
+
+### Usage (Tailwind v3 / config-based)
 
 Add the plugin to your tailwind config
 
 ```ts
 // tailwind.config.ts
 import type {Config} from 'tailwindcss';
-import uiIngredients from 'ui-ingredients-plugin-tailwindcss';
+import zag from 'tailwind-zag';
 
 const config: Config = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
-  plugins: [uiIngredients],
+  plugins: [zag],
 };
 
 export default config;

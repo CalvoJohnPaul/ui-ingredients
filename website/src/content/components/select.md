@@ -14,10 +14,10 @@ description: A component for choosing an option from a dropdown list.
 
 ```svelte
 <script>
-  import {Select} from 'ui-ingredients';
+  import {Select, createListCollection} from 'ui-ingredients';
   import {CheckIcon, ChevronDownIcon} from '$lib/icons';
 
-  let collection = Select.collection({
+  let collection = createListCollection({
     items: [
       {value: '1', label: 'Option 1'},
       {value: '2', label: 'Option 2'},

@@ -1,10 +1,12 @@
 ---
 id: toggle
 title: Toggle
-description: A component for switching between two states, suchjson as on/off.
+description: A component for switching between two states, such as on/off.
 ---
 
 <demo>
+
+## Usage
 
 ```svelte
 <script>

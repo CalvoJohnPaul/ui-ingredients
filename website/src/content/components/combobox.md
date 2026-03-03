@@ -14,7 +14,7 @@ description: A component that combines a text input with a dropdown list for sel
 
 ```svelte
 <script>
-  import {Combobox} from 'ui-ingredients';
+  import {Combobox, createListCollection} from 'ui-ingredients';
   import {CheckIcon, ChevronDownIcon, XCloseIcon} from '$lib/icons';
 
   let items = [
@@ -36,11 +36,9 @@ description: A component that combines a text input with a dropdown list for sel
     }),
   );
 
-  let collection = $derived(
-    Combobox.collection({
-      items: matches,
-    }),
-  );
+  let collection = createListCollection(() => ({
+    items: matches,
+  }));
 </script>
 
 <Combobox.Root

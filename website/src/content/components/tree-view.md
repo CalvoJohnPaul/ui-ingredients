@@ -14,7 +14,7 @@ description: A component for displaying hierarchical data in a tree structure, a
 
 ```svelte
 <script lang="ts">
-  import {type NodeProps, TreeView} from 'ui-ingredients';
+  import {type NodeProps, TreeView, createTreeCollection} from 'ui-ingredients';
   import {
     CheckSquareIcon,
     ChevronRightIcon,
@@ -28,7 +28,7 @@ description: A component for displaying hierarchical data in a tree structure, a
     children?: Node[];
   }
 
-  let collection = TreeView.collection<Node>({
+  let collection = createTreeCollection<Node>({
     nodeToValue(node) {
       return node.value;
     },

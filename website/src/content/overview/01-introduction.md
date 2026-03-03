@@ -6,23 +6,25 @@ description: Learn more about UI Ingredients and its features.
 
 # Introduction
 
-UI ingredients is a headless component library for [Svelte](https://svelte.dev/) powered by [zag](https://zagjs.com/)
+UI Ingredients is a headless component library for [Svelte](https://svelte.dev/), powered by [Zag.js](https://zagjs.com/).
+
+It gives you accessible, behavior-first primitives so you can build your own design system without fighting prebuilt styles.
 
 ## Features
 
 - **Unstyled by Default**
 
-UI Ingredients gives you complete control over your design. With no pre-applied styles, you can seamlessly integrate your own custom aesthetics using `class` props or data attributes.
+UI Ingredients gives you complete control over your UI. With no pre-applied styles, you can design components with utility classes, CSS modules, or plain CSS.
 
 - **Fully Customizable**
 
-With an extensive set of props and event handlers, each component adapts to your application's unique requirements, giving you the freedom to create dynamic, interactive interfaces.
+Components expose flexible props, events, and composition patterns (like `asChild`) so they adapt to your product’s requirements.
 
 - **Built for Accessibility**
 
-Accessibility is at the core of UI Ingredients. All components follow best practices for screen reader support, keyboard navigation, and focus management to ensure an inclusive experience for all users.
+Accessibility is built in from the start, with support for keyboard navigation, ARIA semantics, and focus management.
 
 ## Inspiration
 
-- [zag](https://zagjs.com/) - The fantastic library that powers UI ingredients
-- [ark](https://ark-ui.com/) - The outstanding headless component library that greatly inspired this one
+- [Zag.js](https://zagjs.com/) — The state machine foundation that powers UI Ingredients.
+- [Ark UI](https://ark-ui.com/) — A great source of inspiration for composable, headless components.
