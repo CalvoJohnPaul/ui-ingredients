@@ -1,5 +1,5 @@
-import {createContext} from 'ui-ingredients';
+import {createContext} from 'svelte';
+import {type Accessor} from 'ui-ingredients';
 import type {CreateTableReturn} from './create-table.svelte';
 
-export const [getTableContext, setTableContext] =
-  createContext<CreateTableReturn>('Table');
+export const [getTableContext, setTableContext] = createContext<Accessor<CreateTableReturn>>();

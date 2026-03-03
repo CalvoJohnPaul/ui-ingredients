@@ -2,11 +2,9 @@
 import Table from '$lib/components/ui/table';
 import {MinusIcon} from '@untitled-theme/icons-svelte';
 import accordion from './accordion';
-import alert from './alert';
 import alertDialog from './alert-dialog';
 import angleSlider from './angle-slider';
 import avatar from './avatar';
-import breadcrumbs from './breadcrumbs';
 import carousel from './carousel';
 import checkbox from './checkbox';
 import clipboard from './clipboard';
@@ -79,9 +77,7 @@ const MAP: Record<string, ApiEntries> = {
 	'toggle-group': toggleGroup,
 	'tree-view': treeView,
 	accordion,
-	alert,
 	avatar,
-	breadcrumbs,
 	carousel,
 	checkbox,
 	clipboard,

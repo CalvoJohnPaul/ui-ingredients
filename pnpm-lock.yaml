@@ -308,8 +308,8 @@ importers:
         specifier: ^1.0.5
         version: 1.0.5(tailwindcss@4.2.1)
       ui-ingredients:
-        specifier: ^2.0.0-2
-        version: 2.0.0-2(@internationalized/date@3.5.5)(svelte@5.53.6)
+        specifier: ^2.0.0-3
+        version: 2.0.0-3(@internationalized/date@3.5.5)(svelte@5.53.6)
     devDependencies:
       '@sveltejs/adapter-vercel':
         specifier: ^6.3.3
@@ -3650,8 +3650,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  ui-ingredients@2.0.0-2:
-    resolution: {integrity: sha512-mADW1J1oRFLEMRgRPY1X93L0zQqWrcPe8pG2qoenMne4e/xmms0tIL1X6fN9N98JIcULQrbHAp1Tjnmj+EtV7g==}
+  ui-ingredients@2.0.0-3:
+    resolution: {integrity: sha512-H5pjAsLPq5yowAtl7kpqKTflK06XH3sZ6095TMy1VwQv8sLRbvcMblJzm7TTtCtCc28Mm/TQ+Ug2zO5qlUvc3g==}
     peerDependencies:
       svelte: ^5.20.0
 
@@ -7483,7 +7483,7 @@ snapshots:
 
   typescript@5.9.3: {}
 
-  ui-ingredients@2.0.0-2(@internationalized/date@3.5.5)(svelte@5.53.6):
+  ui-ingredients@2.0.0-3(@internationalized/date@3.5.5)(svelte@5.53.6):
     dependencies:
       '@zag-js/accordion': 1.35.2
       '@zag-js/anatomy': 1.35.3
@@ -7540,6 +7540,7 @@ snapshots:
       '@zag-js/tree-view': 1.35.2
       '@zag-js/types': 1.35.3
       es-toolkit: 1.44.0
+      esm-env: 1.2.2
       svelte: 5.53.6
       type-fest: 5.4.4
     transitivePeerDependencies:

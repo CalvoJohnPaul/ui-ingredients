@@ -1,4 +1,5 @@
 import type {SvelteHTMLElements} from 'svelte/elements';
+import type {Accessor} from 'ui-ingredients';
 import {parts} from './table-anatomy';
 import {tableRecipe, type TableRecipeProps} from './table.recipe';
 
@@ -14,10 +15,10 @@ export interface CreateTableReturn {
 
 export interface CreateTableProps extends TableRecipeProps {}
 
-export function createTable(props: CreateTableProps): CreateTableReturn {
-  const styles = $derived(tableRecipe(props));
+export function createTable(props: Accessor<CreateTableProps>): Accessor<CreateTableReturn> {
+  const styles = $derived(tableRecipe(props()));
 
-  return {
+  return () => ({
     getRootProps() {
       return {
         cellpadding: 0,
@@ -62,5 +63,5 @@ export function createTable(props: CreateTableProps): CreateTableReturn {
         ...parts.heading.attrs,
       };
     },
-  };
+  });
 }
