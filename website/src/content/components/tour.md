@@ -2,7 +2,6 @@
 id: tour
 title: Tour
 description: A component for guiding users through a series of steps or features in an application or website.
-beta: true
 ---
 
 <demo>

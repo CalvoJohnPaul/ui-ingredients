@@ -2,7 +2,6 @@
 id: tree-view
 title: Tree View
 description: A component for displaying hierarchical data in a tree structure, allowing users to expand and collapse branches.
-beta: true
 ---
 
 <demo>

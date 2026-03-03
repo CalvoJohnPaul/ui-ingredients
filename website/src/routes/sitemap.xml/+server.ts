@@ -1,4 +1,4 @@
-import {components, overview, utilities} from '.velite';
+import {components, overview, utilities} from '$velite';
 import type {RequestHandler} from '@sveltejs/kit';
 
 export const prerender = true;

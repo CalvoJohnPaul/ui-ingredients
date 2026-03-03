@@ -1,6 +1,6 @@
 <script lang="ts">
 import {goto} from '$app/navigation';
-import {components, overview, utilities} from '.velite';
+import {components, overview, utilities} from '$velite';
 import {CommandIcon, SearchLgIcon} from '@untitled-theme/icons-svelte';
 import {Combobox, createListCollection, Dialog, Portal} from 'ui-ingredients';
 

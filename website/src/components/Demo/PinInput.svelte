@@ -1,0 +1,25 @@
+<script lang="ts">
+import Input from '$components/ui/Input.svelte';
+import Label from '$components/ui/Label.svelte';
+import {PinInput} from 'ui-ingredients';
+</script>
+
+<PinInput.Root placeholder="0" class="mx-auto w-fit">
+	<PinInput.Label>
+		{#snippet asChild(props)}
+			<Label {...props()}>Label</Label>
+		{/snippet}
+	</PinInput.Label>
+
+	<PinInput.HiddenInput />
+
+	<PinInput.Control class="flex gap-2">
+		{#each Array.from({length: 4}) as _, i}
+			<PinInput.Input index={i} class="aspect-square w-12 text-center">
+				{#snippet asChild(props)}
+					<Input {...props()} />
+				{/snippet}
+			</PinInput.Input>
+		{/each}
+	</PinInput.Control>
+</PinInput.Root>

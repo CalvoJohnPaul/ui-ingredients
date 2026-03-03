@@ -1,6 +1,6 @@
 <script lang="ts">
-import Badge from '$lib/components/ui/badge.svelte';
-import {navbarStore} from '$lib/stores/navbar.svelte';
+import Badge from '$components/ui/Badge.svelte';
+import {navbarStore} from '$stores/navbar.svelte';
 import {Menu05Icon} from '@untitled-theme/icons-svelte';
 import {useTheme} from 'svelte-os-themes';
 import packageJson from 'ui-ingredients/package.json';

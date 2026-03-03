@@ -1,4 +1,4 @@
-import {utilities} from '.velite';
+import {utilities} from '$velite';
 import {error} from '@sveltejs/kit';
 import type {EntryGenerator, PageServerLoad} from './$types';
 

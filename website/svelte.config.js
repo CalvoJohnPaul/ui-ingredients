@@ -10,11 +10,11 @@ const config = {
       runtime: 'nodejs22.x',
     }),
     alias: {
-      '.velite': 'src/.velite',
-      components: 'src/components',
-      templates: 'src/templates',
-      stores: 'src/stores',
-      types: 'src/types',
+      $velite: 'src/.velite',
+      $components: 'src/components',
+      $templates: 'src/templates',
+      $stores: 'src/stores',
+      $types: 'src/types',
     },
   },
   compilerOptions: {

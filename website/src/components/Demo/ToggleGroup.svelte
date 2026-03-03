@@ -1,0 +1,27 @@
+<script lang="ts">
+import IconButton from '$components/ui/IconButton.svelte';
+import {
+	Bold01Icon,
+	Italic01Icon,
+	Underline01Icon,
+} from '@untitled-theme/icons-svelte';
+import {ToggleGroup} from 'ui-ingredients';
+</script>
+
+<ToggleGroup.Root multiple class="mx-auto flex w-fit">
+	<ToggleGroup.Item class="rounded-r-none border-r-0" value="1">
+		{#snippet asChild(props)}
+			<IconButton {...props()}> <Bold01Icon /> </IconButton>
+		{/snippet}
+	</ToggleGroup.Item>
+	<ToggleGroup.Item class="rounded-l-none rounded-r-none border-r-0" value="2">
+		{#snippet asChild(props)}
+			<IconButton {...props()}> <Underline01Icon /> </IconButton>
+		{/snippet}
+	</ToggleGroup.Item>
+	<ToggleGroup.Item class="rounded-l-none" value="3">
+		{#snippet asChild(props)}
+			<IconButton {...props()}> <Italic01Icon /> </IconButton>
+		{/snippet}
+	</ToggleGroup.Item>
+</ToggleGroup.Root>

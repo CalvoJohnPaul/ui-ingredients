@@ -1,20 +1,20 @@
 <script lang="ts">
-  import Markdown from '../../markdown.svelte';
+import Markdown from '$templates/Markdown.svelte';
 
-  let {data} = $props();
+let {data} = $props();
 </script>
 
 <svelte:head>
-  <title>{data.title} | UI Ingredients</title>
-  <meta name="description" content={data.description} />
-  <meta property="og:title" content={data.title} />
-  <meta property="og:description" content={data.description} />
-  <meta property="og:site_name" content="UI Ingredients" />
-  <meta name="twitter:site" content="UI Ingredients" />
-  <meta name="twitter:title" content={data.title} />
-  <meta name="twitter:description" content={data.description} />
+	<title>{data.title} | UI Ingredients</title>
+	<meta name="description" content={data.description}>
+	<meta property="og:title" content={data.title}>
+	<meta property="og:description" content={data.description}>
+	<meta property="og:site_name" content="UI Ingredients">
+	<meta name="twitter:site" content="UI Ingredients">
+	<meta name="twitter:title" content={data.title}>
+	<meta name="twitter:description" content={data.description}>
 </svelte:head>
 
 {#key data.id}
-  <Markdown {...data} />
+	<Markdown {...data} />
 {/key}

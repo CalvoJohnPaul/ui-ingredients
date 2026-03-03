@@ -15,7 +15,7 @@ import {LocaleProvider} from 'ui-ingredients';
 import Navbar from './navbar.svelte';
 import Pagination from './pagination.svelte';
 import Sidebar from './sidebar.svelte';
-import TableOfContents from './table-of-contents.svelte';
+import TableOfContents from './TableOfContents.svelte';
 
 let {children} = $props();
 </script>
