@@ -53,4 +53,5 @@ export * from './TreeView/index.js';
 export * from './createFilter.svelte.js';
 export * from './createListCollection.svelte.js';
 export * from './createTreeCollection.svelte.js';
+export * from './splitProps.js';
 export * from './types.js';
