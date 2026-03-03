@@ -71,7 +71,7 @@ let theme = useTheme();
 			</button>
 
 			<a
-				href="https://github.com/calvo-jp/ui-ingredients"
+				href="https://github.com/CalvoJohnPaul/ui-ingredients"
 				data-sveltekit-preload-data="off"
 			>
 				<svg
