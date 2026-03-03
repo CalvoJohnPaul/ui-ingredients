@@ -55,3 +55,6 @@ export * from './createListCollection.svelte.js';
 export * from './createTreeCollection.svelte.js';
 export * from './splitProps.js';
 export * from './types.js';
+
+export * from '@zag-js/anatomy';
+export * from '@zag-js/svelte';

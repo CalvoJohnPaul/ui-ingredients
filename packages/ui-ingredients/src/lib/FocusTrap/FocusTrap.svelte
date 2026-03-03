@@ -1,9 +1,10 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {browser} from '$app/environment';
+import {defineKeyset} from '$lib/defineKeySet.js';
 import {getEnvironmentContext} from '$lib/EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
 import * as focusTrap from '@zag-js/focus-trap';
 import {mergeProps} from '@zag-js/svelte';
+import {BROWSER} from 'esm-env';
 import {createAttachmentKey} from 'svelte/attachments';
 import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
@@ -61,7 +62,7 @@ let environment = getEnvironmentContext();
 
 let focusTrapOptions: focusTrap.FocusTrapOptions = $derived({
 	...focusTrapProps,
-	document: browser ? environment?.().getDocument() : undefined,
+	document: BROWSER ? environment?.().getDocument() : undefined,
 });
 
 let mergedProps = $derived(
@@ -79,5 +80,3 @@ let mergedProps = $derived(
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.()}</div>
 {/if}
-
-

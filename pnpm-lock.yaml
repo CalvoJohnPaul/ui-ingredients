@@ -189,6 +189,9 @@ importers:
       es-toolkit:
         specifier: ^1.44.0
         version: 1.44.0
+      esm-env:
+        specifier: ^1.2.2
+        version: 1.2.2
       type-fest:
         specifier: ^5.4.4
         version: 5.4.4
