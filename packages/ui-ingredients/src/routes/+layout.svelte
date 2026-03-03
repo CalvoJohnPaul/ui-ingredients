@@ -1,13 +1,7 @@
 <script lang="ts">
 import {page} from '$app/state';
-import {
-	EnvironmentProvider,
-	LocaleProvider,
-	Toast,
-	Toaster,
-} from '$lib/index.js';
+import {EnvironmentProvider, LocaleProvider} from '$lib/index.js';
 import '../app.css';
-import {toaster} from './toaster.svelte.js';
 
 let {children} = $props();
 
@@ -262,13 +256,5 @@ function sx(...styles: (string | null | boolean | undefined)[]) {
 
 			<main style="padding:2rem;flex-grow:1;">{@render children()}</main>
 		</div>
-
-		<Toaster {toaster}>
-			<Toast.Root>
-				<Toast.Title />
-				<Toast.Description />
-				<Toast.CloseTrigger>Close</Toast.CloseTrigger>
-			</Toast.Root>
-		</Toaster>
 	</LocaleProvider>
 </EnvironmentProvider>

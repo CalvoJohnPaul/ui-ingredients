@@ -1,5 +1,11 @@
 <script lang="ts">
-import {toaster} from '../toaster.svelte.js';
+import {createToaster, Toast, Toaster} from '$lib/index.js';
+
+const toaster = createToaster({
+	placement: 'bottom-end',
+	overlap: true,
+	duration: 1000 * 5,
+});
 </script>
 
 <button
@@ -14,3 +20,11 @@ import {toaster} from '../toaster.svelte.js';
 >
 	Click me
 </button>
+
+<Toaster {toaster}>
+	<Toast.Root>
+		<Toast.Title />
+		<Toast.Description />
+		<Toast.CloseTrigger>Close</Toast.CloseTrigger>
+	</Toast.Root>
+</Toaster>
