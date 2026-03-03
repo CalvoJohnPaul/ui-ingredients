@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/suspicious/noExplicitAny: "" */
+
 export type Assign<
   Target extends Record<string, any>,
   Source extends Record<string, any>,
