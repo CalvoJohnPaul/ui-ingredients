@@ -1,10 +1,37 @@
 <script lang="ts">
+import {page} from '$app/state';
 import Badge from '$components/ui/Badge.svelte';
 import Button from '$components/ui/Button.svelte';
 import Link from '$components/ui/Link.svelte';
 import {CloudMoonIcon, CloudSun02Icon} from '@untitled-theme/icons-svelte';
 import {useTheme} from 'svelte-os-themes';
 import packageJson from 'ui-ingredients/package.json';
+
+let links: {
+	label: string;
+	href: string;
+	active?: boolean;
+	external?: boolean;
+}[] = $derived([
+	{
+		label: 'Home',
+		href: '/',
+		active: page.url.pathname === '/',
+	},
+	{
+		label: 'Docs',
+		href: '/overview/getting-started',
+		active:
+			page.url.pathname.startsWith('/overview') ||
+			page.url.pathname.startsWith('/components') ||
+			page.url.pathname.startsWith('/utilities'),
+	},
+	{
+		label: 'GitHub',
+		href: 'https://github.com/CalvoJohnPaul/ui-ingredients',
+		external: true,
+	},
+]);
 
 const highlights = [
 	{
@@ -40,7 +67,22 @@ let theme = useTheme();
 		</div>
 		<div class="grow"></div>
 		<div class="flex items-center gap-3 lg:gap-5">
-			<Link href="/overview/getting-started" size="xs">Get Started</Link>
+			<nav class="hidden items-center gap-1 text-sm font-medium lg:flex">
+				{#each links as link}
+					<a
+						href={link.href}
+						target={link.external ? '_blank' : undefined}
+						rel={link.external ? 'noopener noreferrer' : undefined}
+						class={[
+							'block px-2.5 py-0.5 text-neutral-600 dark:text-neutral-300 rounded-full',
+							link.active && 'bg-neutral-50 dark:bg-neutral-800/50 text-neutral-700 dark:text-white'
+						]}
+					>
+						{link.label}
+					</a>
+				{/each}
+			</nav>
+
 			<button
 				type="button"
 				{...theme.getTriggerProps({
