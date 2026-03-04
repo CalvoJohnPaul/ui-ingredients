@@ -48,6 +48,7 @@ export function createPresence(
       'data-state': api.skip && !animateOnMount ? undefined : present ? 'open' : 'closed',
       [createAttachmentKey()]: (node) => {
         api.setNode(node);
+        return api.setNode(null);
       },
     };
   }

@@ -18,18 +18,12 @@ let {
 	...props
 }: PaginationEllipsisProps = $props();
 
+let ellipsisPropKeys: Array<keyof EllipsisProps> = ['index'];
+let [ellipsisProps, localProps] = $derived(splitProps(props, ellipsisPropKeys));
+
 let pagination = getPaginationContext();
-
-let paginationEllipsisPropKeys: Array<keyof EllipsisProps> = ['index'];
-let [paginationEllipsisProps, localProps] = $derived(
-	splitProps(props, paginationEllipsisPropKeys),
-);
-
 let mergedProps = $derived(
-	mergeProps(
-		pagination().getEllipsisProps(paginationEllipsisProps),
-		localProps,
-	),
+	mergeProps(pagination().getEllipsisProps(ellipsisProps), localProps),
 );
 </script>
 

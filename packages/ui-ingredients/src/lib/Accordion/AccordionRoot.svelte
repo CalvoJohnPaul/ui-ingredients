@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {mergeProps} from '@zag-js/svelte';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {mergeProps} from '@zag-js/svelte';
 import type {Merge, SetOptional} from 'type-fest';
 import type {PresenceStrategyProps} from '../Presence/createPresence.svelte.js';
 import {setPresenceStrategyPropsContext} from '../Presence/PresenceContext.svelte.js';
@@ -28,7 +29,7 @@ let {
 	...props
 }: AccordionProps = $props();
 
-let presentStrategyPropKeys = defineKeyset<PresenceStrategyProps>()([
+let presenceStrategyPropKeys = defineKeyset<PresenceStrategyProps>()([
 	'lazyMount',
 	'keepMounted',
 	'animateOnMount',
@@ -36,7 +37,7 @@ let presentStrategyPropKeys = defineKeyset<PresenceStrategyProps>()([
 ]);
 
 let [presenceStrategyProps, accordionProps] = $derived(
-	splitProps(props, presentStrategyPropKeys),
+	splitProps(props, presenceStrategyPropKeys),
 );
 
 let createAccordionPropKeys = defineKeyset<CreateAccordionProps>()([
@@ -69,5 +70,3 @@ setPresenceStrategyPropsContext(() => presenceStrategyProps);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(accordion)}</div>
 {/if}
-
-

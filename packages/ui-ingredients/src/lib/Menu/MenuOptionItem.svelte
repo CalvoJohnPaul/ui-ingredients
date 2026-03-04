@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {OptionItemProps, OptionItemState} from '@zag-js/menu';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge} from 'type-fest';
@@ -24,7 +25,7 @@ let {
 	...props
 }: MenuOptionItemProps = $props();
 
-let menuOptionItemPropKeys = defineKeyset<OptionItemProps>()([
+let optionItemPropKeys = defineKeyset<OptionItemProps>()([
 	'value',
 	'disabled',
 	'valueText',
@@ -34,33 +35,30 @@ let menuOptionItemPropKeys = defineKeyset<OptionItemProps>()([
 	'onCheckedChange',
 ]);
 
-let [menuOptionItemProps, localProps] = $derived(
-	splitProps(props, menuOptionItemPropKeys),
+let [optionItemProps, localProps] = $derived(
+	splitProps(props, optionItemPropKeys),
 );
 
 let menu = getMenuContext();
 let mergedProps = $derived(
-	mergeProps(
-		menu?.().getOptionItemProps(menuOptionItemProps) ?? {},
-		localProps,
-	),
+	mergeProps(menu?.().getOptionItemProps(optionItemProps) ?? {}, localProps),
 );
 
-let itemState = (): OptionItemState =>
-	menu?.().getOptionItemState(menuOptionItemProps) ?? {
+let optionItemState = (): OptionItemState =>
+	menu?.().getOptionItemState(optionItemProps) ?? {
 		id: '',
 		checked: false,
 		disabled: false,
 		highlighted: false,
 	};
 
-setMenuOptionItemPropsContext(() => menuOptionItemProps);
+setMenuOptionItemPropsContext(() => optionItemProps);
 </script>
 
 {#if asChild}
-	{@render asChild(() => mergedProps, itemState)}
+	{@render asChild(() => mergedProps, optionItemState)}
 {:else}
-	<div bind:this={ref} {...mergedProps}>{@render children?.(itemState)}</div>
+	<div bind:this={ref} {...mergedProps}>
+		{@render children?.(optionItemState)}
+	</div>
 {/if}
-
-

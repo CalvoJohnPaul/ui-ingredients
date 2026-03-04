@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {ItemProps} from '@zag-js/pagination';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge} from 'type-fest';
@@ -21,18 +22,13 @@ let {
 	...props
 }: PaginationItemProps = $props();
 
-let paginationItemPropKeys = defineKeyset<Omit<ItemProps, 'type'>>()([
-	'value',
-]);
-
-let [paginationItemProps, localProps] = $derived(
-	splitProps(props, paginationItemPropKeys),
-);
+let itemPropKeys = defineKeyset<Omit<ItemProps, 'type'>>()(['value']);
+let [itemProps, localProps] = $derived(splitProps(props, itemPropKeys));
 
 let pagination = getPaginationContext();
 let mergedProps = $derived(
 	mergeProps(
-		pagination().getItemProps({type: 'page', ...paginationItemProps}),
+		pagination().getItemProps({type: 'page', ...itemProps}),
 		localProps,
 	),
 );
@@ -45,9 +41,7 @@ let mergedProps = $derived(
 		{#if children}
 			{@render children?.()}
 		{:else}
-			{paginationItemProps.value}
+			{itemProps.value}
 		{/if}
 	</button>
 {/if}
-
-

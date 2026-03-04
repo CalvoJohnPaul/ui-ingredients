@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {ItemGroupProps} from '@zag-js/menu';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge, SetOptional} from 'type-fest';
@@ -26,17 +27,17 @@ let {
 
 let id = $props.id();
 
-let menuItemGroupPropKeys = defineKeyset<ItemGroupProps>()(['id']);
-let [menuItemGroupProps, localProps] = $derived(
-	splitProps({id, ...props}, menuItemGroupPropKeys),
+let itemGroupPropKeys = defineKeyset<ItemGroupProps>()(['id']);
+let [itemGroupProps, localProps] = $derived(
+	splitProps({id, ...props}, itemGroupPropKeys),
 );
 
 let menu = getMenuContext();
 let mergedProps = $derived(
-	mergeProps(menu?.().getItemGroupProps(menuItemGroupProps) ?? {}, localProps),
+	mergeProps(menu?.().getItemGroupProps(itemGroupProps) ?? {}, localProps),
 );
 
-setMenuItemGroupPropsContext(() => menuItemGroupProps);
+setMenuItemGroupPropsContext(() => itemGroupProps);
 </script>
 
 {#if asChild}
@@ -44,5 +45,3 @@ setMenuItemGroupPropsContext(() => menuItemGroupProps);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.()}</div>
 {/if}
-
-

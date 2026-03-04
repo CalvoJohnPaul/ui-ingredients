@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {MarkerProps} from '@zag-js/slider';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge} from 'type-fest';
@@ -18,14 +19,12 @@ let {
 	...props
 }: SliderMarkerProps = $props();
 
-let sliderMarkPropKeys = defineKeyset<MarkerProps>()(['value']);
-let [sliderMarkerProps, localProps] = $derived(
-	splitProps(props, sliderMarkPropKeys),
-);
+let markerPropKeys = defineKeyset<MarkerProps>()(['value']);
+let [markerProps, localProps] = $derived(splitProps(props, markerPropKeys));
 
 let slider = getSliderContext();
 let mergedProps = $derived(
-	mergeProps(slider().getMarkerProps(sliderMarkerProps), localProps),
+	mergeProps(slider().getMarkerProps(markerProps), localProps),
 );
 </script>
 
@@ -34,5 +33,3 @@ let mergedProps = $derived(
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.()}</div>
 {/if}
-
-

@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {PresetTriggerProps} from '@zag-js/date-picker';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge} from 'type-fest';
@@ -21,18 +22,15 @@ let {
 	...props
 }: DatePickerPresetTriggerProps = $props();
 
-let datePickerPresetTriggerPropKeys = defineKeyset<PresetTriggerProps>()([
-	'value',
-]);
-
-let [datePickerPresetTriggerProps, localProps] = $derived(
-	splitProps(props, datePickerPresetTriggerPropKeys),
+let presetTriggerPropKeys = defineKeyset<PresetTriggerProps>()(['value']);
+let [presetTriggerProps, localProps] = $derived(
+	splitProps(props, presetTriggerPropKeys),
 );
 
 let datePicker = getDatePickerContext();
 let mergedProps = $derived(
 	mergeProps(
-		datePicker().getPresetTriggerProps(datePickerPresetTriggerProps),
+		datePicker().getPresetTriggerProps(presetTriggerProps),
 		localProps,
 	),
 );
@@ -45,5 +43,3 @@ let mergedProps = $derived(
 		{@render children?.()}
 	</button>
 {/if}
-
-
