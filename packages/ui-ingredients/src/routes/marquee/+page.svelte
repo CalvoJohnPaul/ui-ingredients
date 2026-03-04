@@ -9,7 +9,7 @@ const items = [
 ];
 </script>
 
-<Marquee.Root autoFill side="start" pauseOnInteraction>
+<Marquee.Root autoFill side="start" pauseOnInteraction spacing="8px">
 	<Marquee.Viewport>
 		<Marquee.Content>
 			{#each items as item}
