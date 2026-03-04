@@ -7,8 +7,7 @@ export const badgeRecipe = tv({
       outline: 'font-semibold border',
     },
     colorScheme: {
-      primary:
-        'border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-800/50',
+      primary: 'border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-800/50',
       warning:
         'border-amber-200 text-amber-700 dark:text-amber-400 bg-amber-50 dark:border-amber-800 dark:bg-amber-800/50',
     },

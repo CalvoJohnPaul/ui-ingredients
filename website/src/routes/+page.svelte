@@ -1,6 +1,7 @@
 <script lang="ts">
 import Badge from '$components/ui/Badge.svelte';
 import Button from '$components/ui/Button.svelte';
+import Link from '$components/ui/Link.svelte';
 
 const highlights = [
 	{
@@ -17,11 +18,6 @@ const highlights = [
 		title: 'Styling freedom',
 		description:
 			'Use utility classes, CSS modules, or vanilla CSS with data attributes and state selectors.',
-	},
-	{
-		title: 'Svelte-native API',
-		description:
-			'Designed for modern Svelte apps with clean primitives that feel natural to use.',
 	},
 ];
 </script>
@@ -72,23 +68,23 @@ const highlights = [
 			</div>
 
 			<div class="flex flex-col gap-3 sm:flex-row sm:items-center">
-				<a href="/overview/getting-started">
-					<Button class="cta-shimmer-primary">Get Started</Button>
-				</a>
-				<a href="/components/accordion">
-					<Button variant="outline">Browse Components</Button>
-				</a>
-				<a
+				<Link href="/overview/getting-started">Get Started</Link>
+				<Link href="/components/accordion" variant="outline">
+					Browse Components
+				</Link>
+				<Link
 					href="https://github.com/CalvoJohnPaul/ui-ingredients"
-					data-sveltekit-preload-data="off"
+					target="_blank"
+					rel="noopener noreferrer"
+					variant="outline"
 				>
-					<Button variant="outline">GitHub</Button>
-				</a>
+					GitHub
+				</Link>
 			</div>
 		</div>
 	</section>
 
-	<section class="grid gap-4 md:grid-cols-2">
+	<section class="grid gap-4 lg:grid-cols-3">
 		{#each highlights as item}
 			<article
 				class="rounded-xl border border-neutral-200/80 bg-white/85 p-5 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/45"
@@ -145,42 +141,12 @@ const highlights = [
 	animation: hero-accent-shimmer 8s linear infinite;
 }
 
-:global(.cta-shimmer-primary) {
-	box-shadow:
-		0 0 0 1px rgb(99 102 241 / 0.55),
-		0 0 24px rgb(99 102 241 / 0.22);
-	animation: cta-ring-shimmer 6s linear infinite;
-}
-
 @keyframes hero-accent-shimmer {
 	0% {
 		background-position: 0% 50%;
 	}
 	100% {
 		background-position: 200% 50%;
-	}
-}
-
-@keyframes cta-ring-shimmer {
-	0% {
-		box-shadow:
-			0 0 0 1px rgb(99 102 241 / 0.55),
-			0 0 24px rgb(99 102 241 / 0.22);
-	}
-	33% {
-		box-shadow:
-			0 0 0 1px rgb(217 70 239 / 0.55),
-			0 0 24px rgb(217 70 239 / 0.2);
-	}
-	66% {
-		box-shadow:
-			0 0 0 1px rgb(6 182 212 / 0.55),
-			0 0 24px rgb(6 182 212 / 0.2);
-	}
-	100% {
-		box-shadow:
-			0 0 0 1px rgb(99 102 241 / 0.55),
-			0 0 24px rgb(99 102 241 / 0.22);
 	}
 }
 

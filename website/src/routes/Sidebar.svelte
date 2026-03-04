@@ -1,6 +1,5 @@
 <script>
 import {page} from '$app/state';
-import Badge from '$components/ui/Badge.svelte';
 import {navbarStore} from '$stores/navbar.svelte';
 import {components, overview, utilities} from '$velite';
 import {Drawer, Portal} from 'ui-ingredients';
@@ -134,11 +133,19 @@ const links = [
 								</span>
 
 								{#if child.beta}
-									<Badge>Beta</Badge>
+									<p
+										class="text-xs text-amber-600 dark:text-amber-400 font-medium font-mono uppercase"
+									>
+										Preview
+									</p>
 								{/if}
 
 								{#if child.deprecated}
-									<Badge colorScheme="warning">Deprecated</Badge>
+									<p
+										class="text-xs text-rose-600 dark:text-rose-400 font-medium font-mono uppercase"
+									>
+										Deprecated
+									</p>
 								{/if}
 							</a>
 						</li>

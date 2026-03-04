@@ -84,7 +84,7 @@ $effect(() => {
   }}
 >
 	<Dialog.Trigger
-		class="group relative flex h-10 w-full items-center gap-2 overflow-hidden rounded-lg border border-neutral-200/80 bg-white/80 px-3 text-left text-sm text-neutral-500 shadow-xs backdrop-blur-sm transition-colors duration-150 hover:border-neutral-300 hover:bg-white dark:border-neutral-700/80 dark:bg-neutral-900/65 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:bg-neutral-900"
+		class="group relative flex h-10 w-full items-center gap-2 overflow-hidden rounded-lg border border-neutral-200/80 bg-white/80 px-3 text-left text-sm text-neutral-500 backdrop-blur-sm transition-colors duration-150 hover:border-neutral-300 hover:bg-white dark:border-neutral-700/80 dark:bg-neutral-900/65 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:bg-neutral-900"
 	>
 		<div
 			aria-hidden="true"

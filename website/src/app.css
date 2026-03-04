@@ -22,6 +22,21 @@
 	input::-webkit-search-results-decoration {
 		display: none;
 	}
+
+	button,
+	[type="button"],
+	[type="reset"],
+	[type="submit"] {
+		cursor: pointer;
+	}
+
+	[disabled] {
+		cursor: not-allowed;
+	}
+
+	[hidden] {
+		display: none !important;
+	}
 }
 
 @theme {
