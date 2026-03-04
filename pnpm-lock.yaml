@@ -135,6 +135,9 @@ importers:
       '@zag-js/rating-group':
         specifier: ^1.35.2
         version: 1.35.2
+      '@zag-js/scroll-area':
+        specifier: ^1.35.3
+        version: 1.35.3
       '@zag-js/select':
         specifier: ^1.35.2
         version: 1.35.2
@@ -2018,6 +2021,9 @@ packages:
 
   '@zag-js/remove-scroll@1.35.2':
     resolution: {integrity: sha512-qdKOzbVRZpp4119hJjAyPx4CRaXR12gdLd2uPRV70W8LE7duVyfX2sigEE2OtTxzdffwFOi7z44eL6zbWz5Cfg==}
+
+  '@zag-js/scroll-area@1.35.3':
+    resolution: {integrity: sha512-IQwdUws/AckRIHK1z/wHdHurnOeGd8h8Dmspfh3VT7NkwTnxeJ4SW9di9smuD+d25eXkJRuX5zGEDHAyx2IaPQ==}
 
   '@zag-js/scroll-snap@1.35.2':
     resolution: {integrity: sha512-cDbh1kXxFRDCxjA7nbYOI3oSQbUQbe9BNZML/blDIhQn84tKku+Nsd/+dZZZyB3Ney0mVdtOjEbkBsnFAkulRA==}
@@ -5431,6 +5437,14 @@ snapshots:
   '@zag-js/remove-scroll@1.35.2':
     dependencies:
       '@zag-js/dom-query': 1.35.2
+
+  '@zag-js/scroll-area@1.35.3':
+    dependencies:
+      '@zag-js/anatomy': 1.35.3
+      '@zag-js/core': 1.35.3
+      '@zag-js/dom-query': 1.35.3
+      '@zag-js/types': 1.35.3
+      '@zag-js/utils': 1.35.3
 
   '@zag-js/scroll-snap@1.35.2':
     dependencies:

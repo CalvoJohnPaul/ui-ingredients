@@ -32,7 +32,6 @@ import SegmentGroup from './SegmentGroup.svelte';
 import Select from './Select.svelte';
 import SignaturePad from './SignaturePad.svelte';
 import Slider from './Slider.svelte';
-import Splitter from './Splitter.svelte';
 import Steps from './Steps.svelte';
 import Switch from './Switch.svelte';
 import Tabs from './Tabs.svelte';
@@ -84,7 +83,6 @@ const MAP: Record<string, Component | null> = {
 	presence: null,
 	select: Select,
 	slider: Slider,
-	splitter: Splitter,
 	steps: Steps,
 	switch: Switch,
 	tabs: Tabs,

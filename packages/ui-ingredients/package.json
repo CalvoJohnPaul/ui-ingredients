@@ -136,6 +136,7 @@
 		"@zag-js/qr-code": "^1.35.2",
 		"@zag-js/radio-group": "^1.35.2",
 		"@zag-js/rating-group": "^1.35.2",
+		"@zag-js/scroll-area": "^1.35.3",
 		"@zag-js/select": "^1.35.2",
 		"@zag-js/signature-pad": "^1.35.2",
 		"@zag-js/slider": "^1.35.2",
