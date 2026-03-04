@@ -28,6 +28,7 @@ import ProgressLinear from './ProgressLinear.svelte';
 import QrCode from './QrCode.svelte';
 import RadioGroup from './RadioGroup.svelte';
 import RatingGroup from './RatingGroup.svelte';
+import ScrollArea from './ScrollArea.svelte';
 import SegmentGroup from './SegmentGroup.svelte';
 import Select from './Select.svelte';
 import SignaturePad from './SignaturePad.svelte';
@@ -62,6 +63,7 @@ const MAP: Record<string, Component | null> = {
 	'rating-group': RatingGroup,
 	'segment-group': SegmentGroup,
 	'signature-pad': SignaturePad,
+	'scroll-area': ScrollArea,
 	'tags-input': TagsInput,
 	'toggle-group': ToggleGroup,
 	'tree-view': TreeView,

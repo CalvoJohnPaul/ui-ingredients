@@ -17,6 +17,7 @@ const MAP: Record<string, AccessibilityDoc | null> = {
 	'qr-code': null,
 	'radio-group': getAccessibilityDoc('radio-group'),
 	'rating-group': getAccessibilityDoc('rating-group'),
+	'scroll-area': null,
 	'segment-group': getAccessibilityDoc('radio-group'),
 	'signature-pad': null,
 	'tags-input': getAccessibilityDoc('tags-input'),

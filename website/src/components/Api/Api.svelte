@@ -35,6 +35,7 @@ import progress from './Progress';
 import qrCode from './QrCode';
 import radioGroup from './RadioGroup';
 import ratingGroup from './RatingGroup';
+import scrollArea from './ScrollArea';
 import segmentGroup from './SegmentGroup';
 import select from './Select';
 import signaturePad from './SignaturePad';
@@ -71,6 +72,7 @@ const MAP: Record<string, ApiEntries> = {
 	'qr-code': qrCode,
 	'radio-group': radioGroup,
 	'rating-group': ratingGroup,
+	'scroll-area': scrollArea,
 	'segment-group': segmentGroup,
 	'signature-pad': signaturePad,
 	'tags-input': tagsInput,

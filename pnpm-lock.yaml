@@ -308,11 +308,11 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2(tailwind-merge@3.0.2)(tailwindcss@4.2.1)
       tailwind-zag:
-        specifier: ^1.0.5
-        version: 1.0.5(tailwindcss@4.2.1)
+        specifier: ^1.1.0
+        version: 1.1.0(tailwindcss@4.2.1)
       ui-ingredients:
-        specifier: ^2.0.0-3
-        version: 2.0.0-3(@internationalized/date@3.5.5)(svelte@5.53.6)
+        specifier: ^2.0.0-4
+        version: 2.0.0-4(@internationalized/date@3.5.5)(svelte@5.53.6)
     devDependencies:
       '@sveltejs/adapter-vercel':
         specifier: ^6.3.3
@@ -3544,8 +3544,8 @@ packages:
       tailwind-merge:
         optional: true
 
-  tailwind-zag@1.0.5:
-    resolution: {integrity: sha512-5rGU+0z8I7Nv4IZ6mcIrfrKjW9q29sVthtEqmSX7eUKu9XrMdGGQTv9uU9Mn8gVmE/cdV+cm/jJTcFKtRC6Oww==}
+  tailwind-zag@1.1.0:
+    resolution: {integrity: sha512-iQVdE6acpVWAMTSYKb2XwxeX6BdyCyAQe+QEexH9m8um8v1CISaxHOE467attqGLm1W72/gGqdoAo+SB51aTEQ==}
     peerDependencies:
       tailwindcss: ^3.3.3 || ^4.0.0
 
@@ -3641,8 +3641,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  ui-ingredients@2.0.0-3:
-    resolution: {integrity: sha512-H5pjAsLPq5yowAtl7kpqKTflK06XH3sZ6095TMy1VwQv8sLRbvcMblJzm7TTtCtCc28Mm/TQ+Ug2zO5qlUvc3g==}
+  ui-ingredients@2.0.0-4:
+    resolution: {integrity: sha512-2BLNwRWBn+TzHq3uf/0A6uY15ORtG3+m4jGBHTKgdrQhKUMS31ruyoGwL2AqpmXDWwBtNesMRGf1uXi8GS7dxw==}
     peerDependencies:
       svelte: ^5.20.0
 
@@ -7382,7 +7382,7 @@ snapshots:
     optionalDependencies:
       tailwind-merge: 3.0.2
 
-  tailwind-zag@1.0.5(tailwindcss@4.2.1):
+  tailwind-zag@1.1.0(tailwindcss@4.2.1):
     dependencies:
       tailwindcss: 4.2.1
 
@@ -7465,7 +7465,7 @@ snapshots:
 
   typescript@5.9.3: {}
 
-  ui-ingredients@2.0.0-3(@internationalized/date@3.5.5)(svelte@5.53.6):
+  ui-ingredients@2.0.0-4(@internationalized/date@3.5.5)(svelte@5.53.6):
     dependencies:
       '@zag-js/accordion': 1.35.3
       '@zag-js/anatomy': 1.35.3
@@ -7504,6 +7504,7 @@ snapshots:
       '@zag-js/qr-code': 1.35.3
       '@zag-js/radio-group': 1.35.3
       '@zag-js/rating-group': 1.35.3
+      '@zag-js/scroll-area': 1.35.3
       '@zag-js/select': 1.35.3
       '@zag-js/signature-pad': 1.35.3
       '@zag-js/slider': 1.35.3

@@ -2,7 +2,7 @@
 import {page} from '$app/state';
 import {navbarStore} from '$stores/navbar.svelte';
 import {components, overview, utilities} from '$velite';
-import {Drawer, Portal} from 'ui-ingredients';
+import {Drawer, Portal, ScrollArea} from 'ui-ingredients';
 import Search from './Search.svelte';
 
 const links = [
@@ -42,22 +42,40 @@ const links = [
 	data-placeholder
 ></div>
 
-<nav
-	class="fixed left-0 top-16 hidden h-[calc(100dvh---spacing(16))] w-[20rem] shrink-0 space-y-4 overflow-y-auto scroll-smooth border-r border-neutral-200/80 bg-white/80 px-8 py-8 backdrop-blur-sm lg:block dark:border-neutral-800 dark:bg-neutral-950/75"
+<div
+	class="fixed left-0 top-16 hidden h-[calc(100dvh---spacing(16))] w-[20rem] shrink-0 border-r border-neutral-200/80 bg-white/80 backdrop-blur-sm lg:block dark:border-neutral-800 dark:bg-neutral-950/75"
 >
-	<div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
-		<div
-			class="absolute -left-12 top-10 h-56 w-56 rounded-full bg-linear-to-br from-indigo-500/10 via-fuchsia-500/6 to-transparent blur-3xl dark:from-indigo-500/16 dark:via-fuchsia-500/10"
-		></div>
-		<div
-			class="absolute right-0 top-1/2 h-52 w-52 rounded-full bg-linear-to-br from-cyan-500/7 via-indigo-500/6 to-transparent blur-3xl dark:from-cyan-500/12 dark:via-indigo-500/9"
-		></div>
-	</div>
+	<ScrollArea.Root class="h-full w-full px-8 py-8">
+		<ScrollArea.Viewport class="h-full w-full [&::-webkit-scrollbar]:hidden">
+			<ScrollArea.Content class="space-y-4">
+				<div
+					aria-hidden="true"
+					class="pointer-events-none absolute inset-0 -z-10"
+				>
+					<div
+						class="absolute -left-12 top-10 h-56 w-56 rounded-full bg-linear-to-br from-indigo-500/10 via-fuchsia-500/6 to-transparent blur-3xl dark:from-indigo-500/16 dark:via-fuchsia-500/10"
+					></div>
+					<div
+						class="absolute right-0 top-1/2 h-52 w-52 rounded-full bg-linear-to-br from-cyan-500/7 via-indigo-500/6 to-transparent blur-3xl dark:from-cyan-500/12 dark:via-indigo-500/9"
+					></div>
+				</div>
 
-	<Search />
+				<Search />
 
-	{@render items()}
-</nav>
+				{@render items()}
+			</ScrollArea.Content>
+		</ScrollArea.Viewport>
+		<ScrollArea.Scrollbar
+			orientation="vertical"
+			class="opacity-0 ui-hover:opacity-100 transition-opacity duration-300 w-3 p-0.75"
+		>
+			<ScrollArea.Thumb
+				class="rounded-full bg-neutral-300 dark:bg-neutral-700"
+			/>
+		</ScrollArea.Scrollbar>
+		<ScrollArea.Corner />
+	</ScrollArea.Root>
+</div>
 
 <Drawer.Root
 	open={navbarStore.drawer.isOpen}
