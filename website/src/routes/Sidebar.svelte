@@ -45,8 +45,10 @@ const links = [
 <div
 	class="fixed left-0 top-16 hidden h-[calc(100dvh---spacing(16))] w-[20rem] shrink-0 border-r border-neutral-200/80 bg-white/80 backdrop-blur-sm lg:block dark:border-neutral-800 dark:bg-neutral-950/75"
 >
-	<ScrollArea.Root class="h-full w-full px-8 py-8">
-		<ScrollArea.Viewport class="h-full w-full [&::-webkit-scrollbar]:hidden">
+	<ScrollArea.Root class="size-full">
+		<ScrollArea.Viewport
+			class="size-full px-8 py-8 [&::-webkit-scrollbar]:hidden"
+		>
 			<ScrollArea.Content class="space-y-4">
 				<div
 					aria-hidden="true"

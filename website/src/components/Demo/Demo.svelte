@@ -17,6 +17,7 @@ import Editable from './Editable.svelte';
 import Field from './Field.svelte';
 import FileUpload from './FileUpload.svelte';
 import HoverCard from './HoverCard.svelte';
+import Marquee from './Marquee.svelte';
 import Menu from './Menu.svelte';
 import NumberInput from './NumberInput.svelte';
 import Pagination from './Pagination.svelte';
@@ -80,6 +81,7 @@ const MAP: Record<string, Component | null> = {
 	highlight: null,
 	field: Field,
 	menu: Menu,
+	marquee: Marquee,
 	pagination: Pagination,
 	popover: Popover,
 	presence: null,

@@ -23,6 +23,7 @@ import focusTrap from './FocusTrap';
 import highlight from './Highlight';
 import hoverCard from './HoverCard';
 import localeProvider from './LocaleProvider';
+import marquee from './Marquee';
 import menu from './Menu';
 import numberInput from './NumberInput';
 import pagination from './Pagination';
@@ -65,6 +66,7 @@ const MAP: Record<string, ApiEntries> = {
 	'focus-trap': focusTrap,
 	'hover-card': hoverCard,
 	'locale-provider': localeProvider,
+	marquee,
 	'number-input': numberInput,
 	'pin-input': pinInput,
 	'progress-circular': progress,
