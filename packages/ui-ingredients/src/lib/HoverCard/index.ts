@@ -7,14 +7,7 @@ export type {HoverCardPositionerProps} from './HoverCardPositioner.svelte';
 export type {HoverCardProps} from './HoverCardRoot.svelte';
 export type {HoverCardTriggerProps} from './HoverCardTrigger.svelte';
 
-export {
-  createHoverCard,
-  type CreateHoverCardProps,
-  type CreateHoverCardReturn,
-} from './createHoverCard.svelte.js';
-export {
-  getHoverCardContext,
-  setHoverCardContext,
-} from './HoverCardContext.svelte.js';
+export * from './createHoverCard.svelte.js';
+export * from './HoverCardContext.svelte.js';
 
 export {anatomy as hoverCardAnatomy} from '@zag-js/hover-card';

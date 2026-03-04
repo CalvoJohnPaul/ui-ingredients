@@ -29,14 +29,7 @@ export type {DatePickerYearSelectProps} from './DatePickerYearSelect.svelte';
 export type {DatePickerYearTableCellProps} from './DatePickerYearTableCell.svelte';
 export type {DatePickerYearTableCellTriggerProps} from './DatePickerYearTableCellTrigger.svelte';
 
-export {
-  createDatePicker,
-  type CreateDatePickerProps,
-  type CreateDatePickerReturn,
-} from './createDatePicker.svelte.js';
-export {
-  getDatePickerContext,
-  setDatePickerContext,
-} from './DatePickerContext.svelte.js';
+export * from './createDatePicker.svelte.js';
+export * from './DatePickerContext.svelte.js';
 
 export {anatomy as datePickerAnatomy, type DateValue} from '@zag-js/date-picker';

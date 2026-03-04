@@ -14,11 +14,7 @@ export type {TourSpotlightProps} from './TourSpotlight.svelte';
 export type {TourTitleProps} from './TourTitle.svelte';
 export type {TourTriggerProps} from './TourTrigger.svelte';
 
-export {
-  createTour,
-  type CreateTourProps,
-  type CreateTourReturn,
-  type TourStepDetails,
-} from './createTour.svelte.js';
+export * from './createTour.svelte.js';
+export * from './TourContext.svelte.js';
+
 export {anatomy as tourAnatomy} from './Tour.anatomy.js';
-export {getTourContext, setTourContext} from './TourContext.svelte.js';

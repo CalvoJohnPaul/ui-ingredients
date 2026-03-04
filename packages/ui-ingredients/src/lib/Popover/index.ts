@@ -12,14 +12,7 @@ export type {PopoverProps} from './PopoverRoot.svelte';
 export type {PopoverTitleProps} from './PopoverTitle.svelte';
 export type {PopoverTriggerProps} from './PopoverTrigger.svelte';
 
-export {
-  createPopover,
-  type CreatePopoverProps,
-  type CreatePopoverReturn,
-} from './createPopover.svelte.js';
-export {
-  getPopoverContext,
-  setPopoverContext,
-} from './PopoverContext.svelte.js';
+export * from './createPopover.svelte.js';
+export * from './PopoverContext.svelte.js';
 
 export {anatomy as popoverAnatomy} from '@zag-js/popover';

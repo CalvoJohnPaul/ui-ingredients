@@ -10,14 +10,7 @@ export type {ProgressTrackProps} from './ProgressTrack.svelte';
 export type {ProgressValueTextProps} from './ProgressValueText.svelte';
 export type {ProgressViewProps} from './ProgressView.svelte';
 
-export {
-  createProgress,
-  type CreateProgressProps,
-  type CreateProgressReturn,
-} from './createProgress.svelte.js';
-export {
-  getProgressContext,
-  setProgressContext,
-} from './ProgressContext.svelte.js';
+export * from './createProgress.svelte.js';
+export * from './ProgressContext.svelte.js';
 
 export {anatomy as progressAnatomy} from '@zag-js/progress';

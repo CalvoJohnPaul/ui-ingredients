@@ -9,7 +9,7 @@ import {parts} from './Tour.anatomy.js';
 
 export interface TourStepDetails extends SetOptional<tour.StepDetails, 'id'> {}
 
-export interface ElementIds extends tour.ElementIds {
+interface ElementIds extends tour.ElementIds {
   trigger?: string;
 }
 

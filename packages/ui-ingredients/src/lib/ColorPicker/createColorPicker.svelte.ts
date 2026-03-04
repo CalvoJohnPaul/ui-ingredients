@@ -1,11 +1,12 @@
 import type {Accessor} from '$lib/types.js';
 import * as colorPicker from '@zag-js/color-picker';
 import {normalizeProps, useMachine} from '@zag-js/svelte';
+import type {HTMLAttributes} from 'svelte/elements';
 import {getEnvironmentContext} from '../EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {getLocaleContext} from '../LocaleProvider/LocaleProviderContext.svelte.js';
 import {parts} from './ColorPicker.anatomy.js';
 
-export interface ElementIds extends colorPicker.ElementIds {
+interface ElementIds extends colorPicker.ElementIds {
   view?: string;
 }
 
@@ -15,7 +16,7 @@ export interface CreateColorPickerProps
 }
 
 export interface CreateColorPickerReturn extends colorPicker.Api {
-  getViewProps(props: {format: colorPicker.ColorFormat}): Record<string, any>;
+  getViewProps(props: {format: colorPicker.ColorFormat}): HTMLAttributes<HTMLElement>;
   getFormats(): {label: string; value: colorPicker.ColorFormat}[];
 }
 

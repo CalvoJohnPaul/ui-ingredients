@@ -12,14 +12,7 @@ export type {TagsInputItemTextProps} from './TagsInputItemText.svelte';
 export type {TagsInputLabelProps} from './TagsInputLabel.svelte';
 export type {TagsInputProps} from './TagsInputRoot.svelte';
 
-export {
-  createTagsInput,
-  type CreateTagsInputProps,
-  type CreateTagsInputReturn,
-} from './createTagsInput.svelte.js';
-export {
-  getTagsInputContext,
-  setTagsInputContext,
-} from './TagsInputContext.svelte.js';
+export * from './createTagsInput.svelte.js';
+export * from './TagsInputContext.svelte.js';
 
 export {anatomy as tagsInputAnatomy} from '@zag-js/tags-input';

@@ -8,14 +8,7 @@ export type {SegmentGroupItemTextProps} from './SegmentGroupItemText.svelte';
 export type {SegmentGroupLabelProps} from './SegmentGroupLabel.svelte';
 export type {SegmentGroupProps} from './SegmentGroupRoot.svelte';
 
-export {
-  createSegmentGroup,
-  type CreateSegmentGroupProps,
-  type CreateSegmentGroupReturn,
-} from './createSegmentGroup.svelte.js';
-export {
-  getSegmentGroupContext,
-  setSegmentGroupContext,
-} from './SegmentGroupContext.svelte.js';
+export * from './createSegmentGroup.svelte.js';
+export * from './SegmentGroupContext.svelte.js';
 
 export {anatomy as segmentGroupAnatomy} from './SegmentGroup.anatomy.js';

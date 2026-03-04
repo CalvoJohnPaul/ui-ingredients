@@ -6,14 +6,7 @@ export type {AccordionIndicatorProps} from './AccordionItemIndicator.svelte';
 export type {AccordionItemTriggerProps} from './AccordionItemTrigger.svelte';
 export type {AccordionProps} from './AccordionRoot.svelte';
 
-export {
-  getAccordionContext,
-  setAccordionContext,
-} from './AccordionContext.svelte.js';
-export {
-  createAccordion,
-  type CreateAccordionProps,
-  type CreateAccordionReturn,
-} from './createAccordion.svelte.js';
+export * from './AccordionContext.svelte.js';
+export * from './createAccordion.svelte.js';
 
 export {anatomy as accordionAnatomy} from '@zag-js/accordion';

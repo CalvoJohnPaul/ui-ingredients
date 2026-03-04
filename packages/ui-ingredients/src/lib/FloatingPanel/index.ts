@@ -13,14 +13,7 @@ export type {FloatingPanelStageTriggerProps} from './FloatingPanelStageTrigger.s
 export type {FloatingPanelTitleProps} from './FloatingPanelTitle.svelte';
 export type {FloatingPanelTriggerProps} from './FloatingPanelTrigger.svelte';
 
-export {
-  createFloatingPanel,
-  type CreateFloatingPanelProps,
-  type CreateFloatingPanelReturn,
-} from './createFloatingPanel.svelte.js';
-export {
-  getFloatingPanelContext,
-  setFloatingPanelContext,
-} from './FloatingPanelContext.svelte.js';
+export * from './createFloatingPanel.svelte.js';
+export * from './FloatingPanelContext.svelte.js';
 
 export {anatomy as floatingPanelAnatomy} from '@zag-js/floating-panel';

@@ -12,11 +12,7 @@ export type {StepsProps} from './StepsRoot.svelte';
 export type {StepsSeparatorProps} from './StepsSeparator.svelte';
 export type {StepsTriggerProps} from './StepsTrigger.svelte';
 
-export {
-  createSteps,
-  type CreateStepsProps,
-  type CreateStepsReturn,
-} from './createSteps.svelte.js';
-export {getStepsContext, setStepsContext} from './StepsContext.svelte.js';
+export * from './createSteps.svelte.js';
+export * from './StepsContext.svelte.js';
 
 export {anatomy as stepsAnatomy} from '@zag-js/steps';

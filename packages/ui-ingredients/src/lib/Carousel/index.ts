@@ -11,14 +11,7 @@ export type {CarouselPrevTriggerProps} from './CarouselPrevTrigger.svelte';
 export type {CarouselProgressTextProps} from './CarouselProgressText.svelte';
 export type {CarouselProps} from './CarouselRoot.svelte';
 
-export {
-  getCarouselContext,
-  setCarouselContext,
-} from './CarouselContext.svelte.js';
-export {
-  createCarousel,
-  type CreateCarouselProps,
-  type CreateCarouselReturn,
-} from './createCarousel.svelte.js';
+export * from './CarouselContext.svelte.js';
+export * from './createCarousel.svelte.js';
 
 export {anatomy as carouselAnatomy} from '@zag-js/carousel';

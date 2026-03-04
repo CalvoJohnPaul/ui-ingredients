@@ -10,14 +10,7 @@ export type {SignaturePadProps} from './SignaturePadRoot.svelte';
 export type {SignaturePadSegmentProps} from './SignaturePadSegment.svelte';
 export type {SignaturePadSegmentPathProps} from './SignaturePadSegmentPath.svelte';
 
-export {
-  createSignaturePad,
-  type CreateSignaturePadProps,
-  type CreateSignaturePadReturn,
-} from './createSignaturePad.svelte.js';
-export {
-  getSignaturePadContext,
-  setSignaturePadContext,
-} from './SignaturePadContext.svelte.js';
+export * from './createSignaturePad.svelte.js';
+export * from './SignaturePadContext.svelte.js';
 
 export {anatomy as signaturePadAnatomy} from '@zag-js/signature-pad';

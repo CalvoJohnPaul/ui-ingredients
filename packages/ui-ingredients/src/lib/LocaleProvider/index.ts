@@ -3,7 +3,4 @@ export {
   default as LocaleProvider,
   type LocaleProviderProps,
 } from './LocaleProvider.svelte';
-export {
-  getLocaleContext,
-  setLocaleContext,
-} from './LocaleProviderContext.svelte.js';
+export * from './LocaleProviderContext.svelte.js';

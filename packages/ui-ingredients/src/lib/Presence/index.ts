@@ -1,5 +1,4 @@
 export {default as Presence, type PresenceProps} from './Presence.svelte';
-export {
-  getPresenceContext,
-  setPresenceContext,
-} from './PresenceContext.svelte.js';
+
+export * from './createPresence.svelte.js';
+export * from './PresenceContext.svelte.js';

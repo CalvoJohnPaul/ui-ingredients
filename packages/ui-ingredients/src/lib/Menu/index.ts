@@ -17,11 +17,7 @@ export type {MenuSeparatorProps} from './MenuSeparator.svelte';
 export type {MenuTriggerProps} from './MenuTrigger.svelte';
 export type {MenuTriggerItemIndicatorProps} from './MenuTriggerItem.svelte';
 
-export {
-  createMenu,
-  type CreateMenuProps,
-  type CreateMenuReturn,
-} from './createMenu.svelte.js';
-export {getMenuContext, setMenuContext} from './MenuContext.svelte.js';
+export * from './createMenu.svelte.js';
+export * from './MenuContext.svelte.js';
 
 export {anatomy as menuAnatomy} from '@zag-js/menu';

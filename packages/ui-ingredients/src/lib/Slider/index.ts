@@ -12,11 +12,7 @@ export type {SliderThumbProps} from './SliderThumb.svelte';
 export type {SliderTrackProps} from './SliderTrack.svelte';
 export type {SliderValueTextProps} from './SliderValueText.svelte';
 
-export {
-  createSlider,
-  type CreateSliderProps,
-  type CreateSliderReturn,
-} from './createSlider.svelte.js';
-export {getSliderContext, setSliderContext} from './SliderContext.svelte.js';
+export * from './createSlider.svelte.js';
+export * from './SliderContext.svelte.js';
 
 export {anatomy as sliderAnatomy} from '@zag-js/slider';

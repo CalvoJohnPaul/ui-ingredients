@@ -11,13 +11,7 @@ export type {ListboxLabelProps} from './ListboxLabel.svelte';
 export type {ListboxProps} from './ListboxRoot.svelte';
 export type {ListboxValueTextProps} from './ListboxValueText.svelte';
 
+export * from './createListbox.svelte.js';
+export * from './ListboxContext.svelte.js';
+
 export {anatomy as listboxAnatomy} from '@zag-js/listbox';
-export {
-  createListbox,
-  type CreateListboxProps,
-  type CreateListboxReturn,
-} from './createListbox.svelte.js';
-export {
-  getListboxContext,
-  setListboxContext,
-} from './ListboxContext.svelte.js';

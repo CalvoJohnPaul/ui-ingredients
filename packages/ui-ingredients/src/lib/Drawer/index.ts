@@ -11,10 +11,7 @@ export type {DrawerProps} from './DrawerRoot.svelte';
 export type {DrawerTitleProps} from './DrawerTitle.svelte';
 export type {DrawerTriggerProps} from './DrawerTrigger.svelte';
 
-export {
-  createDrawer,
-  type CreateDrawerProps,
-  type CreateDrawerReturn,
-} from './createDrawer.svelte.js';
+export * from './createDrawer.svelte.js';
+export * from './DrawerContext.svelte.js';
+
 export {anatomy as drawerAnatomy} from './Drawer.anatomy.js';
-export {getDrawerContext, setDrawerContext} from './DrawerContext.svelte.js';

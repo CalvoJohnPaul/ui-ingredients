@@ -28,15 +28,8 @@ export type {ColorPickerValueSwatchProps} from './ColorPickerValueSwatch.svelte'
 export type {ColorPickerValueTextProps} from './ColorPickerValueText.svelte';
 export type {ColorPickerViewProps} from './ColorPickerView.svelte';
 
-export {
-  getColorPickerContext,
-  setColorPickerContext,
-} from './ColorPickerContext.svelte.js';
-export {
-  createColorPicker,
-  type CreateColorPickerProps,
-  type CreateColorPickerReturn,
-} from './createColorPicker.svelte.js';
+export * from './ColorPickerContext.svelte.js';
+export * from './createColorPicker.svelte.js';
 
 export type {Color} from '@zag-js/color-picker';
 export {anatomy as colorPickerAnatomy} from './ColorPicker.anatomy.js';
