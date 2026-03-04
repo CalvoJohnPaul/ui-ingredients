@@ -4,7 +4,7 @@ export const buttonRecipe = tv({
   base: 'shrink-0 cursor-pointer flex items-center justify-center gap-2 rounded font-semibold transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-50',
   variants: {
     size: {
-      xs: 'h-10 min-w-11 px-3',
+      xs: 'h-10 min-w-11 px-3 text-sm',
       sm: 'h-11 min-w-11 px-3.5',
       md: 'h-12 min-w-12 px-4',
     },
