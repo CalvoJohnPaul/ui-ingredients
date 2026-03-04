@@ -1,6 +1,10 @@
 <script lang="ts">
 import {page} from '$app/state';
-import {EnvironmentProvider, LocaleProvider} from '$lib/index.js';
+import {
+	EnvironmentProvider,
+	LocaleProvider,
+	PortalProvider,
+} from '$lib/index.js';
 import '../app.css';
 
 let {children} = $props();
@@ -217,6 +221,18 @@ let links: {
 		label: 'Password Input',
 		path: '/password-input',
 	},
+	{
+		label: 'Floating Panel',
+		path: '/floating-panel',
+	},
+	{
+		label: 'Scroll Area',
+		path: '/scroll-area',
+	},
+	{
+		label: 'Marquee',
+		path: '/marquee',
+	},
 ]
 	.filter((o, i, arr) => arr.findIndex((t) => t.label === o.label) === i)
 	.toSorted((i, j) => i.label.localeCompare(j.label));
@@ -224,6 +240,8 @@ let links: {
 function sx(...styles: (string | null | boolean | undefined)[]) {
 	return styles.filter(Boolean).join(';').replace(/;{2,}/g, ';');
 }
+
+let portal: HTMLDivElement | null = $state(null);
 </script>
 
 <EnvironmentProvider>
@@ -254,7 +272,13 @@ function sx(...styles: (string | null | boolean | undefined)[]) {
 				</nav>
 			</header>
 
-			<main style="padding:2rem;flex-grow:1;">{@render children()}</main>
+			<main style="padding:2rem;flex-grow:1;">
+				<PortalProvider container={portal}>
+					{@render children()}
+				</PortalProvider>
+			</main>
 		</div>
 	</LocaleProvider>
 </EnvironmentProvider>
+
+<div bind:this={portal}></div>

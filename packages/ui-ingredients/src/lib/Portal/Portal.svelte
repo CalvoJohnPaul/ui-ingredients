@@ -1,5 +1,7 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {portal} from '@zag-js/svelte';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {portal} from '@zag-js/svelte';
+import {fromAction} from 'svelte/attachments';
 import type {SvelteHTMLElements} from 'svelte/elements';
 import type {Merge} from 'type-fest';
 import {getEnvironmentContext} from '../EnvironmentProvider/index.js';
@@ -29,20 +31,21 @@ let [portalActionProps, localProps] = $derived(
 
 let portalProviderProps = getPortalProviderPropsContext();
 let environment = getEnvironmentContext();
+
+let portalProps = $derived({
+	container:
+		portalActionProps.container ??
+		portalProviderProps?.().container ??
+		undefined,
+	disabled: portalActionProps.disabled ?? false,
+	getRootNode: environment?.().getRootNode,
+});
 </script>
 
 <div
-	use:portal={{
-    container:
-      portalActionProps.container ??
-      portalProviderProps?.().container ??
-      undefined,
-    disabled: portalActionProps.disabled ?? false,
-    getRootNode: environment?.().getRootNode,
-  }}
+	{@attach fromAction(portal, () => portalProps)}
+	data-ui-ingredients-portal=""
 	{...localProps}
 >
 	{@render children?.()}
 </div>
-
-

@@ -1,5 +1,6 @@
 <script lang="ts">
 import {AlertDialog} from '$lib/index.js';
+import Portal from '$lib/Portal/Portal.svelte';
 
 let open = $state(false);
 
@@ -17,11 +18,13 @@ $inspect({open});
 >
 	<AlertDialog.Trigger>Click me</AlertDialog.Trigger>
 	<AlertDialog.Backdrop />
-	<AlertDialog.Positioner>
-		<AlertDialog.Content>
-			<AlertDialog.Title>Title</AlertDialog.Title>
-			<AlertDialog.Description>Description</AlertDialog.Description>
-			<AlertDialog.CloseTrigger>Close</AlertDialog.CloseTrigger>
-		</AlertDialog.Content>
-	</AlertDialog.Positioner>
+	<Portal>
+		<AlertDialog.Positioner>
+			<AlertDialog.Content>
+				<AlertDialog.Title>Title</AlertDialog.Title>
+				<AlertDialog.Description>Description</AlertDialog.Description>
+				<AlertDialog.CloseTrigger>Close</AlertDialog.CloseTrigger>
+			</AlertDialog.Content>
+		</AlertDialog.Positioner>
+	</Portal>
 </AlertDialog.Root>
