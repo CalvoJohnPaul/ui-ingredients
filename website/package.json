@@ -36,6 +36,7 @@
 		"@tailwindcss/vite": "^4.2.1",
 		"@types/lodash.debounce": "^4.0.9",
 		"@types/lodash.omit": "^4.5.9",
+		"schema-dts": "^1.1.5",
 		"svelte": "^5.53.6",
 		"svelte-check": "^4.4.4",
 		"tailwindcss": "^4.2.1",
