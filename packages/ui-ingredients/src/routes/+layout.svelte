@@ -198,6 +198,10 @@ let links: {
 		path: '/toggle',
 	},
 	{
+		label: 'Alert',
+		path: '/alert',
+	},
+	{
 		label: 'Alert Dialog',
 		path: '/alert-dialog',
 	},

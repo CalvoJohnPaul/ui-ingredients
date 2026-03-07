@@ -1,6 +1,7 @@
 <script lang="ts">
 import type {Component} from 'svelte';
 import Accordion from './Accordion.svelte';
+import Alert from './Alert.svelte';
 import AlertDialog from './AlertDialog.svelte';
 import AngleSlider from './AngleSlider.svelte';
 import Avatar from './Avatar.svelte';
@@ -47,6 +48,7 @@ import Tour from './Tour.svelte';
 import TreeView from './TreeView.svelte';
 
 const MAP: Record<string, Component | null> = {
+	alert: Alert,
 	'alert-dialog': AlertDialog,
 	'angle-slider': AngleSlider,
 	'color-picker': ColorPicker,

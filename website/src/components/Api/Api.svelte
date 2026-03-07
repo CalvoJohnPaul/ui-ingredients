@@ -1,7 +1,8 @@
 <script lang="ts">
-import Table from '$components/ui/Table';
 import {MinusIcon} from '@untitled-theme/icons-svelte';
+import Table from '$components/ui/Table';
 import accordion from './Accordion';
+import alert from './Alert';
 import alertDialog from './AlertDialog';
 import angleSlider from './AngleSlider';
 import avatar from './Avatar';
@@ -56,6 +57,7 @@ import treeView from './TreeView';
 import type {ApiEntries} from './utils';
 
 const MAP: Record<string, ApiEntries> = {
+	alert,
 	'alert-dialog': alertDialog,
 	'angle-slider': angleSlider,
 	'color-picker': colorPicker,
