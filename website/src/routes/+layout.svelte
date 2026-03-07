@@ -1,5 +1,8 @@
 <script>
 import '@fontsource/fira-code/400.css';
+import '@fontsource/fira-code/500.css';
+import '@fontsource/fira-code/600.css';
+import '@fontsource/fira-code/700.css';
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
@@ -44,7 +47,27 @@ onMount(() => {
 				>
 					<section class="grow lg:mx-auto lg:w-full lg:max-w-3xl">
 						<div
-							class="prose prose-neutral dark:prose-invert prose-headings:font-lexend prose-h1:mb-3 prose-h1:font-lexend prose-h1:text-4xl before:prose-p:content-none after:prose-p:content-none prose-p:first:mb-8 prose-p:first:mt-0 prose-p:first:text-lg prose-a:underline-offset-2 prose-strong:font-medium before:prose-code:content-none after:prose-code:content-none lg:prose-code:text-sm min-w-full"
+							class={[
+								"prose",
+								"prose-neutral",
+								"dark:prose-invert",
+								"prose-headings:font-lexend",
+								"prose-h1:mb-3",
+								"prose-h1:text-4xl",
+								"prose-p:first:mb-8",
+								"prose-p:first:mt-0",
+								"prose-p:first:text-lg",
+								"prose-a:underline-offset-2",
+								"prose-strong:font-medium",
+								"lg:prose-code:text-sm",
+								"min-w-full",
+								"max-w-none",
+								"prose-code:font-medium",
+								"prose-code:before:hidden",
+								"prose-code:after:hidden",
+								"prose-code:text-orange-500",
+								"prose-code:dark:text-orange-400",
+							]}
 						>
 							{@render children()}
 						</div>
