@@ -1,11 +1,11 @@
 <script lang="ts">
-import Markdown from '$templates/Markdown.svelte';
 import Metadata from '$components/Metadata.svelte';
+import Markdown from '$templates/Markdown.svelte';
 
 let {data} = $props();
 </script>
 
-<title>{data.title} | UI Ingredients</title>
+<svelte:head><title>{data.title} | UI Ingredients</title></svelte:head>
 
 <Metadata
 	title={data.title}

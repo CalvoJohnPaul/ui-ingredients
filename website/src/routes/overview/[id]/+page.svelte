@@ -4,7 +4,7 @@ import Metadata from '$components/Metadata.svelte';
 let {data} = $props();
 </script>
 
-<title>{data.title} | UI Ingredients</title>
+<svelte:head><title>{data.title} | UI Ingredients</title></svelte:head>
 
 <Metadata
 	title={data.title}

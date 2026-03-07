@@ -1,12 +1,12 @@
 <script lang="ts">
+import {CloudMoonIcon, CloudSun02Icon} from '@untitled-theme/icons-svelte';
+import {useTheme} from 'svelte-os-themes';
+import packageJson from 'ui-ingredients/package.json';
 import {page} from '$app/state';
 import Metadata from '$components/Metadata.svelte';
 import Badge from '$components/ui/Badge.svelte';
 import Button from '$components/ui/Button.svelte';
 import Link from '$components/ui/Link.svelte';
-import {CloudMoonIcon, CloudSun02Icon} from '@untitled-theme/icons-svelte';
-import {useTheme} from 'svelte-os-themes';
-import packageJson from 'ui-ingredients/package.json';
 
 let links: {
 	label: string;
@@ -55,7 +55,9 @@ const highlights = [
 let theme = useTheme();
 </script>
 
-<title>UI Ingredients - Headless component library for Svelte</title>
+<svelte:head>
+	<title>UI Ingredients - Headless component library for Svelte</title>
+</svelte:head>
 
 <Metadata
 	title="Headless component library for Svelte"
