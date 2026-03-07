@@ -154,7 +154,7 @@
 		"@zag-js/tour": "^1.35.3",
 		"@zag-js/tree-view": "^1.35.3",
 		"@zag-js/types": "^1.35.3",
-		"es-toolkit": "^1.44.0",
+		"es-toolkit": "^1.45.1",
 		"esm-env": "^1.2.2",
 		"type-fest": "^5.4.4"
 	},
@@ -166,9 +166,9 @@
 		"@sveltejs/kit": "^2.53.4",
 		"@sveltejs/package": "^2.5.7",
 		"@sveltejs/vite-plugin-svelte": "^6.2.4",
-		"publint": "^0.3.17",
+		"publint": "^0.3.18",
 		"release-it": "^19.2.4",
-		"svelte": "^5.53.6",
+		"svelte": "^5.53.7",
 		"svelte-check": "^4.4.4",
 		"typescript": "^5.9.3",
 		"vite": "^7.3.1"

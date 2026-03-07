@@ -1,12 +1,12 @@
-import * as p from '@clack/prompts';
-import {allComponents, type ComponentAnatomyName} from '@zag-js/anatomy-icons';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import * as p from '@clack/prompts';
+import {allComponents, type ComponentAnatomyName} from '@zag-js/anatomy-icons';
 import {renderToString} from 'react-dom/server';
 import svgson from 'svgson';
 
 const workspaceRoot = path.resolve(path.dirname('../..'));
-const outputDir = path.join(workspaceRoot, 'website/src/lib/icons/anatomy');
+const outputDir = path.join(workspaceRoot, 'website/src/components/icons/anatomy');
 
 export async function generateAnatomyIcons() {
   const spinner = p.spinner();
