@@ -15,9 +15,6 @@ description: A component for displaying important messages or notifications.
 </script>
 
 <Alert.Root>
-  <Alert.Indicator>
-    <AlertCircleIcon />
-  </Alert.Indicator>
   <Alert.Title>Title</Alert.Title>
   <Alert.Description>Description</Alert.Description>
 </Alert.Root>

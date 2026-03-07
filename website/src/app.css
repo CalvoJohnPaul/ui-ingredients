@@ -42,18 +42,18 @@
 
 	.shiki,
 	.shiki span {
-		color: var(--shiki-light);
-		background: var(--color-neutral-50);
+		color: var(--shiki-light) !important;
+		background: var(--color-neutral-50) !important;
 	}
 
 	.dark .shiki,
 	.dark .shiki span {
-		color: var(--shiki-dark);
-		background: var(--color-neutral-900);
+		color: var(--shiki-dark) !important;
+		background: var(--color-neutral-900) !important;
 	}
 
 	.dark .shiki {
-		border: 1px solid var(--color-neutral-800);
+		border: 1px solid var(--color-neutral-800) !important;
 	}
 
 	/* Shiki line numbers */
@@ -70,11 +70,11 @@
 		width: 3ch;
 		text-align: right;
 		margin-right: 1rem;
-		color: var(--color-neutral-400);
+		color: var(--color-neutral-400) !important;
 	}
 
 	.dark .shiki code .line::before {
-		color: var(--color-neutral-500);
+		color: var(--color-neutral-500) !important;
 	}
 }
 

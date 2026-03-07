@@ -1,7 +1,7 @@
-// import {alertAnatomy} from 'ui-ingredients';
-// import {apiEntryFromAnatomy} from './utils';
+import {alertAnatomy} from 'ui-ingredients';
+import {apiEntryFromAnatomy} from './utils';
 
-export default {
+export default apiEntryFromAnatomy(alertAnatomy)({
   Root: {
     context: {
       id: {
@@ -16,7 +16,7 @@ export default {
       },
     },
     dataAttr: {
-      'data-scope': '"accordion"',
+      'data-scope': '"alert"',
       'data-part': '"root"',
     },
   },
@@ -28,8 +28,8 @@ export default {
       },
     },
     dataAttr: {
-      'data-scope': 'alert',
-      'data-part': 'title',
+      'data-scope': '"alert"',
+      'data-part': '"title"',
     },
   },
   Description: {
@@ -40,8 +40,8 @@ export default {
       },
     },
     dataAttr: {
-      'data-scope': 'alert',
-      'data-part': 'description',
+      'data-scope': '"alert"',
+      'data-part': '"description"',
     },
   },
-};
+});
