@@ -1,11 +1,11 @@
 <script lang="ts">
-import {page} from '$app/state';
+import { page } from '$app/state';
 import Metadata from '$components/Metadata.svelte';
 import Badge from '$components/ui/Badge.svelte';
 import Button from '$components/ui/Button.svelte';
 import Link from '$components/ui/Link.svelte';
-import {CloudMoonIcon, CloudSun02Icon} from '@untitled-theme/icons-svelte';
-import {useTheme} from 'svelte-os-themes';
+import { CloudMoonIcon, CloudSun02Icon } from '@untitled-theme/icons-svelte';
+import { useTheme } from 'svelte-os-themes';
 import packageJson from 'ui-ingredients/package.json';
 
 let links: {
@@ -155,11 +155,13 @@ let theme = useTheme();
 						<h1
 							class="font-lexend text-4xl font-semibold tracking-tight lg:text-5xl"
 						>
-							Build accessible Svelte UIs without fighting design constraints
+							Build accessible Svelte UIs without fighting design
+							<span
+								class="underline decoration-wavy decoration-[1.75px] underline-offset-[0.16em] decoration-indigo-500 dark:decoration-pink-400"
+							>
+								constraints
+							</span>
 						</h1>
-						<div
-							class="hero-accent h-1 w-40 rounded-full bg-linear-to-r from-indigo-500 via-fuchsia-500 to-cyan-500"
-						></div>
 						<p class="text-lg text-neutral-600 dark:text-neutral-300">
 							UI Ingredients gives you unstyled, behavior-rich components so you
 							can create a design system that matches your product.
@@ -255,28 +257,3 @@ let theme = useTheme();
 	</main>
 </div>
 
-<style lang="postcss">
-.hero-accent {
-	background-size: 200% 100%;
-	animation: hero-accent-shimmer 8s linear infinite;
-}
-
-@keyframes hero-accent-shimmer {
-	0% {
-		background-position: 0% 50%;
-	}
-	100% {
-		background-position: 200% 50%;
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.hero-accent {
-		animation: none;
-	}
-
-	:global(.cta-shimmer-primary) {
-		animation: none;
-	}
-}
-</style>
