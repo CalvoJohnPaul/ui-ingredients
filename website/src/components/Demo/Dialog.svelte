@@ -1,9 +1,9 @@
 <script lang="ts">
+import {XCloseIcon} from '@untitled-theme/icons-svelte';
+import {Dialog, Field, Portal} from 'ui-ingredients';
 import Button from '$components/ui/Button.svelte';
 import Input from '$components/ui/Input.svelte';
 import Label from '$components/ui/Label.svelte';
-import {XCloseIcon} from '@untitled-theme/icons-svelte';
-import {Dialog, Field, Portal} from 'ui-ingredients';
 </script>
 
 <Dialog.Root lazyMount>
@@ -15,12 +15,12 @@ import {Dialog, Field, Portal} from 'ui-ingredients';
 
 	<Portal>
 		<Dialog.Backdrop
-			class="ui-open:animate-fade-in ui-closed:animate-fade-out fixed inset-0 bg-white/50 backdrop-blur dark:bg-black/50"
+			class="ui-open:animate-backdrop-in ui-closed:animate-backdrop-out fixed inset-0 bg-white/50 backdrop-blur dark:bg-black/50"
 		/>
 
 		<Dialog.Positioner>
 			<Dialog.Content
-				class="ui-open:animate-fade-in ui-closed:animate-fade-out fixed top-0 h-full w-full border border-neutral-200 bg-white p-5 lg:left-1/2 lg:top-16 lg:h-auto lg:w-[24rem] lg:-translate-x-1/2 lg:rounded lg:p-8 dark:border-neutral-800 dark:bg-neutral-900"
+				class="ui-open:animate-dialog-in ui-closed:animate-dialog-out fixed top-0 h-full w-full border border-neutral-200 bg-white p-5 lg:left-1/2 lg:top-16 lg:h-auto lg:w-[24rem] lg:-translate-x-1/2 lg:rounded lg:p-8 dark:border-neutral-800 dark:bg-neutral-900"
 			>
 				<Dialog.CloseTrigger class="absolute right-4 top-4">
 					<XCloseIcon />

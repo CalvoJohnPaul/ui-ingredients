@@ -13,11 +13,11 @@ import '@fontsource/lexend/600.css';
 import '@fontsource/lexend/700.css';
 import '../app.css';
 
-import {page} from '$app/state';
 import {injectAnalytics} from '@vercel/analytics/sveltekit';
 import {onMount} from 'svelte';
 import {ThemeProvider} from 'svelte-os-themes';
 import {LocaleProvider} from 'ui-ingredients';
+import {page} from '$app/state';
 import Navbar from './Navbar.svelte';
 import Pagination from './Pagination.svelte';
 import Sidebar from './Sidebar.svelte';
@@ -61,7 +61,6 @@ onMount(() => {
 								"prose-strong:font-medium",
 								"lg:prose-code:text-sm",
 								"min-w-full",
-								"max-w-none",
 								"prose-code:font-medium",
 								"prose-code:before:hidden",
 								"prose-code:after:hidden",
