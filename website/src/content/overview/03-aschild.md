@@ -1,12 +1,12 @@
 ---
 id: aschild
-title: The asChild Prop
-description: The asChild prop lets you render a custom component to ensure consistent styling and behavior while enhancing flexibility and reusability.
+title: The asChild snippet
+description: The asChild snippet lets you render a custom component while preserving behavior, props, and accessibility.
 ---
 
-# The asChild Prop
+# The asChild snippet
 
-The `asChild` prop lets you render a custom component to ensure consistent styling and behavior while enhancing flexibility and reusability.
+Use the `asChild` snippet to render your own element/component while preserving behavior and accessibility attributes from the UI Ingredients part.
 
 ## Usage
 
@@ -25,53 +25,28 @@ The `asChild` prop lets you render a custom component to ensure consistent styli
 </Dialog.Root>
 ```
 
-In this example, the `asChild` prop allows the `Button` to be used as the trigger for the `Dialog`, inheriting its behaviors from `Dialog.Trigger`.
+In this example, `Dialog.Trigger` is set to `asChild` and the `asChild` snippet renders `Button` as the trigger while inheriting behavior from `Dialog.Trigger`.
 
-In some components, the `asChild` snippet can also expose component state as a second argument.
+In components that expose state/API through `asChild`, the first argument is always `props`, and the second argument is the API/state accessor.
 
 ```svelte
 <script>
-  import {Accordion} from 'ui-ingredients';
-  import {ChevronDownIcon} from '@untitled-theme/icons-svelte';
-
-  let items = [
-    {
-      value: '1',
-      label: 'Item one',
-      content: 'Item one description',
-    },
-    {
-      value: '2',
-      label: 'Item two',
-      content: 'Item two description',
-    },
-    {
-      value: '3',
-      label: 'Item three',
-      content: 'Item three description',
-    },
-  ];
+  import IconButton from '$components/ui/IconButton.svelte';
+  import {Bell02Icon, BellOff02Icon} from '@untitled-theme/icons-svelte';
+  import {Toggle} from 'ui-ingredients';
 </script>
 
-<Accordion.Root>
-  {#each items as item}
-    <Accordion.Item value={item.value}>
-      <Accordion.ItemTrigger>
-        {item.label}
-        <Accordion.ItemIndicator>
-          <ChevronDownIcon />
-        </Accordion.ItemIndicator>
-      </Accordion.ItemTrigger>
-      <Accordion.ItemContent>
-        {#snippet asChild(props)}
-          <p {...props()}>
-            {item.content}
-          </p>
-        {/snippet}
-      </Accordion.ItemContent>
-    </Accordion.Item>
-  {/each}
-</Accordion.Root>
+<Toggle.Root>
+  {#snippet asChild(props, api)}
+    <IconButton {...props()}>
+      {#if api().pressed}
+        <BellOff02Icon />
+      {:else}
+        <Bell02Icon />
+      {/if}
+    </IconButton>
+  {/snippet}
+</Toggle.Root>
 ```
 
-You can spread `props()` directly onto your custom element to preserve behavior and accessibility attributes.
+`props()` preserves behavior and accessibility attributes, while `api()` gives you access to state for conditional rendering.
