@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
@@ -26,20 +27,20 @@ let {
 }: PasswordInputProps = $props();
 
 let createPasswordInputPropKeys = defineKeyset<CreatePasswordInputProps>()([
-		'id',
-		'defaultVisible',
-		'visible',
-		'onVisibilityChange',
-		'ids',
-		'disabled',
-		'invalid',
-		'readOnly',
-		'required',
-		'translations',
-		'ignorePasswordManagers',
-		'autoComplete',
-		'name',
-	]);
+	'id',
+	'defaultVisible',
+	'visible',
+	'onVisibilityChange',
+	'ids',
+	'disabled',
+	'invalid',
+	'readOnly',
+	'required',
+	'translations',
+	'ignorePasswordManagers',
+	'autoComplete',
+	'name',
+]);
 
 let [createPasswordInputProps, localProps] = $derived(
 	splitProps(props, createPasswordInputPropKeys),
@@ -65,5 +66,3 @@ setPasswordInputContext(PasswordInput);
 		{@render children?.(PasswordInput)}
 	</div>
 {/if}
-
-

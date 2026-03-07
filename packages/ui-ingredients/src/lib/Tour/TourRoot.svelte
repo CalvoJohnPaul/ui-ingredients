@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {
 	setPresenceContext,
 	setPresenceStrategyPropsContext,
 } from '$lib/Presence/PresenceContext.svelte.js';
@@ -52,5 +53,3 @@ setPresenceStrategyPropsContext(() => presenceStrategyProps);
 </script>
 
 {@render children?.(tour)}
-
-

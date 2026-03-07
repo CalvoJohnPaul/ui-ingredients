@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import type {Merge, SetOptional} from 'type-fest';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import type {Merge, SetOptional} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
 import type {
 	CreatePinInputProps,
@@ -68,5 +69,3 @@ setPinInputContext(pinInput);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(pinInput)}</div>
 {/if}
-
-

@@ -1,6 +1,6 @@
-import type {Accessor} from '$lib/types.js';
 import * as dialog from '@zag-js/dialog';
 import {mergeProps, normalizeProps, useMachine} from '@zag-js/svelte';
+import type {Accessor} from '$lib/types.js';
 import {getEnvironmentContext} from '../EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {getLocaleContext} from '../LocaleProvider/LocaleProviderContext.svelte.js';
 import {parts} from './AlertDialog.anatomy.js';

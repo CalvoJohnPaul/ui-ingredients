@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {setPresenceStrategyPropsContext} from '$lib/Presence/PresenceContext.svelte.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {setPresenceStrategyPropsContext} from '$lib/Presence/PresenceContext.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge, SetOptional} from 'type-fest';
@@ -66,5 +67,3 @@ setPresenceStrategyPropsContext(() => presenceStrategyProps);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(steps)}</div>
 {/if}
-
-

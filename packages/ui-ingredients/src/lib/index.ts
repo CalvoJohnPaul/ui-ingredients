@@ -1,4 +1,7 @@
+export * from '@zag-js/anatomy';
+export * from '@zag-js/svelte';
 export * from './Accordion/index.js';
+export * from './Alert/index.js';
 export * from './AlertDialog/index.js';
 export * from './AngleSlider/index.js';
 export * from './Avatar/index.js';
@@ -8,6 +11,9 @@ export * from './Clipboard/index.js';
 export * from './Collapsible/index.js';
 export * from './ColorPicker/index.js';
 export * from './Combobox/index.js';
+export * from './createFilter.svelte.js';
+export * from './createListCollection.svelte.js';
+export * from './createTreeCollection.svelte.js';
 export * from './DatePicker/index.js';
 export * from './Dialog/index.js';
 export * from './Drawer/index.js';
@@ -42,6 +48,7 @@ export * from './Slider/index.js';
 export * from './Splitter/index.js';
 export * from './Steps/index.js';
 export * from './Switch/index.js';
+export * from './splitProps.js';
 export * from './Tabs/index.js';
 export * from './TagsInput/index.js';
 export * from './Timer/index.js';
@@ -51,12 +58,4 @@ export * from './ToggleGroup/index.js';
 export * from './Tooltip/index.js';
 export * from './Tour/index.js';
 export * from './TreeView/index.js';
-
-export * from './createFilter.svelte.js';
-export * from './createListCollection.svelte.js';
-export * from './createTreeCollection.svelte.js';
-export * from './splitProps.js';
 export * from './types.js';
-
-export * from '@zag-js/anatomy';
-export * from '@zag-js/svelte';

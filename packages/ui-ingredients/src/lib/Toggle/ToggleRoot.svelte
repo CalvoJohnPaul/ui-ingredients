@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge} from 'type-fest';
 import type {HtmlIngredientProps} from '../types.js';
@@ -49,5 +50,3 @@ setToggleContext(toggle);
 		{@render children?.(toggle)}
 	</button>
 {/if}
-
-

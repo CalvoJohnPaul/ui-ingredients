@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {type Snippet} from 'svelte';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {type Snippet} from 'svelte';
 import {
 	createPresence,
 	type PresenceStrategyProps,
@@ -62,5 +63,3 @@ if (parentMenu?.()) {
 </script>
 
 {@render children?.(menu)}
-
-

@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {setCollapsibleContext} from '$lib/Collapsible/CollapsibleContext.svelte.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {setCollapsibleContext} from '$lib/Collapsible/CollapsibleContext.svelte.js';
 import {createCollapsible} from '$lib/Collapsible/createCollapsible.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
@@ -58,5 +59,3 @@ setTreeViewNodePropsContext(() => nodeProps);
 {:else}
 	<div bind:this={ref} {...mergedProps}>{@render children?.(nodeState)}</div>
 {/if}
-
-

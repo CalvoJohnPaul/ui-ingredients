@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {MarkerProps} from '@zag-js/angle-slider';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge} from 'type-fest';
@@ -32,5 +33,3 @@ let mergedProps = $derived(
 {:else}
 	<div {...mergedProps}>{@render children?.()}</div>
 {/if}
-
-

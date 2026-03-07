@@ -1,16 +1,16 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge, SetOptional} from 'type-fest';
+import {defineKeyset} from '$lib/defineKeySet.js';
 import type {PresenceStrategyProps} from '../Presence/createPresence.svelte.js';
 import {setPresenceStrategyPropsContext} from '../Presence/PresenceContext.svelte.js';
 import {splitProps} from '../splitProps.js';
 import type {HtmlIngredientProps} from '../types.js';
 import {setAccordionContext} from './AccordionContext.svelte.js';
 import {
-	createAccordion,
 	type CreateAccordionProps,
 	type CreateAccordionReturn,
+	createAccordion,
 } from './createAccordion.svelte.js';
 
 export interface AccordionProps

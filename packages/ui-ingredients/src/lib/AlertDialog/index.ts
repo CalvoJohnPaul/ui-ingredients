@@ -1,15 +1,12 @@
+export {anatomy as alertDialogAnatomy} from './AlertDialog.anatomy.js';
 export * as AlertDialog from './AlertDialog.js';
-
 export type {AlertDialogBackdropProps} from './AlertDialogBackdrop.svelte';
 export type {AlertDialogCloseTriggerProps} from './AlertDialogCloseTrigger.svelte';
 export type {AlertDialogContentProps} from './AlertDialogContent.svelte';
+export * from './AlertDialogContext.svelte.js';
 export type {AlertDialogDescriptionProps} from './AlertDialogDescription.svelte';
 export type {AlertDialogPositionerProps} from './AlertDialogPositioner.svelte';
 export type {AlertDialogProps} from './AlertDialogRoot.svelte';
 export type {AlertDialogTitleProps} from './AlertDialogTitle.svelte';
 export type {AlertDialogTriggerProps} from './AlertDialogTrigger.svelte';
-
-export * from './AlertDialogContext.svelte.js';
 export * from './createAlertDialog.svelte.js';
-
-export {anatomy as alertDialogAnatomy} from './AlertDialog.anatomy.js';

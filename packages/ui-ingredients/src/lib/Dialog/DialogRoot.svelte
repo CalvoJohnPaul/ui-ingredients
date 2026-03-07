@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {Accessor} from '$lib/types.js';
 import type {Snippet} from 'svelte';
 import type {SetOptional} from 'type-fest';
@@ -50,5 +51,3 @@ setPresenceStrategyPropsContext(() => presenceStrategyProps);
 </script>
 
 {@render children?.(dialog)}
-
-

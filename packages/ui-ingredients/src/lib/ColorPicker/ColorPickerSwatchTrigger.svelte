@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {SwatchTriggerProps} from '@zag-js/color-picker';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge} from 'type-fest';
@@ -46,5 +47,3 @@ let mergedProps = $derived(
 		{@render children?.()}
 	</button>
 {/if}
-
-

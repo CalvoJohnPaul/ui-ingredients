@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {IndicatorProps} from '@zag-js/carousel';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge} from 'type-fest';
@@ -21,10 +22,7 @@ let {
 	...props
 }: CarouselIndicatorProps = $props();
 
-let indicatorPropKeys = defineKeyset<IndicatorProps>()([
-	'index',
-	'readOnly',
-]);
+let indicatorPropKeys = defineKeyset<IndicatorProps>()(['index', 'readOnly']);
 
 let [indicatorProps, localProps] = $derived(
 	splitProps(props, indicatorPropKeys),
@@ -43,5 +41,3 @@ let mergedProps = $derived(
 		{@render children?.()}
 	</button>
 {/if}
-
-

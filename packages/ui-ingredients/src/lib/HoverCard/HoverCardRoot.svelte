@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {setPresenceContext} from '$lib/Presence/PresenceContext.svelte.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {setPresenceContext} from '$lib/Presence/PresenceContext.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
 import type {Accessor} from '$lib/types.js';
 import type {Snippet} from 'svelte';
@@ -48,5 +49,3 @@ setPresenceContext(presence);
 </script>
 
 {@render children?.(hoverCard)}
-
-

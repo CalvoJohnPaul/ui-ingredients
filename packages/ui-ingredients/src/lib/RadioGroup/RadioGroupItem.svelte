@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {ItemProps, ItemState} from '@zag-js/radio-group';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge} from 'type-fest';
@@ -24,11 +25,7 @@ let {
 	...props
 }: RadioGroupItemProps = $props();
 
-let itemPropKeys = defineKeyset<ItemProps>()([
-	'value',
-	'disabled',
-	'invalid',
-]);
+let itemPropKeys = defineKeyset<ItemProps>()(['value', 'disabled', 'invalid']);
 
 let [itemProps, localProps] = $derived(splitProps(props, itemPropKeys));
 let radioGroup = getRadioGroupContext();
@@ -47,5 +44,3 @@ setRadioGroupItemPropsContext(() => itemProps);
 		{@render children?.(itemState)}
 	</label>
 {/if}
-
-

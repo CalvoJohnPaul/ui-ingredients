@@ -1,5 +1,6 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {InputProps} from '@zag-js/date-picker';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge} from 'type-fest';
@@ -27,5 +28,3 @@ let mergedProps = $derived(
 {:else}
 	<input bind:this={ref} {...mergedProps}>
 {/if}
-
-

@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';
 import type {ItemProps, ItemState} from '@zag-js/accordion';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge} from 'type-fest';
+import {defineKeyset} from '$lib/defineKeySet.js';
 import {setCollapsibleContext} from '../Collapsible/CollapsibleContext.svelte.js';
 import {createCollapsible} from '../Collapsible/createCollapsible.svelte.js';
 import {splitProps} from '../splitProps.js';

@@ -142,8 +142,7 @@ export default apiEntryFromAnatomy(fieldAnatomy)({
     context: {
       autoResize: {
         type: 'boolean',
-        description:
-          'Automatically resize the textarea based on the content length.',
+        description: 'Automatically resize the textarea based on the content length.',
       },
       asChild: {
         type: 'Snippet',

@@ -1,8 +1,9 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';import {splitProps} from '$lib/splitProps.js';
-import type {Accessor} from '$lib/types.js';
 import type {Snippet} from 'svelte';
 import type {SetOptional} from 'type-fest';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
+import type {Accessor} from '$lib/types.js';
 import type {PresenceStrategyProps} from '../Presence/createPresence.svelte.js';
 import {createPresence} from '../Presence/createPresence.svelte.js';
 import {
@@ -50,5 +51,3 @@ setPresenceStrategyPropsContext(() => presenceStrategyProps);
 </script>
 
 {@render children?.(alertDialog)}
-
-

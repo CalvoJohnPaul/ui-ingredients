@@ -1,7 +1,7 @@
 <script lang="ts" module>
-import { mergeProps } from '@zag-js/svelte';
-import type { HtmlIngredientProps } from '../types.js';
-import { getTooltipContext } from './TooltipContext.svelte.js';
+import {mergeProps} from '@zag-js/svelte';
+import type {HtmlIngredientProps} from '../types.js';
+import {getTooltipContext} from './TooltipContext.svelte.js';
 
 export interface TooltipArrowProps
 	extends HtmlIngredientProps<'span', HTMLSpanElement> {}

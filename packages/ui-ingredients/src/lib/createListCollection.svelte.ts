@@ -1,4 +1,4 @@
-import {ListCollection, type CollectionOptions} from '@zag-js/collection';
+import {type CollectionOptions, ListCollection} from '@zag-js/collection';
 import {reflect} from '@zag-js/svelte';
 import {isFunction} from 'es-toolkit';
 import type {Accessor} from './types.js';
