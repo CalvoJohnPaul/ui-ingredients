@@ -11,6 +11,8 @@ import '@fontsource/lexend/700.css';
 import '../app.css';
 
 import {page} from '$app/state';
+import {injectAnalytics} from '@vercel/analytics/sveltekit';
+import {onMount} from 'svelte';
 import {ThemeProvider} from 'svelte-os-themes';
 import {LocaleProvider} from 'ui-ingredients';
 import Navbar from './Navbar.svelte';
@@ -20,6 +22,10 @@ import TableOfContents from './TableOfContents.svelte';
 
 let {children} = $props();
 let home = $derived(page.url.pathname === '/');
+
+onMount(() => {
+	injectAnalytics();
+});
 </script>
 
 <LocaleProvider locale="en-US">

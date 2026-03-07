@@ -3,12 +3,13 @@ import type {RequestHandler} from '@sveltejs/kit';
 
 export const prerender = true;
 
-export const GET: RequestHandler = async ({url: {origin}}) => {
+export const GET: RequestHandler = async () => {
   const urls = [
+    '/',
     ...components.map((item) => item.permalink),
     ...utilities.map((item) => item.permalink),
     ...overview.map((item) => item.permalink),
-  ].map((path) => `${origin}${path}`);
+  ].map((path) => `https://ui-ingredients.xyz${path}`);
 
   const content = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

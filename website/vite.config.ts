@@ -1,9 +1,10 @@
-import { sveltekit } from '@sveltejs/kit/vite';
+import {sveltekit} from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
+import devtoolsJson from 'vite-plugin-devtools-json';
 
 export default defineConfig({
-  plugins: [sveltekit(), tailwindcss()],
+  plugins: [devtoolsJson(), sveltekit(), tailwindcss()],
   server: {
     port: 3000,
   },

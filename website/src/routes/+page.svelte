@@ -1,5 +1,6 @@
 <script lang="ts">
 import {page} from '$app/state';
+import Metadata from '$components/Metadata.svelte';
 import Badge from '$components/ui/Badge.svelte';
 import Button from '$components/ui/Button.svelte';
 import Link from '$components/ui/Link.svelte';
@@ -53,6 +54,11 @@ const highlights = [
 
 let theme = useTheme();
 </script>
+
+<Metadata
+	title="Headless component library for Svelte"
+	description="Start building accessible Svelte UIs without fighting design constraints. UI Ingredients gives you unstyled, behavior-rich components so you can create a design system that matches your product."
+/>
 
 <div class="h-16"></div>
 <header

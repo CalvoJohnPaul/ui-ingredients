@@ -9,6 +9,7 @@ const content = `
   .filter(Boolean)
   .join('\n');
 
+export const prerender = true;
 export const GET: RequestHandler = () => {
   return new Response(content, {
     headers: {

@@ -1,20 +1,21 @@
 <script lang="ts">
 import Markdown from '$templates/Markdown.svelte';
+import Metadata from '$components/Metadata.svelte';
 
 let {data} = $props();
 </script>
 
 <svelte:head>
-	<title>{data.title} | UI Ingredients</title>
-	<meta name="description" content={data.description}>
-	<meta property="og:title" content={data.title}>
-	<meta property="og:description" content={data.description}>
-	<meta property="og:site_name" content="UI Ingredients">
-	<meta name="twitter:site" content="UI Ingredients">
-	<meta name="twitter:title" content={data.title}>
-	<meta name="twitter:description" content={data.description}>
+	<script type="application/ld+json">{articleJsonLd}</script>
+	<script type="application/ld+json">{breadcrumbJsonLd}</script>
 </svelte:head>
 
-{#key data.id}
-	<Markdown {...data} />
-{/key}
+<title>{data.title} | UI Ingredients</title>
+
+<Metadata
+	title={data.title}
+	description={data.description}
+	canonical="https://ui-ingredients.xyz/{data.id}"
+/>
+
+<Markdown {...data} />
