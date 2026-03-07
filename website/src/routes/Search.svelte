@@ -1,8 +1,8 @@
 <script lang="ts">
-import {goto} from '$app/navigation';
-import {components, overview, utilities} from '$velite';
 import {CommandIcon, SearchLgIcon} from '@untitled-theme/icons-svelte';
 import {Combobox, createListCollection, Dialog, Portal} from 'ui-ingredients';
+import {goto} from '$app/navigation';
+import {components, overview, utilities} from '$velite';
 
 let searchables = [
 	/**/
@@ -106,11 +106,11 @@ $effect(() => {
 	</Dialog.Trigger>
 	<Portal>
 		<Dialog.Backdrop
-			class="ui-open:animate-fade-in ui-closed:animate-fade-out fixed left-0 top-0 size-full bg-white/50 dark:bg-black/50"
+			class="ui-open:animate-backdrop-in ui-closed:animate-backdrop-out fixed left-0 top-0 size-full bg-white/50 dark:bg-black/50 backdrop-blur-xs"
 		/>
 		<Dialog.Positioner>
 			<Dialog.Content
-				class="fixed left-1/2 top-32 w-136 -translate-x-1/2 overflow-hidden rounded-md border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-900"
+				class="fixed left-1/2 top-32 w-136 -translate-x-1/2 overflow-hidden rounded-md border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-900 ui-open:animate-dialog-in ui-closed:animate-dialog-out"
 			>
 				<Combobox.Root
 					{collection}
@@ -144,7 +144,6 @@ $effect(() => {
 							ESC
 						</span>
 					</Combobox.Control>
-
 					<Combobox.Content
 						class="max-h-73 space-y-0.5 overflow-y-auto border-t border-neutral-200 dark:border-neutral-700"
 					>
