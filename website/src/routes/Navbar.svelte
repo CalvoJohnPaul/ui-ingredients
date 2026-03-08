@@ -1,7 +1,4 @@
 <script lang="ts">
-import {page} from '$app/state';
-import Badge from '$components/ui/Badge.svelte';
-import {navbarStore} from '$stores/navbar.svelte';
 import {
 	CloudMoonIcon,
 	CloudSun02Icon,
@@ -9,6 +6,9 @@ import {
 } from '@untitled-theme/icons-svelte';
 import {useTheme} from 'svelte-os-themes';
 import packageJson from 'ui-ingredients/package.json';
+import {page} from '$app/state';
+import Badge from '$components/ui/Badge.svelte';
+import {navbarStore} from '$stores/navbar.svelte';
 
 let theme = useTheme();
 
@@ -78,10 +78,13 @@ let links: {
 
 			<button
 				type="button"
-				{...theme.getTriggerProps({
-          value: 'auto',
-          sequence: ['dark', 'light'],
-        })}
+				onclick={() => {
+					if (theme.current === 'dark') {
+						theme.current = 'light';
+					} else {
+						theme.current = 'dark';
+					}
+				}}
 			>
 				{#if theme.current === 'dark'}
 					<CloudMoonIcon class="size-5" />

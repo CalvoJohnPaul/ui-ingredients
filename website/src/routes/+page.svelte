@@ -95,10 +95,13 @@ let theme = useTheme();
 
 			<button
 				type="button"
-				{...theme.getTriggerProps({
-          value: 'auto',
-          sequence: ['dark', 'light'],
-        })}
+				onclick={() => {
+					if (theme.current === 'dark') {
+						theme.current = 'light';
+					} else {
+						theme.current = 'dark';
+					}
+				}}
 			>
 				{#if theme.current === 'dark'}
 					<CloudMoonIcon class="size-5" />

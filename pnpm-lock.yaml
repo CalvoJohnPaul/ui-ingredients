@@ -305,8 +305,8 @@ importers:
         specifier: ^4.0.1
         version: 4.0.1
       svelte-os-themes:
-        specifier: ^1.0.0
-        version: 1.0.0(svelte@5.53.7)
+        specifier: ^3.0.0
+        version: 3.0.0(svelte@5.53.7)
       tailwind-variants:
         specifier: ^3.2.2
         version: 3.2.2(tailwind-merge@3.0.2)(tailwindcss@4.2.1)
@@ -3544,8 +3544,8 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: '>=5.0.0'
 
-  svelte-os-themes@1.0.0:
-    resolution: {integrity: sha512-IjVInpo9G3GyP3NwKACqn1dBFGFxPhhlY4LYPpFbBCtxkMu0l2e+iQJXImknHtO4SqfJaBc+JzAff9zMxpzccg==}
+  svelte-os-themes@3.0.0:
+    resolution: {integrity: sha512-PVjFPAjP2MJhH7UpTEAEQ+FvXmcK8sgib5ewdVxu1thUaH7HPl/fKB97zg73GmDWMRoYqv4oni73XQELCN/V2Q==}
     peerDependencies:
       svelte: ^5.0.0
 
@@ -7387,7 +7387,7 @@ snapshots:
     transitivePeerDependencies:
       - picomatch
 
-  svelte-os-themes@1.0.0(svelte@5.53.7):
+  svelte-os-themes@3.0.0(svelte@5.53.7):
     dependencies:
       svelte: 5.53.7
 
