@@ -1,5 +1,7 @@
 <script lang="ts" module>
+import {dataAttr} from '@zag-js/dom-query';
 import {mergeProps} from '@zag-js/svelte';
+import {omit} from 'es-toolkit';
 import type {HtmlIngredientProps} from '../types.js';
 import {getClipboardContext} from './ClipboardContext.svelte.js';
 
@@ -22,7 +24,11 @@ let {
 let clipboard = getClipboardContext();
 let indicatorState = (): IndicatorState => ({copied: clipboard().copied});
 let mergedProps = $derived(
-	mergeProps(clipboard().getIndicatorProps(indicatorState()), props),
+	mergeProps(
+		omit(clipboard().getIndicatorProps(indicatorState()), ['hidden']),
+		props,
+		{'data-copied': dataAttr(clipboard().copied)},
+	),
 );
 </script>
 

@@ -52,8 +52,8 @@ description: A component for guiding users through a series of steps or features
 </script>
 
 <Tour.Root {steps}>
-  {#snippet children(ctx)}
-    {@const actions = ctx.step?.actions ?? []}
+  {#snippet children(api)}
+    {@const actions = api().step?.actions ?? []}
 
     <Tour.Trigger>Start</Tour.Trigger>
     <Tour.Backdrop />

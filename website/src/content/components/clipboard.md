@@ -24,8 +24,8 @@ description: A component for copying text or content to the user's clipboard.
     <Clipboard.Input />
     <Clipboard.Trigger>
       <Clipboard.Indicator>
-        {#snippet children(ctx)}
-          {#if ctx.copied}
+        {#snippet children(api)}
+          {#if api().copied}
             <Copy01Icon />
           {:else}
             <CheckIcon />

@@ -1,9 +1,9 @@
 <script lang="ts">
+import { CheckIcon, Copy01Icon } from '@untitled-theme/icons-svelte';
+import { Clipboard } from 'ui-ingredients';
 import IconButton from '$components/ui/IconButton.svelte';
 import Input from '$components/ui/Input.svelte';
 import Label from '$components/ui/Label.svelte';
-import {CheckIcon, Copy01Icon} from '@untitled-theme/icons-svelte';
-import {Clipboard} from 'ui-ingredients';
 </script>
 
 <Clipboard.Root value="UI Ingredients" class="mx-auto max-w-[20rem]">
@@ -19,18 +19,17 @@ import {Clipboard} from 'ui-ingredients';
 				<Input {...props()} />
 			{/snippet}
 		</Clipboard.Input>
-
 		<Clipboard.Trigger
 			class="ui-copied:text-green-600 dark:ui-copied:text-green-500"
 		>
 			{#snippet asChild(props)}
 				<IconButton {...props()}>
-					<Clipboard.Indicator class="size-5">
-						{#snippet asChild(props, ctx)}
-							{#if ctx().copied}
-								<CheckIcon {...props()} />
+					<Clipboard.Indicator>
+						{#snippet asChild(props, state)}
+							{#if state().copied}
+								<CheckIcon {...props()} class="size-5" />
 							{:else}
-								<Copy01Icon {...props()} />
+								<Copy01Icon {...props()} class="size-5" />
 							{/if}
 						{/snippet}
 					</Clipboard.Indicator>
