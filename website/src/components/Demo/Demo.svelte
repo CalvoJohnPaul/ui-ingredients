@@ -17,6 +17,7 @@ import Drawer from './Drawer.svelte';
 import Editable from './Editable.svelte';
 import Field from './Field.svelte';
 import FileUpload from './FileUpload.svelte';
+import FloatingPanel from './FloatingPanel.svelte';
 import HoverCard from './HoverCard.svelte';
 import Marquee from './Marquee.svelte';
 import Menu from './Menu.svelte';
@@ -54,7 +55,7 @@ const MAP: Record<string, Component | null> = {
 	'color-picker': ColorPicker,
 	'date-picker': DatePicker,
 	'file-upload': FileUpload,
-	'floating-panel': null,
+	'floating-panel': FloatingPanel,
 	'focus-trap': null,
 	'hover-card': HoverCard,
 	'number-input': NumberInput,
