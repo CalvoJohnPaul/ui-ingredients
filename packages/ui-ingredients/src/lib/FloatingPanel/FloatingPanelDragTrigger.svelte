@@ -4,7 +4,7 @@ import type {HtmlIngredientProps} from '../types.js';
 import {getFloatingPanelContext} from './FloatingPanelContext.svelte.js';
 
 export interface FloatingPanelDragTriggerProps
-	extends HtmlIngredientProps<'button', HTMLButtonElement> {}
+	extends HtmlIngredientProps<'div', HTMLDivElement> {}
 </script>
 
 <script lang="ts">
@@ -24,7 +24,5 @@ let mergedProps = $derived(
 {#if asChild}
 	{@render asChild(() => mergedProps)}
 {:else}
-	<button type="button" bind:this={ref} {...mergedProps}>
-		{@render children?.()}
-	</button>
+	<div bind:this={ref} {...mergedProps}>{@render children?.()}</div>
 {/if}
