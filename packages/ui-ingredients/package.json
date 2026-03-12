@@ -159,7 +159,7 @@
 		"type-fest": "^5.4.4"
 	},
 	"peerDependencies": {
-		"svelte": "^5.20.0"
+		"svelte": "^5.29.0"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-vercel": "^6.3.3",
