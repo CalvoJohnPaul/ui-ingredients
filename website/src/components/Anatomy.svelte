@@ -1,4 +1,6 @@
 <script lang="ts">
+import {createGradient} from '@zag-js/anatomy-icons';
+import type {Component} from 'svelte';
 import {
 	AccordionAnatomyIcon,
 	AvatarAnatomyIcon,
@@ -12,6 +14,7 @@ import {
 	EditableAnatomyIcon,
 	FieldAnatomyIcon,
 	FileUploadAnatomyIcon,
+	FloatingPanelAnatomyIcon,
 	HoverCardAnatomyIcon,
 	MenuAnatomyIcon,
 	NumberInputAnatomyIcon,
@@ -40,8 +43,6 @@ import {
 	TourAnatomyIcon,
 	TreeViewAnatomyIcon,
 } from '$components/icons/anatomy';
-import {createGradient} from '@zag-js/anatomy-icons';
-import type {Component} from 'svelte';
 
 const MAP: Record<string, Component | null> = {
 	'alert-dialog': DialogAnatomyIcon,
@@ -49,7 +50,7 @@ const MAP: Record<string, Component | null> = {
 	'color-picker': ColorPickerAnatomyIcon,
 	'date-picker': DatePickerAnatomyIcon,
 	'file-upload': FileUploadAnatomyIcon,
-	'floating-panel': null,
+	'floating-panel': FloatingPanelAnatomyIcon,
 	'hover-card': HoverCardAnatomyIcon,
 	'number-input': NumberInputAnatomyIcon,
 	'pin-input': PinInputAnatomyIcon,
