@@ -9,7 +9,7 @@ let {data} = $props();
 <Metadata
 	title={data.title}
 	description={data.description}
-	canonical="https://ui-ingredients.xyz/{data.id}"
+	canonical={`https://ui-ingredients.xyz${data.permalink ?? `/overview/${data.id}`}`}
 />
 
 {@html data.content}

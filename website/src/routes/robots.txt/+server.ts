@@ -3,6 +3,8 @@ import type {RequestHandler} from '@sveltejs/kit';
 const content = `
   User-agent: *
   Allow: /
+  Host: ui-ingredients.xyz
+  Sitemap: https://ui-ingredients.xyz/sitemap.xml
 `
   .split('\n')
   .map((s) => s.trim())
