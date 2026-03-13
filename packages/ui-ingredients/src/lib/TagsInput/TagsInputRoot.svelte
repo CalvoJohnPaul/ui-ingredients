@@ -1,13 +1,13 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';
-import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge, SetOptional} from 'type-fest';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {HtmlIngredientProps} from '../types.js';
 import {
-	createTagsInput,
 	type CreateTagsInputProps,
 	type CreateTagsInputReturn,
+	createTagsInput,
 } from './createTagsInput.svelte.js';
 import {setTagsInputContext} from './TagsInputContext.svelte.js';
 
@@ -57,6 +57,7 @@ let createTagsInputPropKeys = defineKeyset<CreateTagsInputProps>()([
 	'onPointerDownOutside',
 	'onFocusOutside',
 	'onInteractOutside',
+	'allowDuplicates',
 ]);
 
 let [createTagsInputProps, localProps] = $derived(

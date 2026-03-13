@@ -1,15 +1,15 @@
 <script lang="ts" module>
+import {mergeProps} from '@zag-js/svelte';
+import type {Merge, SetOptional} from 'type-fest';
 import {defineKeyset} from '$lib/defineKeySet.js';
 import {setPresenceStrategyPropsContext} from '$lib/Presence/PresenceContext.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
-import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional} from 'type-fest';
 import type {PresenceStrategyProps} from '../Presence/createPresence.svelte.js';
 import type {HtmlIngredientProps} from '../types.js';
 import {
-	createTreeView,
 	type CreateTreeViewProps,
 	type CreateTreeViewReturn,
+	createTreeView,
 } from './createTreeView.svelte.js';
 import {setTreeViewContext} from './TreeViewContext.svelte.js';
 
@@ -67,6 +67,7 @@ let createTreeViewPropKeys = defineKeyset<CreateTreeViewProps>()([
 	'loadChildren',
 	'scrollToIndexFn',
 	'id',
+	'translations',
 ]);
 
 let [createTreeViewProps, localProps] = $derived(

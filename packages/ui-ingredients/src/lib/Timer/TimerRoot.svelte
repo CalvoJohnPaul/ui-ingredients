@@ -1,13 +1,13 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';
-import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge, SetOptional} from 'type-fest';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {HtmlIngredientProps} from '../types.js';
 import {
-	createTimer,
 	type CreateTimerProps,
 	type CreateTimerReturn,
+	createTimer,
 } from './createTimer.svelte.js';
 import {setTimerContext} from './TimerContext.svelte.js';
 
@@ -31,6 +31,7 @@ let createTimerPropKeys = defineKeyset<CreateTimerProps>()([
 	'onTick',
 	'onComplete',
 	'id',
+	'translations',
 ]);
 
 let [createTimerProps, localProps] = $derived(

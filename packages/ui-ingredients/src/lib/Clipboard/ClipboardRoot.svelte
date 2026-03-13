@@ -1,8 +1,8 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';
-import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge, SetOptional} from 'type-fest';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {HtmlIngredientProps} from '../types.js';
 import {setClipboardContext} from './ClipboardContext.svelte.js';
 import type {
@@ -34,6 +34,7 @@ let createClipboardPropKeys = defineKeyset<CreateClipboardProps>()([
 	'onValueChange',
 	'onStatusChange',
 	'timeout',
+	'translations',
 ]);
 
 let [createClipboardProps, localProps] = $derived(

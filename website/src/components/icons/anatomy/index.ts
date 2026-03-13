@@ -6,6 +6,7 @@ export {default as CircularProgressAnatomyIcon} from './CircularProgressAnatomyI
 export {default as ClipboardAnatomyIcon} from './ClipboardAnatomyIcon.svelte';
 export {default as ColorPickerAnatomyIcon} from './ColorPickerAnatomyIcon.svelte';
 export {default as ComboboxAnatomyIcon} from './ComboboxAnatomyIcon.svelte';
+export {default as DateInputAnatomyIcon} from './DateInputAnatomyIcon.svelte';
 export {default as DatePickerAnatomyIcon} from './DatePickerAnatomyIcon.svelte';
 export {default as DialogAnatomyIcon} from './DialogAnatomyIcon.svelte';
 export {default as EditableAnatomyIcon} from './EditableAnatomyIcon.svelte';

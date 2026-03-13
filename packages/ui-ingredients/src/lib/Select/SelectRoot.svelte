@@ -1,18 +1,18 @@
 <script lang="ts" module>
+import {mergeProps} from '@zag-js/svelte';
+import type {Merge, SetOptional} from 'type-fest';
 import {defineKeyset} from '$lib/defineKeySet.js';
 import {setPresenceContext} from '$lib/Presence/PresenceContext.svelte.js';
 import {splitProps} from '$lib/splitProps.js';
-import {mergeProps} from '@zag-js/svelte';
-import type {Merge, SetOptional} from 'type-fest';
 import {
 	createPresence,
 	type PresenceStrategyProps,
 } from '../Presence/createPresence.svelte.js';
 import type {HtmlIngredientProps} from '../types.js';
 import {
-	createSelect,
 	type CreateSelectProps,
 	type CreateSelectReturn,
+	createSelect,
 } from './createSelect.svelte.js';
 import {setSelectContext} from './SelectContext.svelte.js';
 
@@ -63,6 +63,7 @@ let createSelectPropKeys = defineKeyset<CreateSelectProps>()([
 	'onPointerDownOutside',
 	'onFocusOutside',
 	'onInteractOutside',
+	'translations',
 ]);
 
 let [createSelectProps, selectProps] = $derived(
