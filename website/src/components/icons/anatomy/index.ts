@@ -36,6 +36,7 @@ export {default as SwitchAnatomyIcon} from './SwitchAnatomyIcon.svelte';
 export {default as TabsAnatomyIcon} from './TabsAnatomyIcon.svelte';
 export {default as TagsInputAnatomyIcon} from './TagsInputAnatomyIcon.svelte';
 export {default as ToastAnatomyIcon} from './ToastAnatomyIcon.svelte';
+export {default as TocAnatomyIcon} from './TocAnatomyIcon.svelte';
 export {default as ToggleGroupAnatomyIcon} from './ToggleGroupAnatomyIcon.svelte';
 export {default as TooltipAnatomyIcon} from './TooltipAnatomyIcon.svelte';
 export {default as TourAnatomyIcon} from './TourAnatomyIcon.svelte';
