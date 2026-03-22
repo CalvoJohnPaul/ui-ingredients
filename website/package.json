@@ -26,23 +26,23 @@
 		"svelte-os-themes": "^4.0.0",
 		"tailwind-variants": "^3.2.2",
 		"tailwind-zag": "^1.1.0",
-		"ui-ingredients": "^2.2.0"
+		"ui-ingredients": "^2.3.0"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-vercel": "^6.3.3",
 		"@sveltejs/kit": "^2.55.0",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@tailwindcss/typography": "^0.5.19",
-		"@tailwindcss/vite": "^4.2.1",
+		"@tailwindcss/vite": "^4.2.2",
 		"@types/lodash.debounce": "^4.0.9",
 		"@types/lodash.omit": "^4.5.9",
 		"schema-dts": "^1.1.5",
-		"svelte": "^5.53.12",
+		"svelte": "^5.54.1",
 		"svelte-check": "^4.4.5",
-		"tailwindcss": "^4.2.1",
+		"tailwindcss": "^4.2.2",
 		"typescript": "^5.9.3",
 		"velite": "^0.3.1",
-		"vite": "^8.0.0",
+		"vite": "^8.0.1",
 		"vite-plugin-devtools-json": "^1.0.0"
 	}
 }
