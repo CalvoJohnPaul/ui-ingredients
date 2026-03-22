@@ -1,7 +1,7 @@
-import type {Accessor} from '$lib/types.js';
 import * as colorPicker from '@zag-js/color-picker';
 import {normalizeProps, useMachine} from '@zag-js/svelte';
 import type {HTMLAttributes} from 'svelte/elements';
+import type {Accessor} from '$lib/types.js';
 import {getEnvironmentContext} from '../EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {getLocaleContext} from '../LocaleProvider/LocaleProviderContext.svelte.js';
 import {parts} from './ColorPicker.anatomy.js';

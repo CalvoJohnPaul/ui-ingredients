@@ -1,13 +1,10 @@
+export {anatomy as tooltipAnatomy} from '@zag-js/tooltip';
+export * from './createTooltip.svelte.js';
 export * as Tooltip from './Tooltip.js';
-
 export type {TooltipArrowProps} from './TooltipArrow.svelte';
 export type {TooltipArrowTipProps} from './TooltipArrowTip.svelte';
 export type {TooltipContentProps} from './TooltipContent.svelte';
+export * from './TooltipContext.svelte.js';
 export type {TooltipPositionerProps} from './TooltipPositioner.svelte';
 export type {TooltipProps} from './TooltipRoot.svelte';
 export type {TooltipTriggerProps} from './TooltipTrigger.svelte';
-
-export * from './createTooltip.svelte.js';
-export * from './TooltipContext.svelte.js';
-
-export {anatomy as tooltipAnatomy} from '@zag-js/tooltip';

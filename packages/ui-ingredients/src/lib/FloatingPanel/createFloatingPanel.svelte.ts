@@ -1,8 +1,8 @@
+import * as floatingPanel from '@zag-js/floating-panel';
+import {normalizeProps, useMachine} from '@zag-js/svelte';
 import {getEnvironmentContext} from '$lib/EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {getLocaleContext} from '$lib/LocaleProvider/LocaleProviderContext.svelte.js';
 import type {Accessor} from '$lib/types.js';
-import * as floatingPanel from '@zag-js/floating-panel';
-import {normalizeProps, useMachine} from '@zag-js/svelte';
 
 export interface CreateFloatingPanelProps
   extends Omit<floatingPanel.Props, 'dir' | 'getRootNode'> {}

@@ -1,5 +1,7 @@
+export {anatomy as sliderAnatomy} from '@zag-js/slider';
+export * from './createSlider.svelte.js';
 export * as Slider from './Slider.js';
-
+export * from './SliderContext.svelte.js';
 export type {SliderControlProps} from './SliderControl.svelte';
 export type {SliderDraggingIndicatorProps} from './SliderDraggingIndicator.svelte';
 export type {SliderHiddenInputProps} from './SliderHiddenInput.svelte';
@@ -11,8 +13,3 @@ export type {SliderProps} from './SliderRoot.svelte';
 export type {SliderThumbProps} from './SliderThumb.svelte';
 export type {SliderTrackProps} from './SliderTrack.svelte';
 export type {SliderValueTextProps} from './SliderValueText.svelte';
-
-export * from './createSlider.svelte.js';
-export * from './SliderContext.svelte.js';
-
-export {anatomy as sliderAnatomy} from '@zag-js/slider';

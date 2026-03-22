@@ -1,14 +1,14 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';
-import {splitProps} from '$lib/splitProps.js';
 import {mergeProps} from '@zag-js/svelte';
 import type {Merge, SetOptional} from 'type-fest';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {HtmlIngredientProps} from '../types.js';
 import {setAvatarContext} from './AvatarContext.svelte.js';
 import {
-	createAvatar,
 	type CreateAvatarProps,
 	type CreateAvatarReturn,
+	createAvatar,
 } from './createAvatar.svelte.js';
 
 export interface AvatarProps

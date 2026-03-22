@@ -1,8 +1,11 @@
+export * from './createDrawer.svelte.js';
+export {anatomy as drawerAnatomy} from './Drawer.anatomy.js';
 export * as Drawer from './Drawer.js';
 export type {DrawerBackdropProps} from './DrawerBackdrop.svelte';
 export type {DrawerBodyProps} from './DrawerBody.svelte';
 export type {DrawerCloseTriggerProps} from './DrawerCloseTrigger.svelte';
 export type {DrawerContentProps} from './DrawerContent.svelte';
+export * from './DrawerContext.svelte.js';
 export type {DrawerDescriptionProps} from './DrawerDescription.svelte';
 export type {DrawerFooterProps} from './DrawerFooter.svelte';
 export type {DrawerHeaderProps} from './DrawerHeader.svelte';
@@ -10,8 +13,3 @@ export type {DrawerPositionerProps} from './DrawerPositioner.svelte';
 export type {DrawerProps} from './DrawerRoot.svelte';
 export type {DrawerTitleProps} from './DrawerTitle.svelte';
 export type {DrawerTriggerProps} from './DrawerTrigger.svelte';
-
-export * from './createDrawer.svelte.js';
-export * from './DrawerContext.svelte.js';
-
-export {anatomy as drawerAnatomy} from './Drawer.anatomy.js';

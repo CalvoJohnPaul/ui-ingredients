@@ -129,8 +129,8 @@ $effect(() => {
               saveSearch(id);
             });
           }}
-					open
 					loopFocus
+					lazyMount
 				>
 					<Combobox.Control class="relative">
 						<Combobox.Input

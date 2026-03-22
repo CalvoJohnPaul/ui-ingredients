@@ -1,13 +1,10 @@
+export {anatomy as hoverCardAnatomy} from '@zag-js/hover-card';
+export * from './createHoverCard.svelte.js';
 export * as HoverCard from './HoverCard.js';
-
 export type {HoverCardArrowProps} from './HoverCardArrow.svelte';
 export type {HoverCardArrowTipProps} from './HoverCardArrowTip.svelte';
 export type {HoverCardContentProps} from './HoverCardContent.svelte';
+export * from './HoverCardContext.svelte.js';
 export type {HoverCardPositionerProps} from './HoverCardPositioner.svelte';
 export type {HoverCardProps} from './HoverCardRoot.svelte';
 export type {HoverCardTriggerProps} from './HoverCardTrigger.svelte';
-
-export * from './createHoverCard.svelte.js';
-export * from './HoverCardContext.svelte.js';
-
-export {anatomy as hoverCardAnatomy} from '@zag-js/hover-card';

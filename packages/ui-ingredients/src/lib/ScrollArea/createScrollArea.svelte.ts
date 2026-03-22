@@ -1,8 +1,8 @@
+import * as scrollArea from '@zag-js/scroll-area';
+import {normalizeProps, type PropTypes, useMachine} from '@zag-js/svelte';
 import {getEnvironmentContext} from '$lib/EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {getLocaleContext} from '$lib/LocaleProvider/LocaleProviderContext.svelte.js';
 import type {Accessor} from '$lib/types.js';
-import * as scrollArea from '@zag-js/scroll-area';
-import {normalizeProps, useMachine, type PropTypes} from '@zag-js/svelte';
 
 export interface CreateScrollAreaProps extends Omit<scrollArea.Props, 'dir' | 'getRootNode'> {}
 export interface CreateScrollAreaReturn extends scrollArea.Api<PropTypes> {}

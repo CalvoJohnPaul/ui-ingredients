@@ -1,6 +1,6 @@
 <script lang="ts">
-import { CheckIcon, Copy01Icon } from '@untitled-theme/icons-svelte';
-import { Clipboard } from 'ui-ingredients';
+import {CheckIcon, Copy01Icon} from '@untitled-theme/icons-svelte';
+import {Clipboard} from 'ui-ingredients';
 import IconButton from '$components/ui/IconButton.svelte';
 import Input from '$components/ui/Input.svelte';
 import Label from '$components/ui/Label.svelte';

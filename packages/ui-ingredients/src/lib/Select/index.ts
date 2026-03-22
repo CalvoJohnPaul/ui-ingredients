@@ -1,7 +1,9 @@
+export {anatomy as selectAnatomy} from '@zag-js/select';
+export * from './createSelect.svelte.js';
 export * as Select from './Select.js';
-
 export type {SelectClearTriggerProps} from './SelectClearTrigger.svelte';
 export type {SelectContentProps} from './SelectContent.svelte';
+export * from './SelectContext.svelte.js';
 export type {SelectControlProps} from './SelectControl.svelte';
 export type {SelectHiddenSelectProps} from './SelectHiddenSelect.svelte';
 export type {SelectIndicatorProps} from './SelectIndicator.svelte';
@@ -16,8 +18,3 @@ export type {SelectPositionerProps} from './SelectPositioner.svelte';
 export type {SelectProps} from './SelectRoot.svelte';
 export type {SelectTriggerProps} from './SelectTrigger.svelte';
 export type {SelectValueTextProps} from './SelectValueText.svelte';
-
-export * from './createSelect.svelte.js';
-export * from './SelectContext.svelte.js';
-
-export {anatomy as selectAnatomy} from '@zag-js/select';

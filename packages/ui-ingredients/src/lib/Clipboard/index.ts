@@ -1,13 +1,10 @@
+export {anatomy as clipboardAnatomy} from '@zag-js/clipboard';
 export * as Clipboard from './Clipboard.js';
-
+export * from './ClipboardContext.svelte.js';
 export type {ClipboardControlProps} from './ClipboardControl.svelte';
 export type {ClipboardIndicatorProps} from './ClipboardIndicator.svelte';
 export type {ClipboardInputProps} from './ClipboardInput.svelte';
 export type {ClipboardLabelProps} from './ClipboardLabel.svelte';
 export type {ClipboardProps} from './ClipboardRoot.svelte';
 export type {ClipboardTriggerProps} from './ClipboardTrigger.svelte';
-
-export * from './ClipboardContext.svelte.js';
 export * from './createClipboard.svelte.js';
-
-export {anatomy as clipboardAnatomy} from '@zag-js/clipboard';

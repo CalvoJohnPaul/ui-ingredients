@@ -1,6 +1,6 @@
-import type {Accessor} from '$lib/types.js';
 import * as checkbox from '@zag-js/checkbox';
 import {normalizeProps, useMachine} from '@zag-js/svelte';
+import type {Accessor} from '$lib/types.js';
 import {getEnvironmentContext} from '../EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {getFieldContext} from '../Field/FieldContext.svelte.js';
 import {getLocaleContext} from '../LocaleProvider/LocaleProviderContext.svelte.js';

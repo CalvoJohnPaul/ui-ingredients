@@ -1,10 +1,10 @@
-import {getEnvironmentContext} from '$lib/EnvironmentProvider/EnvironmentProviderContext.svelte.js';
-import {getLocaleContext} from '$lib/LocaleProvider/LocaleProviderContext.svelte.js';
-import type {Accessor} from '$lib/types.js';
 import {normalizeProps, useMachine} from '@zag-js/svelte';
 import * as tour from '@zag-js/tour';
 import type {HTMLButtonAttributes} from 'svelte/elements';
 import type {SetOptional} from 'type-fest';
+import {getEnvironmentContext} from '$lib/EnvironmentProvider/EnvironmentProviderContext.svelte.js';
+import {getLocaleContext} from '$lib/LocaleProvider/LocaleProviderContext.svelte.js';
+import type {Accessor} from '$lib/types.js';
 import {parts} from './Tour.anatomy.js';
 
 export interface TourStepDetails extends SetOptional<tour.StepDetails, 'id'> {}

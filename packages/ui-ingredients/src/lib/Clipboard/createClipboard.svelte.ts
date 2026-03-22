@@ -1,6 +1,6 @@
-import type {Accessor} from '$lib/types.js';
 import * as clipboard from '@zag-js/clipboard';
 import {normalizeProps, useMachine} from '@zag-js/svelte';
+import type {Accessor} from '$lib/types.js';
 import {getEnvironmentContext} from '../EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 
 export interface CreateClipboardProps extends Omit<clipboard.Props, 'getRootNode'> {}

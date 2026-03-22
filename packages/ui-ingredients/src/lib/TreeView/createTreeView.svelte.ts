@@ -1,8 +1,8 @@
+import {normalizeProps, useMachine} from '@zag-js/svelte';
+import * as treeView from '@zag-js/tree-view';
 import {getEnvironmentContext} from '$lib/EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {getLocaleContext} from '$lib/LocaleProvider/LocaleProviderContext.svelte.js';
 import type {Accessor} from '$lib/types.js';
-import {normalizeProps, useMachine} from '@zag-js/svelte';
-import * as treeView from '@zag-js/tree-view';
 
 export interface CreateTreeViewProps extends Omit<treeView.Props, 'dir' | 'getRootNode'> {}
 export interface CreateTreeViewReturn extends treeView.Api {}

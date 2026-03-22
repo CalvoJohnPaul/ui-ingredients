@@ -1,6 +1,6 @@
-import type {Accessor} from '$lib/types.js';
 import type {ItemProps} from '@zag-js/radio-group';
 import {createContext} from 'svelte';
+import type {Accessor} from '$lib/types.js';
 import type {CreateSegmentGroupReturn} from './createSegmentGroup.svelte.js';
 
 export const [getSegmentGroupContext, setSegmentGroupContext] =

@@ -1,7 +1,8 @@
+export {anatomy as comboboxAnatomy} from '@zag-js/combobox';
 export * as Combobox from './Combobox.js';
-
 export type {ComboboxClearTriggerProps} from './ComboboxClearTrigger.svelte';
 export type {ComboboxContentProps} from './ComboboxContent.svelte';
+export * from './ComboboxContext.svelte.js';
 export type {ComboboxControlProps} from './ComboboxControl.svelte';
 export type {ComboboxInputProps} from './ComboboxInput.svelte';
 export type {ComboboxItemProps} from './ComboboxItem.svelte';
@@ -14,8 +15,4 @@ export type {ComboboxListProps} from './ComboboxList.svelte';
 export type {ComboboxPositionerProps} from './ComboboxPositioner.svelte';
 export type {ComboboxProps} from './ComboboxRoot.svelte';
 export type {ComboboxTriggerProps} from './ComboboxTrigger.svelte';
-
-export * from './ComboboxContext.svelte.js';
 export * from './createCombobox.svelte.js';
-
-export {anatomy as comboboxAnatomy} from '@zag-js/combobox';

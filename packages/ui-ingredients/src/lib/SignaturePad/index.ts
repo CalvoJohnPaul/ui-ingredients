@@ -1,6 +1,8 @@
+export {anatomy as signaturePadAnatomy} from '@zag-js/signature-pad';
+export * from './createSignaturePad.svelte.js';
 export * as SignaturePad from './SignaturePad.js';
-
 export type {SignaturePadClearTriggerProps} from './SignaturePadClearTrigger.svelte';
+export * from './SignaturePadContext.svelte.js';
 export type {SignaturePadControlProps} from './SignaturePadControl.svelte';
 export type {SignaturePadCurrentSegmentPathProps} from './SignaturePadCurrentSegmentPath.svelte';
 export type {SignaturePadGuideProps} from './SignaturePadGuide.svelte';
@@ -9,8 +11,3 @@ export type {SignaturePadLabelProps} from './SignaturePadLabel.svelte';
 export type {SignaturePadProps} from './SignaturePadRoot.svelte';
 export type {SignaturePadSegmentProps} from './SignaturePadSegment.svelte';
 export type {SignaturePadSegmentPathProps} from './SignaturePadSegmentPath.svelte';
-
-export * from './createSignaturePad.svelte.js';
-export * from './SignaturePadContext.svelte.js';
-
-export {anatomy as signaturePadAnatomy} from '@zag-js/signature-pad';

@@ -1,9 +1,9 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';
-import {splitProps} from '$lib/splitProps.js';
 import type {HighlightWordProps} from '@zag-js/highlight-word';
 import {highlightWord} from '@zag-js/highlight-word';
 import type {Merge} from 'type-fest';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {HtmlIngredientProps} from '../types.js';
 
 export interface HighlightProps

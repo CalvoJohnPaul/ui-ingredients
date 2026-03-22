@@ -1,6 +1,3 @@
-import {getEnvironmentContext} from '$lib/EnvironmentProvider/EnvironmentProviderContext.svelte.js';
-import {getLocaleContext} from '$lib/LocaleProvider/LocaleProviderContext.svelte.js';
-import type {Accessor} from '$lib/types.js';
 import {ariaAttr, dataAttr, getDocument, getWindow} from '@zag-js/dom-query';
 import type {
   HTMLAttributes,
@@ -9,6 +6,9 @@ import type {
   HTMLSelectAttributes,
   HTMLTextareaAttributes,
 } from 'svelte/elements';
+import {getEnvironmentContext} from '$lib/EnvironmentProvider/EnvironmentProviderContext.svelte.js';
+import {getLocaleContext} from '$lib/LocaleProvider/LocaleProviderContext.svelte.js';
+import type {Accessor} from '$lib/types.js';
 import {parts} from './Field.anatomy.js';
 
 interface ElementIds {

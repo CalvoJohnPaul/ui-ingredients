@@ -1,9 +1,9 @@
+import {normalizeProps, useMachine} from '@zag-js/svelte';
+import * as tagsInput from '@zag-js/tags-input';
 import {getEnvironmentContext} from '$lib/EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {getFieldContext} from '$lib/Field/FieldContext.svelte.js';
 import {getLocaleContext} from '$lib/LocaleProvider/LocaleProviderContext.svelte.js';
 import type {Accessor} from '$lib/types.js';
-import {normalizeProps, useMachine} from '@zag-js/svelte';
-import * as tagsInput from '@zag-js/tags-input';
 export interface CreateTagsInputProps extends Omit<tagsInput.Props, 'dir' | 'getRootNode'> {}
 
 export interface CreateTagsInputReturn extends tagsInput.Api {}

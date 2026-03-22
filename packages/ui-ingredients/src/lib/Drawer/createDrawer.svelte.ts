@@ -1,7 +1,7 @@
-import type {Accessor} from '$lib/types.js';
 import * as dialog from '@zag-js/dialog';
 import {normalizeProps, useMachine} from '@zag-js/svelte';
 import type {HTMLAttributes} from 'svelte/elements';
+import type {Accessor} from '$lib/types.js';
 import {getEnvironmentContext} from '../EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {getLocaleContext} from '../LocaleProvider/LocaleProviderContext.svelte.js';
 import {parts} from './Drawer.anatomy.js';

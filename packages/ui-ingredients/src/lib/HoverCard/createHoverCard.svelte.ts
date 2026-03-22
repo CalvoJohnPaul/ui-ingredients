@@ -1,6 +1,6 @@
-import type {Accessor} from '$lib/types.js';
 import * as hoverCard from '@zag-js/hover-card';
 import {normalizeProps, useMachine} from '@zag-js/svelte';
+import type {Accessor} from '$lib/types.js';
 import {getEnvironmentContext} from '../EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {getLocaleContext} from '../LocaleProvider/LocaleProviderContext.svelte.js';
 

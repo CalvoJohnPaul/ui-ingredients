@@ -1,6 +1,6 @@
-import type {Accessor} from '$lib/types.js';
 import {normalizeProps, useMachine} from '@zag-js/svelte';
 import * as switch_ from '@zag-js/switch';
+import type {Accessor} from '$lib/types.js';
 import {getEnvironmentContext} from '../EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {getFieldContext} from '../Field/FieldContext.svelte.js';
 import {getLocaleContext} from '../LocaleProvider/LocaleProviderContext.svelte.js';

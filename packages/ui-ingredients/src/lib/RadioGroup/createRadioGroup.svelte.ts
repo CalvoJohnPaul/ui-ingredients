@@ -1,8 +1,8 @@
+import * as radioGroup from '@zag-js/radio-group';
+import {normalizeProps, useMachine} from '@zag-js/svelte';
 import {getEnvironmentContext} from '$lib/EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {getLocaleContext} from '$lib/LocaleProvider/LocaleProviderContext.svelte.js';
 import type {Accessor} from '$lib/types.js';
-import * as radioGroup from '@zag-js/radio-group';
-import {normalizeProps, useMachine} from '@zag-js/svelte';
 
 export interface CreateRadioGroupProps extends Omit<radioGroup.Props, 'dir' | 'getRootNode'> {}
 

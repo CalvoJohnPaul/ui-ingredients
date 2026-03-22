@@ -1,5 +1,7 @@
+export {anatomy as radioGroupAnatomy} from '@zag-js/radio-group';
+export * from './createRadioGroup.svelte.js';
 export * as RadioGroup from './RadioGroup.js';
-
+export * from './RadioGroupContext.svelte.js';
 export type {RadioGroupIndicatorProps} from './RadioGroupIndicator.svelte';
 export type {RadioGroupItemProps} from './RadioGroupItem.svelte';
 export type {RadioGroupItemControlProps} from './RadioGroupItemControl.svelte';
@@ -7,8 +9,3 @@ export type {RadioGroupItemHiddenInputProps} from './RadioGroupItemHiddenInput.s
 export type {RadioGroupItemTextProps} from './RadioGroupItemText.svelte';
 export type {RadioGroupLabelProps} from './RadioGroupLabel.svelte';
 export type {RadioGroupProps} from './RadioGroupRoot.svelte';
-
-export * from './createRadioGroup.svelte.js';
-export * from './RadioGroupContext.svelte.js';
-
-export {anatomy as radioGroupAnatomy} from '@zag-js/radio-group';

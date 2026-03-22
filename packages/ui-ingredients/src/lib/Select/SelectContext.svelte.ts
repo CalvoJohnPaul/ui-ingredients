@@ -1,6 +1,6 @@
-import type {Accessor} from '$lib/types.js';
 import type {ItemGroupProps, ItemProps} from '@zag-js/select';
 import {createContext} from 'svelte';
+import type {Accessor} from '$lib/types.js';
 import type {CreateSelectReturn} from './createSelect.svelte.js';
 
 export const [getSelectContext, setSelectContext] = createContext<Accessor<CreateSelectReturn>>();

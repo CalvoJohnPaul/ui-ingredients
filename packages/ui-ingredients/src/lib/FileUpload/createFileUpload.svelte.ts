@@ -1,9 +1,9 @@
+import * as fileUpload from '@zag-js/file-upload';
+import {normalizeProps, useMachine} from '@zag-js/svelte';
 import {getEnvironmentContext} from '$lib/EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {getFieldContext} from '$lib/Field/FieldContext.svelte.js';
 import {getLocaleContext} from '$lib/LocaleProvider/LocaleProviderContext.svelte.js';
 import type {Accessor} from '$lib/types.js';
-import * as fileUpload from '@zag-js/file-upload';
-import {normalizeProps, useMachine} from '@zag-js/svelte';
 
 export interface CreateFileUploadProps extends Omit<fileUpload.Props, 'dir' | 'getRootNode'> {}
 

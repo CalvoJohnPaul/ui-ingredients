@@ -1,16 +1,13 @@
+export {anatomy as progressAnatomy} from '@zag-js/progress';
+export * from './createProgress.svelte.js';
 export * as Progress from './Progress.js';
-
 export type {ProgressCircleProps} from './ProgressCircle.svelte';
 export type {ProgressCircleRangeProps} from './ProgressCircleRange.svelte';
 export type {ProgressCircleTrackProps} from './ProgressCircleTrack.svelte';
+export * from './ProgressContext.svelte.js';
 export type {ProgressLabelProps} from './ProgressLabel.svelte';
 export type {ProgressRangeProps} from './ProgressRange.svelte';
 export type {ProgressProps} from './ProgressRoot.svelte';
 export type {ProgressTrackProps} from './ProgressTrack.svelte';
 export type {ProgressValueTextProps} from './ProgressValueText.svelte';
 export type {ProgressViewProps} from './ProgressView.svelte';
-
-export * from './createProgress.svelte.js';
-export * from './ProgressContext.svelte.js';
-
-export {anatomy as progressAnatomy} from '@zag-js/progress';

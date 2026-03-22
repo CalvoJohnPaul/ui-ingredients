@@ -1,5 +1,6 @@
+export type {Color} from '@zag-js/color-picker';
+export {anatomy as colorPickerAnatomy} from './ColorPicker.anatomy.js';
 export * as ColorPicker from './ColorPicker.js';
-
 export type {ColorPickerAreaProps} from './ColorPickerArea.svelte';
 export type {ColorPickerAreaBackgroundProps} from './ColorPickerAreaBackground.svelte';
 export type {ColorPickerAreaThumbProps} from './ColorPickerAreaThumb.svelte';
@@ -10,6 +11,7 @@ export type {ColorPickerChannelSliderThumbProps} from './ColorPickerChannelSlide
 export type {ColorPickerChannelSliderTrackProps} from './ColorPickerChannelSliderTrack.svelte';
 export type {ColorPickerChannelSliderValueTextProps} from './ColorPickerChannelSliderValueText.svelte';
 export type {ColorPickerContentProps} from './ColorPickerContent.svelte';
+export * from './ColorPickerContext.svelte.js';
 export type {ColorPickerControlProps} from './ColorPickerControl.svelte';
 export type {ColorPickerEyeDropperTriggerProps} from './ColorPickerEyeDropperTrigger.svelte';
 export type {ColorPickerFormatSelectProps} from './ColorPickerFormatSelect.svelte';
@@ -27,9 +29,4 @@ export type {ColorPickerTriggerProps} from './ColorPickerTrigger.svelte';
 export type {ColorPickerValueSwatchProps} from './ColorPickerValueSwatch.svelte';
 export type {ColorPickerValueTextProps} from './ColorPickerValueText.svelte';
 export type {ColorPickerViewProps} from './ColorPickerView.svelte';
-
-export * from './ColorPickerContext.svelte.js';
 export * from './createColorPicker.svelte.js';
-
-export type {Color} from '@zag-js/color-picker';
-export {anatomy as colorPickerAnatomy} from './ColorPicker.anatomy.js';

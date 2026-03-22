@@ -1,7 +1,7 @@
-import {getFieldContext} from '$lib/Field/FieldContext.svelte.js';
-import type {Accessor} from '$lib/types.js';
 import * as editable from '@zag-js/editable';
 import {normalizeProps, useMachine} from '@zag-js/svelte';
+import {getFieldContext} from '$lib/Field/FieldContext.svelte.js';
+import type {Accessor} from '$lib/types.js';
 import {getEnvironmentContext} from '../EnvironmentProvider/EnvironmentProviderContext.svelte.js';
 import {getLocaleContext} from '../LocaleProvider/LocaleProviderContext.svelte.js';
 

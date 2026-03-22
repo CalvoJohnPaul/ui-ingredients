@@ -1,12 +1,12 @@
 <script lang="ts" module>
-import {defineKeyset} from '$lib/defineKeySet.js';
-import {getEnvironmentContext} from '$lib/EnvironmentProvider/EnvironmentProviderContext.svelte.js';
-import {splitProps} from '$lib/splitProps.js';
 import * as focusTrap from '@zag-js/focus-trap';
 import {mergeProps} from '@zag-js/svelte';
 import {BROWSER} from 'esm-env';
 import {createAttachmentKey} from 'svelte/attachments';
 import type {Merge} from 'type-fest';
+import {defineKeyset} from '$lib/defineKeySet.js';
+import {getEnvironmentContext} from '$lib/EnvironmentProvider/EnvironmentProviderContext.svelte.js';
+import {splitProps} from '$lib/splitProps.js';
 import type {HtmlIngredientProps} from '../types.js';
 
 interface FocusTrapOptions

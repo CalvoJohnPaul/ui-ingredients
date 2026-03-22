@@ -1,15 +1,12 @@
+export {anatomy as toastAnatomy} from '@zag-js/toast';
+export * from './createToaster.svelte.js';
 export * as Toast from './Toast.js';
-export {default as Toaster, type ToasterProps} from './Toaster.svelte';
-
 export type {ToastActionTriggerProps} from './ToastActionTrigger.svelte';
 export type {ToastCloseTriggerProps} from './ToastCloseTrigger.svelte';
+export * from './ToastContext.svelte.js';
 export type {ToastDescriptionProps} from './ToastDescription.svelte';
+export {default as Toaster, type ToasterProps} from './Toaster.svelte';
 export type {ToastGhostAfterProps} from './ToastGhostAfter.svelte';
 export type {ToastGhostBeforeProps} from './ToastGhostBefore.svelte';
 export type {ToastProps} from './ToastRoot.svelte';
 export type {ToastTitleProps} from './ToastTitle.svelte';
-
-export * from './createToaster.svelte.js';
-export * from './ToastContext.svelte.js';
-
-export {anatomy as toastAnatomy} from '@zag-js/toast';
