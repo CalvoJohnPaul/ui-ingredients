@@ -10,11 +10,11 @@
 		"@tsconfig/node22": "^22.0.5",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
-		"@zag-js/anatomy-icons": "^1.37.0",
+		"@zag-js/anatomy-icons": "^1.38.1",
 		"react": "^19.2.4",
 		"react-dom": "^19.2.4",
 		"svgson": "^5.3.1",
 		"tsx": "^4.21.0",
-		"typescript": "^5.9.3"
+		"typescript": "^6.0.2"
 	}
 }

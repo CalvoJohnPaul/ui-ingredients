@@ -25,7 +25,7 @@ description: A specialized input field for entering and managing passwords, with
       <PasswordInput.Input />
       <PasswordInput.VisibilityTrigger>
         <PasswordInput.Indicator>
-          {#if api.visible}
+          {#if api().visible}
             <EyeIcon />
           {:else}
             <EyeOffIcon />
@@ -63,7 +63,7 @@ description: A specialized input field for entering and managing passwords, with
           {#snippet asChild(props)}
             <Button {...props()} variant="outline">
               <PasswordInput.Indicator>
-                {#if api.visible}
+                {#if api().visible}
                   <EyeIcon />
                 {:else}
                   <EyeOffIcon />
